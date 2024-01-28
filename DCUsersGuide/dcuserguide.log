@@ -1,0 +1,293 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.26)  4 JAN 2024 17:56
+entering extended mode
+**./dcuserguide.tex
+(dcuserguide.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-10-18>
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls
+Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo
+File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.s
+ty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.s
+ty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphi
+cs.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex
+.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend
+-pdftex.def
+File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count190
+\l__pdf_internal_box=\box50
+) (dcuserguide.aux
+
+LaTeX Warning: Label `fig:dca_main' multiply defined.
+
+)
+\openout1 = `dcuserguide.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
+f.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count191
+\scratchdimen=\dimen141
+\scratchbox=\box51
+\nofMPsegments=\count192
+\nofMParguments=\count193
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count194
+\MPscratchDim=\dimen142
+\MPnumerator=\count195
+\makeMPintoPDFobject=\count196
+\everyMPtoPDFconversion=\toks20
+)
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
+df-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\eleki\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\epstopdf-s
+ys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 14.
+ [1
+
+{C:/Users/eleki/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(dcuserguide.toc)
+\tf@toc=\write3
+\openout3 = `dcuserguide.toc'.
+
+ [2]
+<dcstart.png, id=11, 94.85437pt x 407.27156pt>
+File: dcstart.png Graphic file (type png)
+<use dcstart.png>
+Package pdftex.def Info: dcstart.png  used on input line 47.
+(pdftex.def)             Requested size: 56.9055pt x 244.33374pt.
+
+Overfull \hbox (4.87332pt too wide) in paragraph at lines 55--56
+\OT1/cmr/m/n/12 ments of DEM en-ti-ties (work-ers) in small labyrinth. There is
+ no database
+ []
+
+
+Overfull \hbox (3.21548pt too wide) in paragraph at lines 66--68
+\OT1/cmr/m/n/12 DCDemo.exe demon-strates graph-i-cally the move-ments of DEM en
+-ti-ties (work-
+ []
+
+[3]
+<demo.png, id=17, 608.2725pt x 464.4853pt>
+File: demo.png Graphic file (type png)
+<use demo.png>
+Package pdftex.def Info: demo.png  used on input line 71.
+(pdftex.def)             Requested size: 398.33858pt x 304.18695pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 71--72
+ [][] 
+ []
+
+<master1.png, id=18, 651.93562pt x 246.1697pt>
+File: master1.png Graphic file (type png)
+<use master1.png>
+Package pdftex.def Info: master1.png  used on input line 83.
+(pdftex.def)             Requested size: 426.79134pt x 161.16156pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 83--84
+ [] 
+ []
+
+[4 <./dcstart.png>] [5 <./demo.png> <./master1.png>]
+<menu_database.png, id=28, 649.67719pt x 246.1697pt>
+File: menu_database.png Graphic file (type png)
+<use menu_database.png>
+Package pdftex.def Info: menu_database.png  used on input line 103.
+(pdftex.def)             Requested size: 312.9803pt x 118.59207pt.
+<config.png, id=29, 263.98625pt x 203.76125pt>
+File: config.png Graphic file (type png)
+<use config.png>
+Package pdftex.def Info: config.png  used on input line 111.
+(pdftex.def)             Requested size: 170.71652pt x 131.76855pt.
+<menu_create_workers.png, id=30, 276.28218pt x 427.5975pt>
+File: menu_create_workers.png Graphic file (type png)
+<use menu_create_workers.png>
+Package pdftex.def Info: menu_create_workers.png  used on input line 119.
+(pdftex.def)             Requested size: 227.62204pt x 352.28294pt.
+<mnu_createlabs.png, id=31, 444.15938pt x 426.84468pt>
+File: mnu_createlabs.png Graphic file (type png)
+<use mnu_createlabs.png>
+Package pdftex.def Info: mnu_createlabs.png  used on input line 127.
+(pdftex.def)             Requested size: 341.43306pt x 328.12431pt.
+<mnu_showparameter.png, id=32, 320.19624pt x 241.90375pt>
+File: mnu_showparameter.png Graphic file (type png)
+<use mnu_showparameter.png>
+Package pdftex.def Info: mnu_showparameter.png  used on input line 138.
+(pdftex.def)             Requested size: 199.16928pt x 150.4697pt.
+ [6 <./menu_database.png> <./config.png (PNG copy)>] [7 <./menu_create_workers.
+png>] [8 <./mnu_createlabs.png>]
+<analyser1.png, id=45, 1925.1925pt x 1039.885pt>
+File: analyser1.png Graphic file (type png)
+<use analyser1.png>
+Package pdftex.def Info: analyser1.png  used on input line 159.
+(pdftex.def)             Requested size: 426.79134pt x 230.52081pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 159--160
+ [] 
+ []
+
+[9 <./mnu_showparameter.png (PNG copy)>]
+<dcaselect.png, id=49, 448.67625pt x 259.97125pt>
+File: dcaselect.png Graphic file (type png)
+<use dcaselect.png>
+Package pdftex.def Info: dcaselect.png  used on input line 172.
+(pdftex.def)             Requested size: 256.0748pt x 148.37952pt.
+<dcamainmenu.png, id=50, 894.34125pt x 77.28876pt>
+File: dcamainmenu.png Graphic file (type png)
+<use dcamainmenu.png>
+Package pdftex.def Info: dcamainmenu.png  used on input line 183.
+(pdftex.def)             Requested size: 398.33858pt x 34.42464pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 183--184
+ [] 
+ []
+
+<mnureloadata.png, id=51, 225.84375pt x 99.37125pt>
+File: mnureloadata.png Graphic file (type png)
+<use mnureloadata.png>
+Package pdftex.def Info: mnureloadata.png  used on input line 192.
+(pdftex.def)             Requested size: 170.71652pt x 75.1196pt.
+<simreport.png, id=52, 411.5375pt x 459.7175pt>
+File: simreport.png Graphic file (type png)
+<use simreport.png>
+Package pdftex.def Info: simreport.png  used on input line 201.
+(pdftex.def)             Requested size: 227.62204pt x 254.26938pt.
+<mnusql.png, id=53, 261.97874pt x 74.2775pt>
+File: mnusql.png Graphic file (type png)
+<use mnusql.png>
+Package pdftex.def Info: mnusql.png  used on input line 226.
+(pdftex.def)             Requested size: 199.16928pt x 56.47075pt.
+[10 <./analyser1.png (PNG copy)>] [11 <./dcaselect.png (PNG copy)> <./dcamainme
+nu.png (PNG copy)> <./mnureloadata.png (PNG copy)>] [12 <./simreport.png (PNG c
+opy)> <./mnusql.png (PNG copy)>]
+<mnudiagrams.png, id=63, 232.87pt x 149.55875pt>
+File: mnudiagrams.png Graphic file (type png)
+<use mnudiagrams.png>
+Package pdftex.def Info: mnudiagrams.png  used on input line 239.
+(pdftex.def)             Requested size: 170.71652pt x 109.64479pt.
+<comparison.png, id=64, 703.12688pt x 417.81094pt>
+File: comparison.png Graphic file (type png)
+<use comparison.png>
+Package pdftex.def Info: comparison.png  used on input line 247.
+(pdftex.def)             Requested size: 426.79134pt x 253.60199pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 247--248
+ [] 
+ []
+
+<mnuselections.png, id=65, 328.22626pt x 74.52844pt>
+File: mnuselections.png Graphic file (type png)
+<use mnuselections.png>
+Package pdftex.def Info: mnuselections.png  used on input line 255.
+(pdftex.def)             Requested size: 284.52756pt x 64.60721pt.
+<discoverlab1.png, id=66, 1245.65375pt x 694.595pt>
+File: discoverlab1.png Graphic file (type png)
+<use discoverlab1.png>
+Package pdftex.def Info: discoverlab1.png  used on input line 268.
+(pdftex.def)             Requested size: 369.88582pt x 206.24977pt.
+<labrightclick.png, id=67, 764.8575pt x 759.83875pt>
+File: labrightclick.png Graphic file (type png)
+<use labrightclick.png>
+Package pdftex.def Info: labrightclick.png  used on input line 278.
+(pdftex.def)             Requested size: 426.79134pt x 423.98795pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 278--279
+ [] 
+ []
+
+[13 <./mnudiagrams.png (PNG copy)>] [14 <./comparison.png> <./mnuselections.png
+>] [15 <./discoverlab1.png (PNG copy)>] [16 <./labrightclick.png (PNG copy)>]
+(dcuserguide.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1399 strings out of 478873
+ 22941 string characters out of 2848365
+ 318776 words of memory out of 3000000
+ 19313 multiletter control sequences out of 15000+600000
+ 406537 words of font info for 37 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,6n,66p,801b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/eleki/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm
+-super-ts1.enc}<C:/Users/eleki/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><C:/Users/eleki/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/eleki/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/eleki/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/elek
+i/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on dcuserguide.pdf (16 pages, 537497 bytes).
+PDF statistics:
+ 105 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+

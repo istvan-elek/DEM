@@ -1,0 +1,397 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+
+
+\begin{document}
+
+\author{Istvan Elek}
+\title{DEM Center Users' Guide}
+\date{\today}
+
+
+%\frontmatter
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+%\mainmatter
+
+
+\section{Preface}
+
+DEM center is a program package written in C\#, which is the heart of digital evolution. You can create any size of labyrinths with any DEM workers and wumpuses, traps and gold. The system  helps you to understand what happened to  evolutionary workers in this peculiar world. The system saves all events and workers into a Postgres database, so PostgreSQL 9.6 or later version has to be installed previously. PgAdmin is optional, but very useful tool, so it is also suggested to install. Use the Master to start thousands of DEM workers to discover the world. Start Analyser in order to understand the events.
+
+
+
+\section{Installation}
+
+\begin{enumerate}
+	\item Download the ziped (dc.zip) package from this site (Download menu)
+	\item Copy it to the desired directory and unzip
+	\item Download Postgres 9.6 or later version and install it
+	\item Download and install pgAdmin 4.x (optional)
+	\item Create a postgres user with name: wumpus with password: wumpus with admin rights (use postgres command line or pgAdmin). If you want to use your own parameters, open \textit{config.cfg} file, from the program directory and put your data into it (username: wumpus,	password: wumpus, 	host: localhost). You may also need to change the content of \textit{configAdmin.cfg} file (username postgres, password root, database postgres, host localhost) if your data are different from them.
+	\item Start DC.exe
+	\item Let's start!
+\end{enumerate}
+
+
+
+\section{DC}
+
+DC.exe is a frame program, which organize your work. You can make the followings (Figure \ref{fig:dcstart}):
+
+\begin{figure}
+	\centering
+	\includegraphics[width=2cm]{dcstart.png}
+	\caption{DC Centre form: Demo,  Master, Analyser modules can be launched from here.}
+	\label{fig:dcstart}
+\end{figure}
+
+
+
+\begin{itemize}
+	\item You can start DCDemo.exe, which demonstrates graphically the movements of DEM entities (workers) in small labyrinth. There is no database connection and knowledge base creation in this case.
+	\item If you are going to make simulations, start DCMaster.exe.
+	\item If you already have simulation results, you can use DCAnalyser.exe to analyse databases, to understand what have happened to evolutionary entities, and what the fate of DEM workers is.
+\end{itemize}
+
+The easiest way to start click to DC.exe, and start further modules from here.
+
+
+
+\section{DCDemo}
+
+DCDemo.exe  demonstrates graphically the movements of DEM entities (workers) in small labyrinth (Figure \ref{fig:demo}). There is no database connection and knowledge base creation in this case. Here you can create workers, any sized labyrinth with many wumpuses, traps and gold bars. Do not create to much (suggested only one), because picture may become confusing.
+If worker has died the live flag emphasized with black colour. If the worker found gold, the live flag became green, the 'gotcha' flag turns \textit{true} emphasized with green colour.
+
+\begin{figure}
+\centering
+	\includegraphics[width=14cm]{demo.png}
+	\caption{DCDemo: Labyrinth with legend and movements can be seen. Numbers symbolize the step number when the certain field was entered.}
+	\label{fig:demo}
+\end{figure}
+
+
+
+
+\section{DCMaster}
+
+If you are going to make simulations, start DCMaster.exe (Figure \ref{fig:master1}). First, you need to create a new database in the \textit{Database} menu (Figure \ref{fig:menu_database}). The database name must be started with 'dem' letters. Also in it you can edit/display config file (Figure \ref{fig:config}), which contains connection parameters to Postgres and existing dem databases. 
+
+After creation you should select this new database. Click to 'Select a database' combo box to select the desired database.
+If you created a new database (invasion), or you selected an existing one,  you can create DEM workers by clicking \textit{Edit/Create workers} menu (Figure \ref{fig:menu_create_workers}).
+
+You can also create any number and size of labyrinths by clicking \textit{Edit/Create labyrinths} menu (Figure \ref{fig:mnu_createlabs}), or edit existing one. You can set the number and size of  labyrinths, and the number of wumpuses, traps and gold bars. 
+
+
+
+You can chose operation modes too, such as use machine learning, or not use. You can set up starting position by hand or by random method. After you clicked to \textit{Start iteration} button you can see summary data after every closed session in 'Workflow progress data' section.
+
+\begin{figure}
+	\begin{center}
+	\includegraphics[width=15cm]{master1.png}
+		\caption{The DCmaster starter screen: This is where you can open an existing database or create any labyrinths, DEM workers, and you can set up simulation parameters. }
+\label{fig:master1}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=13cm]{menu_database.png}
+		\caption{Database menu, where you can create new database, or edit config file}
+		\label{fig:menu_database}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=6cm]{config.png}
+		\caption{Database/Config file menu, where you can edit the config file content}
+		\label{fig:config}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=8cm]{menu_create_workers.png}
+		\caption{Edit/Create worker menu: here you can create or delete the selected workers. The number of workers has to be set up before clicking to 'Create workers' button., }
+		\label{fig:menu_create_workers}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=12cm]{mnu_createlabs.png}
+		\caption{Edit/Create labyrinth menu: here you can create any size of labyrinths with any number of wumpuses, traps and gold bars.}
+		\label{fig:mnu_createlabs}
+	\end{center}
+\end{figure}
+
+ 
+You can set up parameters (Figure \ref{fig:mnu_showparameters}) of the world: initial worker energy, movement costs, wumpus, trap, gold energy content, replication energy level, replication rate (default is 2), etc. 
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=8cm]{mnu_showparameter.png}
+		\caption{Set up parameters menu is for adjusting the circumstances in the artificial world (labyrinths). You can edit world parameters if you change values. The changed value is stored if you select the next record.}
+		\label{fig:mnu_showparameters}
+	\end{center}
+\end{figure}
+
+
+In the \textit{Database} menu there are three further sub menus. The first is \textit{Delete workers}, which delete all existing workers from the database and worker related table such as worker\_path. It is useful if you wish to start a new simulation with new workers, but in old labyrinths. To click to \textit{Delete all tables content} menu item deletes every table from the selected (actual) database such as workers, labyrinths, logbook, worker\_path. Finally, you can display logbook content by clicking the \textit{Show logbook} menu.
+
+If every necessary parameter has set up, and labs and workers have been created you can start the simulation by clicking to  \textit{Start iteration} button. You can observe  events in 'Iteration progress data' section. The better mode of observation is to start DCAnalyser.exe which has many functions to display and analyse data.
+
+There is a report file (DCreports\_name.rep) which is a summary the metadata of simulation stored in a text file in the /user/documents/DCreports/ directory.
+
+
+
+\section{DCAnalyser}
+
+
+If you already have simulation results, or you have just started the simulation process by clicking \textit{Start invasion} button, you can use DCAnalyser.exe to analyse databases (invasions data), to understand what happened to evolutionary entities, and what the fates of DEM workers are. There are built-in queries, charts and picture to help your understanding. You can create your own selections too (\textit{Sql} menu), and you can display results (\textit{Diagrams} menu). In \textit{Selection} menu you can see knowledge data in tabular form, or you can see discovered fields of a labyrinth. Figure \ref{fig:analyser} demonstrates the complexity of DCAnalyser. You can see a labyrinth not only in tabular form, but in graphics too if you click to a labyrinth with right mouse button.
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{analyser1.png}
+		\caption{DCAnalyser: This module has wide range functions of data analysis. You can see data in tabular form, and graphics too, such as charts or images}
+		\label{fig:analyser}
+	\end{center}
+\end{figure}
+
+
+After DCAnaliser.exe start you need to analyse the database. Select a database (invasion) to analyse events and data (Figure \ref{fig:dcaselect}). When a database has been selected its content were loaded to different tables (workers, logbook, labyrinths, worker-Path or knowledge). If you checked 'Display knowledge' (Figure \ref{fig:check_displayknowledge}), you will see workers' knowledge in the datagridview. If you checked 'Display worker path' you will see the the worker path of all workers.
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=9cm]{dcaselect.png}
+		\caption{Click to 'Select database' combo to select a database which contains every data of the selected invasion}
+		\label{fig:dcaselect}
+	\end{center}
+\end{figure}
+
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[width=6cm]{check_displayknowledge.png}
+%		\caption{If you check \textit{Display knowledge} (default) you can see the knowledge table content. If \textit{Display worker path} is checked you can see the worker\_path table contents (be careful, because this table can be enormous with million records)}
+%		\label{fig:check_displayknowledge}
+%	\end{center}
+%\end{figure}
+
+The selected database content should be reloaded (Figure \ref{fig:mnuReloadata}), if the content of selected database is changing (for example a simulation is running just now). If you use a monitor option (check it on) in main menu bar you can observe the number of alive workers in real time.
+
+
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=5cm]{mnuReloadata.png}
+		\caption{Reload menu: You can reload the selected database content. You can also reload database names. It is needed if you started a new simulation with DCMaster.exe, and a new simulation database has been created.}
+		\label{fig:mnuReloadata}
+	\end{center}
+\end{figure}
+
+You can make any selections with \textit{Sql} menu (Figure \ref{fig:mnusql}). if you know Sql you can create your own Sql query, and you can see it in tabular form. If you choose \textit{Display charts from any Select} sub menu you can see the result in chart form.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=6cm]{mnusql.png}
+		\caption{With Sql menu you can create arbitrary Sql selections. You can display results in tabular or graphic form}
+		\label{fig:mnusql}
+	\end{center}
+	\end{figure}
+
+
+In \textit{Diagram} menu (Figure \ref{fig:mnudiagrams}) you can see mission data on charts: population (number of alive workers), population rate, gathered energy, energy rate, and fitness of groups. You can also compare any data from any mission. If you click to the special icon (white arrows) an sql command field displays, where you can see actual Sql statement.
+
+You can not only display charts on the certain database (invasion), but compare mission data of different invasions (Figure \ref{fig:comparison}). If you choose \textit{Compare missions} menu you can choose desired invasions and data type to display.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=6cm]{mnudiagrams.png}
+		\caption{You can draw charts if you choose any sub menus from \textit{Diagram} menu. }
+		\label{fig:mnudiagrams}
+	\end{center}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{comparison.png}
+		\caption{Comparison of two invasions database.}
+		\label{fig:comparison}
+	\end{center}
+\end{figure}
+		
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=10cm]{mnuselections.png}
+		\caption{Selection menu: here you can select worker specific knowledge and display discovered fields.}
+		\label{fig:mnuselections}
+	\end{center}
+\end{figure}
+
+Choose \textit{Selections} menu (Figure \ref{fig:mnuselections}) if you wish to see workers' knowledge for selected labyrinth or for all labyrinth. If the workers knowledge is interesting, first you should select a certain worker by clicking to a record in'workers' table. If you did not select labyrinth the selected knowledge is valid for all labyrinths.
+
+In \textit{Selections} menu you can display the discovered fields of a selected labyrinth (Figure \ref{fig:discoverlab1}). You can see individual or collective knowledge as an image. The union of individual results is the collective knowledge.
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{discoverlab1.png}
+		\caption{Discovered fields of a selected labyrinth}
+		\label{fig:discoverlab1}
+	\end{center}
+\end{figure}
+
+You can see a labyrinth graphically if you make a mouse click with right mouse button to a record in lab table data grid view. I  this was you will see the distribution of objects in the selected labyrinth (Figure \ref{fig:labrightclick}).
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{labrightclick.png}
+		\caption{The selected labyrinth with many wumpuses (black points), traps (red points) and gold bars (goldenrod points). Select a labyrinth by clicking with right mouse button if you wish to see the labyrinth graphically.}
+		\label{fig:labrightclick}
+	\end{center}
+\end{figure}
+
+Clicking to the menu item  'Display discovered fields of a given generation' we you query generations' prosperity. You can set up generation number (1,2,...) where 1 means the first generation (there is no ancestors of them) and quantifier ($<,>,=$, etc). The result is displayed graphically (visited point of the selected labyrinth) and optionally, you can see it in tabular form.
+
+%\newpage
+\section{Database tables and structures}
+
+The database management system of the DEM system is Postgres. As many invasions is created as many databases is stored in Postgres. The name of every database should start with 'dem'. Every database has the following tables: knowledge, lab (labyrinths), logbook, missions, parameters, worker\_path, workers.
+
+
+%\subsection{knowledge table}
+%
+%\begin{itemize}
+%	\item row\_id: type is long integer (primary key) for uniquely identify rows
+%	\item worker\_id: type is long integer (primary key) which identifies a certain worker
+%	\item lab\_id: type is long integer which identifies a labyrinth
+%	\item loc\_wumpus: type is string which contains the locations of wumpuses in the lab identified by lab\_id separated by ','
+%	\item loc\_traps: type is string which contains the locations of traps in the lab identified by lab\_id separated by ','
+%	\item loc\_gold: type is string which contains the locations of gold bars in the lab identified by lab\_id separated by ',' (Fig. \ref{fig:tabknowledge})
+%\end{itemize}
+%
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[width=8cm]{tabknowledge.jpg}
+%		\caption{The structure of the 'knowledge' table}
+%		\label{fig:tabknowledge}
+%	\end{center}
+%\end{figure}
+
+\subsection{lab table}
+
+\begin{itemize}
+	\item lab\_id: type is integer (primary key) for uniquely identify labyrinths
+	\item lab\_size: type is integer, which describes the rectangular (lab\_size $\times$ lab\_size) labyrinths
+	\item number\_of\_wumpuses: type is integer which gives the number of wumpuses in the certain labyrinth
+	\item wumpus\_position: type is string which contains the positions of wumpuses separated by ','
+	\item traps\_position: type is string which contains the positions of traps separated by ','
+	\item gold\_position: type is string which contains the positions of gold bars separated by ','	(Fig. \ref{fig:tablab})
+\end{itemize}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=14cm]{tablab.jpg}
+		\caption{The structure of the 'lab' table}
+		\label{fig:tablab}
+	\end{center}
+\end{figure}
+
+\subsection{logbook table}
+
+\begin{itemize}
+	\item row\_id: type is long integer (primary key) for uniquely identify rows
+	\item worker\_id: type is long integer for worker identification
+	\item lab\_id: type is integer, for labyrinth identification
+	\item start\_position: type is string which stores the start position of this mission
+	\item mission\_id: type is integer where the current mission\_id is stored (Fig. \ref{fig:tablogbook})
+\end{itemize}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=8cm]{tablogbook.jpg}
+		\caption{The structure of the 'logbook' table}
+		\label{fig:tablogbook}
+	\end{center}
+\end{figure}
+
+\subsection{iteration table}
+
+\begin{itemize}
+	\item id: type is integer (primary key) for uniquely identify missions
+	\item number\_of\_alive\_workers: type is long integer. This field contains the number of alive workers after the given mission
+	\item gathered\_energy: type is long integer. This field contains the gathered energy by the alive workers after the given mission 
+	\item energy\_rate: type is float. It's value is (the sum of workers' energy at the beginning a given mission)/(the sum of workers' energy at the end of mission)	
+	\item population\_rate: type is float.  It's value is (the number of workers' at the beginning of a given mission)/(the number of workers' at the end of a given mission)	(Fig. \ref{fig:tabmission})
+	\end{itemize}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=10cm]{tabmission.jpg}
+		\caption{The structure of the 'mission' table}
+		\label{fig:tabmission}
+	\end{center}
+\end{figure}
+
+\subsection{parameters table}
+This table is a special table which stores those parameters which adjust behavior of the DCMaster program such as initial worker energy, gold energy content, movement costs, traps energy content (it is negative), wumpus energy content (it is negative), replication energy level (below this value the replication is not allowed), replication rate ( in case of value 2 a worker produces 2 predecessors, in case of value 3 a worker produce 3 predecessors)
+
+\begin{itemize}
+	\item name: type is string. The contents is name of the parameter
+	\item value: type is integer, which contains the certain value of this parameter
+	\item parameter\_id: type is integer (primary key) for identifying parameters
+ (Fig. \ref{fig:tabparameters})
+\end{itemize}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=6cm]{tabparameters.jpg}
+		\caption{The structure of the 'parameters' table}
+		\label{fig:tabparameters}
+	\end{center}
+\end{figure}
+
+\subsection{worker\_path table}
+
+\begin{itemize}
+	\item row\_id: type is long integer (primary key) for uniquely identify the rows
+	\item worker\_id: type is long integer which identifies the workers
+	\item worker\_path: type is string which stores the visited position of a worker in a certain labyrinth
+	\item value: type is integer which contains the energy content of the visited field (Fig. \ref{fig:tabworkerpath})
+\end{itemize}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=6cm]{tabworkerpath.jpg}
+		\caption{The structure of the 'worker\_path' table}
+		\label{fig:tabworkerpath}
+	\end{center}
+\end{figure}
+
+\subsection{workers table}
+
+\begin{itemize}
+	\item worker\_id: type is long integer (primary key) for uniquely identify workers
+	\item live: type is boolean, which is the status (live or dead) of a certain worker
+	\item energy: type is long integer which stores the energy content of a certain worker
+	\item parent: type is string which contains the ancestors' worker\_ids separated by ',' (Fig. \ref{fig:tabworkers})
+\end{itemize}
+ 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=4.5cm]{tabworkers.jpg}
+		\caption{The structure of the 'workers' table}
+		\label{fig:tabworkers}
+	\end{center}
+\end{figure}
+
+
+\end{document}
