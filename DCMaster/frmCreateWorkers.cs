@@ -33,7 +33,8 @@ namespace DCMaster
         {
             string parameterFileName = Application.StartupPath + @"\parameters.txt";
             InitializeComponent();
-            parameters = parameters = System.IO.File.ReadAllLines(parameterFileName);
+            parameters = System.IO.File.ReadAllLines(parameterFileName);
+            tbNumOfWorkers.Text = Properties.Settings.Default.initialnumofworkers.ToString();
             tbNumOfWorkers.Focus();
             tbNumOfWorkers.Select();
             startPos = startP;
@@ -45,6 +46,8 @@ namespace DCMaster
 
         private void bttnQuit_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.initialnumofworkers = int.Parse(tbNumOfWorkers.Text);
+            Properties.Settings.Default.Save();
             dgvWorkers.DataSource = null;
             this.Dispose();
             this.Close();
@@ -69,7 +72,7 @@ namespace DCMaster
                 wk[i].Parent = "0";
                 wk[i].CurrentPosition = startPos;
             }
-            tbNumOfWorkers.Text = "";
+            //tbNumOfWorkers.Text = "";
             loadWorkers2Dgv();
             this.AcceptButton = bttnQuit;
         }

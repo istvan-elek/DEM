@@ -19,7 +19,7 @@ namespace DCMaster
             InitializeComponent();
             //this.TopMost = true;
             string[] dataPoints = loadIterationData(fname, title);
-            drawDiagram(title, dataPoints,"iteration " + title);
+            drawDiagram(title, dataPoints,"stepCount " + title);
         }
 
         private void ch1_MouseMove(object sender, MouseEventArgs e)
@@ -105,6 +105,10 @@ namespace DCMaster
             ch1.ChartAreas[0].AxisX.Title = colNames.Split(' ')[0];   //"X axis";
             ch1.ChartAreas[0].AxisY.Title = colNames.Split(' ')[1];  // "Y axis";
             ch1.BackColor = System.Drawing.Color.White;
+            ch1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+            ch1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            ch1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+            ch1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
             ch1.Titles.Clear();
             //ch1.Titles.Add(title);
             float[] x = new float[Convert.ToInt32(dataPnt.Length)];
@@ -124,7 +128,7 @@ namespace DCMaster
                 int l = stick.Length;
                 string num = stick.Substring(0, 2);
                 for (int k=2; k<l; k++) { num += "0"; }
-                ch1.ChartAreas[0].AxisY.Minimum = int.Parse(num)*l;
+                ch1.ChartAreas[0].AxisY.Minimum = int.Parse(num) * (l+1);
             }
             if (title=="fittness") ch1.ChartAreas[0].AxisY.Title = "fittness = Log10 ( population * energy )";
             ch1.Series[0].ChartType = SeriesChartType.Line;

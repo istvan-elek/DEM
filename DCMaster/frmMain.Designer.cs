@@ -109,6 +109,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpAnalyserTools.SuspendLayout();
@@ -146,6 +147,7 @@
             this.toolStripSeparator5,
             this.tsbttnViewreports,
             this.tscmbViewreports,
+            this.toolStripSeparator6,
             this.tsbttnHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -771,7 +773,7 @@
             this.grpLabData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpLabData.Location = new System.Drawing.Point(0, 0);
             this.grpLabData.Name = "grpLabData";
-            this.grpLabData.Size = new System.Drawing.Size(235, 0);
+            this.grpLabData.Size = new System.Drawing.Size(216, 0);
             this.grpLabData.TabIndex = 1;
             this.grpLabData.TabStop = false;
             this.grpLabData.Text = "Lab data";
@@ -780,7 +782,7 @@
             // btnShowLabImage
             // 
             this.btnShowLabImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowLabImage.Location = new System.Drawing.Point(95, 25);
+            this.btnShowLabImage.Location = new System.Drawing.Point(76, 25);
             this.btnShowLabImage.Name = "btnShowLabImage";
             this.btnShowLabImage.Size = new System.Drawing.Size(109, 23);
             this.btnShowLabImage.TabIndex = 26;
@@ -796,7 +798,7 @@
             this.tbLabData.Multiline = true;
             this.tbLabData.Name = "tbLabData";
             this.tbLabData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbLabData.Size = new System.Drawing.Size(229, 0);
+            this.tbLabData.Size = new System.Drawing.Size(210, 0);
             this.tbLabData.TabIndex = 0;
             // 
             // grp_static_hostility
@@ -997,6 +999,11 @@
             this.trackBar2.TickFrequency = 100;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 49);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1127,5 +1134,6 @@
         private System.Windows.Forms.Button bttnSaveCurrentLab;
         private System.Windows.Forms.TextBox tbStop;
         private System.Windows.Forms.Label lblStop;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }

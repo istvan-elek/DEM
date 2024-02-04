@@ -91,7 +91,7 @@
             // 
             // bttnAbout
             // 
-            this.bttnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bttnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bttnAbout.Image = ((System.Drawing.Image)(resources.GetObject("bttnAbout.Image")));
             this.bttnAbout.Location = new System.Drawing.Point(20, 425);
             this.bttnAbout.Name = "bttnAbout";

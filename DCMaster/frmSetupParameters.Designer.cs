@@ -40,7 +40,7 @@
             this.dgvParameters.Location = new System.Drawing.Point(0, 0);
             this.dgvParameters.MultiSelect = false;
             this.dgvParameters.Name = "dgvParameters";
-            this.dgvParameters.Size = new System.Drawing.Size(231, 206);
+            this.dgvParameters.Size = new System.Drawing.Size(225, 199);
             this.dgvParameters.TabIndex = 0;
             this.dgvParameters.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParameters_CellValueChanged);
             // 
@@ -48,7 +48,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(231, 206);
+            this.ClientSize = new System.Drawing.Size(225, 199);
             this.Controls.Add(this.dgvParameters);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;

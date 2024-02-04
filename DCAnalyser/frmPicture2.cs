@@ -24,7 +24,21 @@ namespace DCAnalyser
         Boolean push=false;
         DataTable lab;
         string appfolder;
-        
+
+        public frmPicture2(string title, Image img)
+        {
+            InitializeComponent();
+            //appfolder = appfold;
+            this.Text = title;
+            Title = title;
+            bmpLab = new Bitmap(img);
+            picBox.Image = img;
+            resetPicBox();
+            diff = picBox.Width / int.Parse(tstbZoomRate.Text);
+            //lab = lb;
+        }
+
+
         public frmPicture2(string title, Image img, DataTable lb, string appfold)  //amikor csak a labirintust jeleníti meg
         {
             InitializeComponent();
@@ -111,7 +125,8 @@ namespace DCAnalyser
             if (xpos == picBox.Image.Width) { xpos = picBox.Image.Width - 1; }
             int ypos = (int)(Convert.ToSingle(e.Y) * rate + 0.5F);
             if (ypos == picBox.Image.Height) { ypos = picBox.Image.Height - 1; }
-            string a = "position = '" + (xpos + "," + ypos) +"'";
+            string a = "position = '" + (xpos + "," + ypos) + "'";
+            //string a = (xpos + "," + ypos)/* + "'"*/;
             DataRow[] rows = lab.Select(a);
             string fieldValue="";
             if (rows.Length !=0)

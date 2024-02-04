@@ -140,6 +140,10 @@ namespace DCAnalyser
                 ch1.ChartAreas[0].AxisX.Minimum = 0;
                 ch1.ChartAreas[0].AxisY.Minimum = 0;
                 ch1.BackColor = System.Drawing.Color.White;
+                ch1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+                ch1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+                ch1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+                ch1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
                 ch1.Titles.Clear();              
                 ch1.Titles.Add(mainTitle);
                 ch1.Titles[0].Font = new System.Drawing.Font("Microsoft Sans Serif", 12, FontStyle.Regular);

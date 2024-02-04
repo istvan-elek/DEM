@@ -22,6 +22,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SQLite;
 using System.Xml.Linq;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure.DependencyResolution;
 
 namespace DCMaster
 {
@@ -35,7 +36,7 @@ namespace DCMaster
         int sink_energy_max;
         int Replication_energy_level;
         int replication_rate;
-        //int empty_field_energy = 0;
+        int Delay;
         Hostility hostile;
         Dictionary<Int32, worker> wk = new Dictionary<Int32, worker>();  // this is a workers' list as a dictionary, where key is the worker_id and worker is the worker object
         Int32[] wkSequence; // the workers' IDs are in it for the random start
@@ -52,11 +53,19 @@ namespace DCMaster
         string extStarp="";
         string extMerge="";
         string extLab="";
+        string extDelay = "";
 
         public frmMain()
         {
             InitializeComponent();
             this.Text = "DC Master, v_" + Application.ProductVersion.ToString();
+            loadParameters();
+            tbStartPosition.TabStop = false;
+            tbStop.TabStop = false;
+        }
+
+        void loadParameters()
+        {
             string parameterFileName = Application.StartupPath + "\\parameters.txt";
             parameters = System.IO.File.ReadAllLines(parameterFileName);
             initial_worker_energy = Convert.ToInt16(parameters[0].Split(';')[1]);
@@ -65,13 +74,32 @@ namespace DCMaster
             movement_costs = Convert.ToInt16(parameters[3].Split(';')[1]);
             Replication_energy_level = Convert.ToInt16(parameters[4].Split(';')[1]);
             replication_rate = Convert.ToInt16(parameters[5].Split(';')[1]);
-            tbStartPosition.Text = Properties.Settings.Default.startposition;  //"0,0";
+            Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
+            tbStartPosition.Text = Properties.Settings.Default.startposition;
             tbStop.Text = Properties.Settings.Default.countlimit;
             chkUseML.Checked = Properties.Settings.Default.learn;
             chkCoincidence.Checked = Properties.Settings.Default.merge;
             chkStartPositionFromParent.Checked = Properties.Settings.Default.startfrombirthplace;
-            tbStartPosition.TabStop = false;
-            tbStop.TabStop = false;
+        }
+
+        void refreshParameters()
+        {
+            string parameterFileName = Application.StartupPath + "\\parameters.txt";
+            parameters = System.IO.File.ReadAllLines(parameterFileName);
+            initial_worker_energy = Convert.ToInt16(parameters[0].Split(';')[1]);
+            source_energy_max = Convert.ToInt16(parameters[1].Split(';')[1]);
+            sink_energy_max = Convert.ToInt16(parameters[2].Split(';')[1]);
+            movement_costs = Convert.ToInt16(parameters[3].Split(';')[1]);
+            Replication_energy_level = Convert.ToInt16(parameters[4].Split(';')[1]);
+            replication_rate = Convert.ToInt16(parameters[5].Split(';')[1]);
+            Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
+            //tbStartPosition.Invoke(new Action(() => tbStartPosition.Text = Properties.Settings.Default.startposition));
+            //tbStop.Invoke(new Action(() => tbStop.Text = Properties.Settings.Default.countlimit));
+            //chkUseML.Invoke(new Action(() => chkUseML.Checked = Properties.Settings.Default.learn));
+            learn = chkUseML.Checked;
+            merge = chkCoincidence.Checked;
+            //chkCoincidence.Invoke(new Action(() => chkCoincidence.Checked = Properties.Settings.Default.merge));
+            //chkStartPositionFromParent.Invoke(new Action(()=> chkStartPositionFromParent.Checked = Properties.Settings.Default.startfrombirthplace));
         }
 
 
@@ -120,8 +148,10 @@ namespace DCMaster
             bttnShowHideLabirynth.Enabled = true;
             tsbttnShowAnalyser.Enabled=true;
             hostile = new Hostility(lab, movement_costs);
+            if (lab == null) return;
             refreshDinamicHostility();
             int trvalue = (int)(lab.Hostility);
+            if (trvalue > trackBar1.Maximum ) lab.Hostility = trackBar1.Maximum; trvalue = (int)(lab.Hostility);
             trackBar1.Value = trvalue;
             grp_static_hostility.Text = "Static hostility of labyrinth: " + lab.Hostility.ToString();
             //trackBar2.Invoke(new Action(() => trackBar2.Value = trvalue));
@@ -129,7 +159,18 @@ namespace DCMaster
 
         void refreshDinamicHostility()
         {
-            string ps = tbStartPosition.Text.Trim().Split(',')[0].Trim() + "," + tbStartPosition.Text.Trim().Split(',')[1].Trim();
+            string ps;
+            try
+            {
+                ps = tbStartPosition.Text.Trim().Split(',')[0].Trim() + "," + tbStartPosition.Text.Trim().Split(',')[1].Trim();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error in input data", "Error in input data",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             float host = hostile.ComputeDinamicHostility(ps);
             grpDinamicHostility.Text = "Dinamic hostility: " + (host).ToString("##.####") + " started from the field (" + ps + ")";
             int trvalue = (int)(host);
@@ -195,10 +236,17 @@ namespace DCMaster
         void Start()
         {
         //set up initial parameter of GUI and files (appfolder, reports and iterations) START ============================
+
         #region appfolder, reports and iterations    
             Int32 numOfWorkers = wk.Count;
             Int32 initial_num_of_workers = wk.Count;
             Int32 initial_energy = 0;
+            refreshParameters();
+            //tbStartPosition.Text = Properties.Settings.Default.startposition;
+            //tbStop.Text = Properties.Settings.Default.countlimit;
+            Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
+
+            extDelay = "_delay" + Delay;
             if (chkUseML.Checked) { learn = true; }
             else { learn = false; }
             if (chkCoincidence.Checked) { merge = true; }
@@ -216,8 +264,8 @@ namespace DCMaster
             if (merge) { extMerge = "_merge"; } else { extMerge = ""; }
             extStarp= "_startp" + tbStartPosition.Text.Replace(',','_');
             extLab = "_lab" + lab.Size.ToString();
-            iterationName = appfolder + @"\DC\iterations\default" + extLab + extLearn + extMerge + extStarp + ".iter";
-            repFileName = appfolder + @"\DC\reports\default" + extLab + extLearn + extMerge + extStarp + ".report";
+            iterationName = appfolder + @"\DC\iterations\default" + extLab + extLearn + extMerge + extStarp + extDelay + ".iter";
+            repFileName = appfolder + @"\DC\reports\default" + extLab + extLearn + extMerge + extStarp + extDelay + ".report";
             bttnSaveCurrentLab.Invoke(new Action(() => bttnSaveCurrentLab.Enabled=true));
             DirectoryInfo di1=new DirectoryInfo(appfolder + @"\DC\iterations\"); 
             if (!di1.Exists) { di1.Create(); }
@@ -225,11 +273,11 @@ namespace DCMaster
             if (!di2.Exists) { di2.Create(); }
             if (chkbSave2file.Checked)
             {
-                iterationName = appfolder + @"\DC\iterations\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + ".iter";
-                repFileName = appfolder + @"\DC\reports\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + ".report";
+                iterationName = appfolder + @"\DC\iterations\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extDelay + extStarp + ".iter";
+                repFileName = appfolder + @"\DC\reports\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".report";
                 DirectoryInfo di3 = new DirectoryInfo(appfolder + @"\DC\Databases\");
                 if (!di3.Exists)  { di3.Create(); }
-                dbName= appfolder + @"\DC\databases\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + ".s3db";
+                dbName= appfolder + @"\DC\databases\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".s3db";
             }
                   
             using (FileStream fs = new FileStream(iterationName, FileMode.Create, FileAccess.Write, FileShare.Read))
@@ -310,7 +358,8 @@ namespace DCMaster
                                 {
                                     wk[maxindex].StartLocation= tbStartPosition.Text;
                                 }
-                                wk[maxindex].Parent = wk[parentsID].Parent + "," + parentsID;  
+                                wk[maxindex].Parent = wk[parentsID].Parent + "," + parentsID;
+                                //wk[maxindex].Parent.Add(parentsID.ToString());
                                 wk[maxindex].Live = true;
                                 wk[maxindex].Energy = initial_worker_energy;
                                 wk[maxindex].SEntropy = wk[i].SEntropy;
@@ -334,7 +383,7 @@ namespace DCMaster
                             lblLivingWorkerNumber.Invoke(new Action(() => lblLivingWorkerNumber.Text = numOfWorkers.ToString()));
                             writeReportFile(numOfWorkers, (stepCount).ToString());
                             Int32 sumEnergy = sumOfEnergy(wk);
-                            Int32 sumentropia = sumofSEntropy(wk);
+                            float sumentropia = sumofSEntropy(wk);
                             saveIteration2File(stepCount+1, numOfWorkers, sumEnergy, sumentropia);
                             writeReportFile(numOfWorkers, lblIterationCount.Text);
                             this.Invoke(new Action(() => this.bttnStopIteration.Enabled = false));
@@ -358,14 +407,14 @@ namespace DCMaster
                             return; 
                         }
                     }
-                }  // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (start workers) xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                }  // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (end of start workers) xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                 if (chkCoincidence.Checked)
                 {
                     mergeImprint(wkSequence);
                 }
                 stepCount++;
                 Int32 gatheredEnergy = sumOfEnergy(wk);
-                Int32 entropia= sumofSEntropy(wk);
+                float entropia= sumofSEntropy(wk);
                 saveIteration2File(stepCount, numOfWorkers, gatheredEnergy, entropia);
                 lblIterationCount.Invoke(new Action(() => lblIterationCount.Text = (stepCount).ToString()));
                 lblLivingWorkerNumber.Invoke(new Action(() => lblLivingWorkerNumber.Text = numOfWorkers.ToString()));               
@@ -402,7 +451,7 @@ namespace DCMaster
         }
 
 
-        void saveIteration2File(int stepNum, int numWk, Int32 energ, Int32 SEntr)
+        void saveIteration2File(int stepNum, int numWk, Int32 energ, float SEntr)
         {
             using (FileStream fs = new FileStream(iterationName, FileMode.Append, FileAccess.Write, FileShare.Read))
             {
@@ -427,9 +476,9 @@ namespace DCMaster
             dbs.saveIteration(File.ReadAllLines(iterationName));
         }
 
-        Int32 sumofSEntropy(Dictionary<Int32, worker> wkrs)
+        float sumofSEntropy(Dictionary<Int32, worker> wkrs)
         {
-            Int32 sum = 0;
+            float sum = 0;
             foreach (var item in wkrs.Values)
             {
                 sum += item.SEntropy;
@@ -489,6 +538,8 @@ namespace DCMaster
             sb.AppendLine(parameters[3].Split(';')[0] + ": " + parameters[3].Split(';')[1] );
             sb.AppendLine(parameters[4].Split(';')[0] + ": " + parameters[4].Split(';')[1] );
             sb.AppendLine(parameters[5].Split(';')[0] + ": " + parameters[5].Split(';')[1] );
+            sb.Append(parameters[6].Split(';')[0] + ": " + parameters[6].Split(';')[1] + Environment.NewLine);
+
             sb.AppendLine(Environment.NewLine + "Iteration parameters" + Environment.NewLine + "--------------------");
             sb.AppendLine("Iteration number was " + inum + ", when process terminated");
             sb.AppendLine("Number of living workers: " + numofworkersAlive);
@@ -825,7 +876,7 @@ namespace DCMaster
             else fname= appfolder + @"\DC\reports\" + tscmbViewreports.SelectedItem.ToString();
             iterationName = fname;
             
-            if (Path.GetExtension(fname/*iterationName*/) == ".iter")
+            if (Path.GetExtension(fname) == ".iter")
             {
                 bttnShowGatheredEnergy.Enabled = true;
                 bttnShowPopulation.Enabled = true;
@@ -833,13 +884,14 @@ namespace DCMaster
                 bttnShowIterationData.Visible = true;
                 bttnShowIterationData.Enabled = true;
                 bttnShowFittness.Enabled = true;
+                tsbttnShowAnalyser.Enabled = true;
             }
             else 
             {
                 bttnShowGatheredEnergy.Enabled = false;
                 bttnShowPopulation.Enabled = false;;
             }
-            frmViewTextFile viewreports = new frmViewTextFile(fname/*iterationName*/);
+            frmViewTextFile viewreports = new frmViewTextFile(fname);
             viewreports.TopMost = true;
             viewreports.Show();
         }

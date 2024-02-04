@@ -111,7 +111,10 @@ namespace DCAnalyser
                     if (dt.Columns.Count==1) MessageBox.Show("Failed query display. The query result may be wrong. Column0=" + dt.Columns[0].ColumnName + ", Column1 is missing", "Failed query display", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                ch1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+                ch1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+                ch1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+                ch1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
                 ch1.BackColor = System.Drawing.Color.White;
                 ch1.Titles.Clear();
                 ch1.Titles.Add(title);
@@ -169,7 +172,10 @@ namespace DCAnalyser
                     if (dt.Columns.Count == 1) MessageBox.Show("Failed query display. The query result may be wrong. Column0=" + dt.Columns[0].ColumnName + ", Column1 is missing", "Failed query display", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                ch1.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+                ch1.ChartAreas[0].AxisX.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+                ch1.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+                ch1.ChartAreas[0].AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
                 ch1.BackColor = System.Drawing.Color.White;
                 ch1.Titles.Clear();
                 ch1.Titles.Add(title);

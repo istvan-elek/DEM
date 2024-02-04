@@ -111,6 +111,7 @@
             this.bsWorkersPath = new System.Windows.Forms.BindingSource(this.components);
             this.bsLogBook = new System.Windows.Forms.BindingSource(this.components);
             this.bsIteration = new System.Windows.Forms.BindingSource(this.components);
+            this.compareImprintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -710,6 +711,7 @@
             this.displayEntropyToolStripMenuItem,
             this.toolStripMenuItem2,
             this.compareSimulationToolStripMenuItem,
+            this.compareImprintsToolStripMenuItem,
             this.toolStripMenuItem1,
             this.displayResultOfAnySqlToolStripMenuItem});
             this.diagramsToolStripMenuItem.Enabled = false;
@@ -853,6 +855,13 @@
             this.stLblLastSQL.ToolTipText = "Right mouse click to copy to clipboard";
             this.stLblLastSQL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.stLblLastSQL_MouseDown);
             // 
+            // compareImprintsToolStripMenuItem
+            // 
+            this.compareImprintsToolStripMenuItem.Name = "compareImprintsToolStripMenuItem";
+            this.compareImprintsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.compareImprintsToolStripMenuItem.Text = "Compare imprints";
+            this.compareImprintsToolStripMenuItem.Click += new System.EventHandler(this.compareImprintsToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -991,6 +1000,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbttnResizeColumns;
+        private System.Windows.Forms.ToolStripMenuItem compareImprintsToolStripMenuItem;
     }
 }
 

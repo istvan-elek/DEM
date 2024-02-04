@@ -60,7 +60,7 @@ namespace DCMaster
                         "stepcount integer," +
                         "numofworkers integer," +
                         "energy integer," +
-                        "entropy integer" +
+                        "entropy float" +
                         ")";
                     cmd.ExecuteNonQuery();
                 }
@@ -86,7 +86,7 @@ namespace DCMaster
                         int stepcount = int.Parse(s[0]);
                         int numofworkers = int.Parse(s[1]);
                         int energy = int.Parse(s[2]);
-                        int entropy = int.Parse(s[3]);
+                        float entropy = Convert.ToSingle( s[3]);
                         cmd.CommandText = "Insert into iteration (stepcount, numofworkers, energy, entropy) VALUES (?,?,?,?)";
                         cmd.Parameters.Add(new SQLiteParameter("stepcount", stepcount));
                         cmd.Parameters.Add(new SQLiteParameter("numofworkers", numofworkers));
@@ -112,7 +112,7 @@ namespace DCMaster
                         "(" +
                         "id integer PRIMARY KEY NOT NULL," +
                         "energy integer," +
-                        //"live boolean," +
+                        "entropy float," +
                         "learn boolean," +
                         "parents text," +
                         "current_position text," +
@@ -136,10 +136,10 @@ namespace DCMaster
                     using (SQLiteCommand cmd = new SQLiteCommand())
                     {
                         cmd.Connection = cnn;
-                        cmd.CommandText = "Insert into workers (id,energy,learn,parents,current_position,start_location, worker_path, imprint,edge) VALUES (?,?,?,?,?,?,?,?,?)";
+                        cmd.CommandText = "Insert into workers (id,energy,entropy,learn,parents,current_position,start_location, worker_path, imprint,edge) VALUES (?,?,?,?,?,?,?,?,?,?)";
                         cmd.Parameters.Add(new SQLiteParameter("id", wk[wkSequence[i]].ID));
                         cmd.Parameters.Add(new SQLiteParameter("energy", wk[wkSequence[i]].Energy));
-                                //cmd.Parameters.Add(new SQLiteParameter("live", wk[wkSequence[i]].Live));
+                        cmd.Parameters.Add(new SQLiteParameter("entropy", wk[wkSequence[i]].SEntropy));
                         cmd.Parameters.Add(new SQLiteParameter("learn", wk[wkSequence[i]].Learn));
                         cmd.Parameters.Add(new SQLiteParameter("parents", wk[wkSequence[i]].Parent));
                         cmd.Parameters.Add(new SQLiteParameter("current_position", wk[wkSequence[i]].CurrentPosition));

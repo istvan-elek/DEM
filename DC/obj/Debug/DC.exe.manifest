@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DC.exe" size="106496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DC.exe" size="105984">
       <assemblyIdentity name="DC" version="2.5.0.1" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IPtAqSeNQGALhsuKzxMAgBVUg3x/b9nnypfDmcIVUlc=</dsig:DigestValue>
+        <dsig:DigestValue>ZO8HX7YiTENU4j+Dcwb7k8LbTEUkZCtnVY56q9vBo34=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -17,7 +17,7 @@ namespace DCMaster
     public partial class frmCreateLabirynth : Form
     {
         NpgsqlConnectionStringBuilder cnsb = new NpgsqlConnectionStringBuilder();
-        public labyrinth lab = new labyrinth();
+        public labyrinth lab/* = new labyrinth()*/;
         public int LabSize;
         int numOfEnergySources;
         int numOfEnergySinks;
@@ -34,11 +34,21 @@ namespace DCMaster
             tbLabSize.Focus();
             tbLabSize.Select();
             movement_cost = int.Parse(parameters[3].Split(';')[1]);
+            numOfEnergySinks = Properties.Settings.Default.numofenergysinks;
+            tbNumberOfEnergySinks.Text = numOfEnergySinks.ToString();
+            numOfEnergySources = Properties.Settings.Default.numofenergysources;
+            tbNumberOfEnergySources.Text = numOfEnergySources.ToString();
+            LabSize =Properties.Settings.Default.labsize; 
+            tbLabSize.Text = LabSize.ToString();
         }
 
 
         private void bttnClose_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.numofenergysinks = numOfEnergySinks;
+            Properties.Settings.Default.numofenergysources = numOfEnergySources;
+            Properties.Settings.Default.labsize = LabSize;
+            Properties.Settings.Default.Save();
             this.Close();
         }
 
@@ -49,7 +59,7 @@ namespace DCMaster
                 MessageBox.Show("Missing labirynth data", "Missing data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
+            lab = new labyrinth();
             LabSize = Convert.ToInt16(tbLabSize.Text);
             numOfEnergySources = Convert.ToInt16(tbNumberOfEnergySources.Text.Trim());
             numOfEnergySinks = Convert.ToInt16(tbNumberOfEnergySinks.Text.Trim());
@@ -134,6 +144,7 @@ namespace DCMaster
 
         private void bttnLoadLab_Click(object sender, EventArgs e)
         {
+            lab = new labyrinth();
             OpenFileDialog of = new OpenFileDialog();
             of.Filter = "labyrinths|*.lab";
             if (of.ShowDialog() == DialogResult.OK) 

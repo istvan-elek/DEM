@@ -40,9 +40,11 @@ namespace DCAnalyser
             this.tslblZoomRate = new System.Windows.Forms.ToolStripLabel();
             this.tstbZoomRate = new System.Windows.Forms.ToolStripTextBox();
             this.tsbtnChangeColor = new System.Windows.Forms.ToolStripButton();
+            this.tsbttnCapture = new System.Windows.Forms.ToolStripButton();
             this.picBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tsbttnCapture = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,6 +62,8 @@ namespace DCAnalyser
             this.tslblZoomRate,
             this.tstbZoomRate,
             this.tsbtnChangeColor,
+            this.toolStripSeparator2,
+            this.toolStripSeparator3,
             this.tsbttnCapture});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -147,6 +151,16 @@ namespace DCAnalyser
             this.tsbtnChangeColor.Visible = false;
             this.tsbtnChangeColor.Click += new System.EventHandler(this.tsbtnChangeColor_Click);
             // 
+            // tsbttnCapture
+            // 
+            this.tsbttnCapture.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbttnCapture.Image = ((System.Drawing.Image)(resources.GetObject("tsbttnCapture.Image")));
+            this.tsbttnCapture.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbttnCapture.Name = "tsbttnCapture";
+            this.tsbttnCapture.Size = new System.Drawing.Size(23, 22);
+            this.tsbttnCapture.Text = "Capture image";
+            this.tsbttnCapture.Click += new System.EventHandler(this.tsbttnCapture_Click);
+            // 
             // picBox
             // 
             this.picBox.BackColor = System.Drawing.Color.Black;
@@ -170,15 +184,15 @@ namespace DCAnalyser
             this.panel1.TabIndex = 2;
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
-            // tsbttnCapture
+            // toolStripSeparator2
             // 
-            this.tsbttnCapture.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbttnCapture.Image = ((System.Drawing.Image)(resources.GetObject("tsbttnCapture.Image")));
-            this.tsbttnCapture.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbttnCapture.Name = "tsbttnCapture";
-            this.tsbttnCapture.Size = new System.Drawing.Size(23, 22);
-            this.tsbttnCapture.Text = "Capture image";
-            this.tsbttnCapture.Click += new System.EventHandler(this.tsbttnCapture_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // frmPicture2
             // 
@@ -216,5 +230,7 @@ namespace DCAnalyser
         private System.Windows.Forms.ToolStripButton tsbtnHand;
         private System.Windows.Forms.ToolStripButton tsbtnChangeColor;
         private System.Windows.Forms.ToolStripButton tsbttnCapture;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

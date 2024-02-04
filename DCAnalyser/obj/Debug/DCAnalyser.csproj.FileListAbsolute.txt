@@ -145,6 +145,7 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.AssemblyReference.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmBrowseReports.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmCompareImprints.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmGuide.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmIterationCompare.resources

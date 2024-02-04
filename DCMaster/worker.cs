@@ -17,7 +17,7 @@ namespace DCMaster
     {
         labyrinth lab;
         static Random rnd = new Random(); //random number for neighbor choose
-        ////int energySum=0;
+        float lbsize;
         int initEnergy;
         int movementCost;
         int delayValue;
@@ -26,6 +26,7 @@ namespace DCMaster
         public worker(labyrinth currentLab, Int32 id, Boolean learning, IList<string> param) 
         {
             lab = currentLab;
+            lbsize = (float)lab.Size;
             _ID = id;
             _learn = learning;
             initEnergy = Convert.ToInt16(param[0].Split(';')[1]); ;
@@ -68,6 +69,13 @@ namespace DCMaster
             get { return _learn; } 
             set { _learn = value; }
         }
+
+        //List<string> _parent = new List<string>();
+        //public List<string> Parent
+        //{
+        //    get { return _parent; }
+        //    set { _parent = value; }
+        //}
 
 
         string _parent;
@@ -127,8 +135,8 @@ namespace DCMaster
             set { _imprint = value; }
         }
 
-        Int32 _sEntropy =0;
-        public Int32 SEntropy
+        float _sEntropy =0;
+        public float SEntropy
         {
             get { return _sEntropy; }
             set { _sEntropy = value; }
@@ -153,11 +161,19 @@ namespace DCMaster
             {
                 foreach (string item in _imprint)
                 {
-                    string[] s = item.Split(',');
-                    string s2 = s[0] + "," + s[1];
-                    if ((s2 == newPosition) && (int.Parse(s[2]) < movementCost))
+                    string[] s = item.Split(',');   //imprint content
+                    string s2 = s[0] + "," + s[1]; // position x=s[0], y=s[1],  s[2] is energy
+                    Boolean danger = true;
+                    while (danger)
                     {
-                        newPosition = currentNeighbours[rnd.Next(0, currentNeighbours.Count)];
+                        if ((s2 == newPosition) && (int.Parse(s[2]) < movementCost))// megnézi, hogy a mező benne van-e az imprintben és energia értéke negatív-e (energianyelő)
+                        {
+                            newPosition = currentNeighbours[rnd.Next(0, currentNeighbours.Count)];
+                        }
+                        else
+                        {
+                            danger = false;
+                        }
                     }
                 }
             }

@@ -82,5 +82,53 @@ namespace DCMaster.Properties {
                 this["startfrombirthplace"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int labsize {
+            get {
+                return ((int)(this["labsize"]));
+            }
+            set {
+                this["labsize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int numofenergysources {
+            get {
+                return ((int)(this["numofenergysources"]));
+            }
+            set {
+                this["numofenergysources"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int numofenergysinks {
+            get {
+                return ((int)(this["numofenergysinks"]));
+            }
+            set {
+                this["numofenergysinks"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int initialnumofworkers {
+            get {
+                return ((int)(this["initialnumofworkers"]));
+            }
+            set {
+                this["initialnumofworkers"] = value;
+            }
+        }
     }
 }

@@ -96,6 +96,12 @@
     <Compile Include="frmBrowseReports.Designer.cs">
       <DependentUpon>frmBrowseReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCompareImprints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompareImprints.Designer.cs">
+      <DependentUpon>frmCompareImprints.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGuide.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowseReports.resx">
       <DependentUpon>frmBrowseReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompareImprints.resx">
+      <DependentUpon>frmCompareImprints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGuide.resx">
       <DependentUpon>frmGuide.cs</DependentUpon>

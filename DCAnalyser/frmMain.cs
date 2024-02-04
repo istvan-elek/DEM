@@ -23,7 +23,7 @@ namespace DCAnalyser
     {
         SQLiteConnectionStringBuilder cnsb = new SQLiteConnectionStringBuilder();
         SQLiteConnectionStringBuilder cnsbAdmin = new SQLiteConnectionStringBuilder();
-        string appfolder = Properties.Settings.Default.lastFolder;
+        string appfolder;// = Properties.Settings.Default.lastFolder;
         System.Windows.Forms.FormWindowState state; 
         string dbFolder;
         string reportFolder;
@@ -31,27 +31,36 @@ namespace DCAnalyser
         List<Int32> timeSeries = new List<Int32>(0);
         int labSize;
         string[] reportNames;
-
+        string lastFolder;
 
         public frmMain()
         {
             InitializeComponent();
             this.Text = "DC Analyser, v_" + Application.ProductVersion.ToString();
-            if (appfolder=="") appfolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\DC\\";
-            dbFolder = appfolder + "databases\\";
-            reportFolder = appfolder + "reports\\";
-            reportNames = Directory.GetFiles(reportFolder, "*.report");
-            foreach(string item in reportNames)
+            if (appfolder == null)
             {
-                tscmbBrowseReport.Items.Add(Path.GetFileNameWithoutExtension(item));
+                appfolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\DC\\";
             }
-            this.WindowState = Properties.Settings.Default.winstate;
+            dbFolder = appfolder + "databases\\";
+            lastFolder = dbFolder;
+            reportFolder = appfolder + "reports\\";
+            if (Directory.Exists(reportFolder))
+            {
+                reportNames = Directory.GetFiles(reportFolder, "*.report");
+                foreach (string item in reportNames)
+                {
+                    tscmbBrowseReport.Items.Add(Path.GetFileNameWithoutExtension(item));
+                }
+                this.WindowState = Properties.Settings.Default.winstate;
+            }
+            else { MessageBox.Show("Missing default folder (DC). Choose one"); }
         }
 
         private void databaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog of = new OpenFileDialog();
-            of.InitialDirectory = dbFolder;
+            lastFolder = Properties.Settings.Default.lastFolder;
+            of.InitialDirectory = lastFolder;   //appfolder; //dbFolder;
             of.Filter = "Sqlite database file|*.s3db|All files|*.*";
             if (of.ShowDialog()==DialogResult.OK)
             {
@@ -59,9 +68,10 @@ namespace DCAnalyser
                 SQLanalyzeToolStripMenuItem.Enabled = true;
                 selectionsToolStripMenuItem.Enabled=true;
                 diagramsToolStripMenuItem.Enabled=true;
-                string FolderName = Path.GetDirectoryName(of.FileName);
-                appfolder = FolderName.Substring(0, FolderName.LastIndexOf("\\")) + "\\";
-                Properties.Settings.Default["lastFolder"] = appfolder;
+                //string FolderName = Path.GetDirectoryName(of.FileName);
+                //appfolder = FolderName.Substring(0, FolderName.LastIndexOf("\\")) + "\\";
+                //string p = Path.GetDirectoryName(of.FileName);
+                Properties.Settings.Default["lastFolder"] = Path.GetDirectoryName(of.FileName); //appfolder;
                 Properties.Settings.Default.Save();
             }
             this.Text = "Analyser --> " + Path.GetFileNameWithoutExtension(of.FileName);
@@ -79,9 +89,7 @@ namespace DCAnalyser
             bsIteration.DataSource = loadTableData("select * from iteration");
             dgvIteration.DataSource=bsIteration;
             bnIteration.BindingSource= bsIteration;
-            tslblIteration.Text = "Iteration";
-
-            
+            tslblIteration.Text = "Iteration";           
             DataTable dtl = loadTableData("select * from labirynth"); 
             string sz= dtl.Rows[dtl.Rows.Count - 1][2].ToString();
             labSize = int.Parse(sz);
@@ -206,6 +214,8 @@ namespace DCAnalyser
                 return;
             }
         }
+
+
 
         private void displayDiscoveredFieldOfAllWorkersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -512,6 +522,13 @@ namespace DCAnalyser
             Properties.Settings.Default["winstate"] = this.WindowState;
             Properties.Settings.Default.Save();
             Application.Exit();
+        }
+
+        private void compareImprintsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] files = Directory.GetFiles(dbFolder, "*.s3db");
+            frmCompareImprints frmImprints=new frmCompareImprints(labSize, appfolder);
+            frmImprints.ShowDialog();
         }
     }
 }
