@@ -87,6 +87,10 @@
             this.SQLanalyzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayChartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectGenerationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectInitialWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectWorkersWithTheSelectedParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.diagramsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayPopulationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayGatheredEnergyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,15 +98,18 @@
             this.displayEntropyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.compareSimulationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compareImprintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.displayResultOfAnySqlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMenuDiscoveredFieldsofaGeneration = new System.Windows.Forms.ToolStripMenuItem();
+            this.generationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tscmbBrowseReport = new System.Windows.Forms.ToolStripComboBox();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.select1stGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.stLblLastSQL = new System.Windows.Forms.ToolStripStatusLabel();
@@ -111,7 +118,10 @@
             this.bsWorkersPath = new System.Windows.Forms.BindingSource(this.components);
             this.bsLogBook = new System.Windows.Forms.BindingSource(this.components);
             this.bsIteration = new System.Windows.Forms.BindingSource(this.components);
-            this.compareImprintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectInitialWorkersGeneratrionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectWorkersFromAGivenGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectWorkersWithSelectedParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -155,7 +165,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1146, 493);
+            this.splitContainer1.Size = new System.Drawing.Size(1146, 495);
             this.splitContainer1.SplitterDistance = 693;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -171,7 +181,7 @@
             this.dgvWorkers.Name = "dgvWorkers";
             this.dgvWorkers.ReadOnly = true;
             this.dgvWorkers.RowHeadersWidth = 51;
-            this.dgvWorkers.Size = new System.Drawing.Size(693, 466);
+            this.dgvWorkers.Size = new System.Drawing.Size(693, 468);
             this.dgvWorkers.TabIndex = 3;
             this.dgvWorkers.Tag = "ColumnHeader";
             this.dgvWorkers.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvWorkers_CellMouseDown_1);
@@ -312,7 +322,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.bnLabs);
             this.splitContainer2.Panel2.Controls.Add(this.bnWorkersPath);
             this.splitContainer2.Panel2.Controls.Add(this.dgvWorkersPath);
-            this.splitContainer2.Size = new System.Drawing.Size(449, 493);
+            this.splitContainer2.Size = new System.Drawing.Size(449, 495);
             this.splitContainer2.SplitterDistance = 276;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -324,7 +334,7 @@
             this.dgvIteration.Location = new System.Drawing.Point(0, 27);
             this.dgvIteration.Name = "dgvIteration";
             this.dgvIteration.RowHeadersWidth = 51;
-            this.dgvIteration.Size = new System.Drawing.Size(276, 466);
+            this.dgvIteration.Size = new System.Drawing.Size(276, 468);
             this.dgvIteration.TabIndex = 3;
             // 
             // bnIteration
@@ -434,7 +444,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 493);
+            this.panel1.Size = new System.Drawing.Size(276, 495);
             this.panel1.TabIndex = 4;
             // 
             // dgvLabs
@@ -444,7 +454,7 @@
             this.dgvLabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLabs.Location = new System.Drawing.Point(0, 25);
             this.dgvLabs.Name = "dgvLabs";
-            this.dgvLabs.Size = new System.Drawing.Size(169, 468);
+            this.dgvLabs.Size = new System.Drawing.Size(169, 470);
             this.dgvLabs.TabIndex = 0;
             this.dgvLabs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvLabs_MouseDown);
             // 
@@ -661,6 +671,7 @@
             this.SQLanalyzeToolStripMenuItem,
             this.diagramsToolStripMenuItem,
             this.selectionsToolStripMenuItem,
+            this.generationsToolStripMenuItem,
             this.tscmbBrowseReport,
             this.helpToolStripMenuItem,
             this.exitToolStripMenuItem1});
@@ -682,11 +693,12 @@
             // 
             this.SQLanalyzeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sQLWindowToolStripMenuItem,
-            this.displayChartsToolStripMenuItem});
+            this.displayChartsToolStripMenuItem,
+            this.selectGenerationsToolStripMenuItem});
             this.SQLanalyzeToolStripMenuItem.Enabled = false;
             this.SQLanalyzeToolStripMenuItem.Name = "SQLanalyzeToolStripMenuItem";
-            this.SQLanalyzeToolStripMenuItem.Size = new System.Drawing.Size(35, 23);
-            this.SQLanalyzeToolStripMenuItem.Text = "Sql";
+            this.SQLanalyzeToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
+            this.SQLanalyzeToolStripMenuItem.Text = "Sql queries";
             // 
             // sQLWindowToolStripMenuItem
             // 
@@ -701,6 +713,36 @@
             this.displayChartsToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.displayChartsToolStripMenuItem.Text = "Display charts of any Select";
             this.displayChartsToolStripMenuItem.Click += new System.EventHandler(this.displayResultOfAnySqlToolStripMenuItem_Click);
+            // 
+            // selectGenerationsToolStripMenuItem
+            // 
+            this.selectGenerationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectInitialWorkersToolStripMenuItem,
+            this.selectWorkersWithTheSelectedParentToolStripMenuItem,
+            this.toolStripMenuItem3});
+            this.selectGenerationsToolStripMenuItem.Name = "selectGenerationsToolStripMenuItem";
+            this.selectGenerationsToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.selectGenerationsToolStripMenuItem.Text = " Select generations";
+            this.selectGenerationsToolStripMenuItem.Visible = false;
+            // 
+            // selectInitialWorkersToolStripMenuItem
+            // 
+            this.selectInitialWorkersToolStripMenuItem.Name = "selectInitialWorkersToolStripMenuItem";
+            this.selectInitialWorkersToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.selectInitialWorkersToolStripMenuItem.Text = "Select initial workers generation";
+            this.selectInitialWorkersToolStripMenuItem.Click += new System.EventHandler(this.selectInitialWorkersToolStripMenuItem_Click);
+            // 
+            // selectWorkersWithTheSelectedParentToolStripMenuItem
+            // 
+            this.selectWorkersWithTheSelectedParentToolStripMenuItem.Name = "selectWorkersWithTheSelectedParentToolStripMenuItem";
+            this.selectWorkersWithTheSelectedParentToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.selectWorkersWithTheSelectedParentToolStripMenuItem.Text = "Select workers with the selected parent";
+            this.selectWorkersWithTheSelectedParentToolStripMenuItem.Click += new System.EventHandler(this.selectWorkersWithTheSelectedParentToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(275, 6);
             // 
             // diagramsToolStripMenuItem
             // 
@@ -759,6 +801,13 @@
             this.compareSimulationToolStripMenuItem.Text = "Compare simulations";
             this.compareSimulationToolStripMenuItem.Click += new System.EventHandler(this.compareMissionsToolStripMenuItem_Click);
             // 
+            // compareImprintsToolStripMenuItem
+            // 
+            this.compareImprintsToolStripMenuItem.Name = "compareImprintsToolStripMenuItem";
+            this.compareImprintsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.compareImprintsToolStripMenuItem.Text = "Compare imprints";
+            this.compareImprintsToolStripMenuItem.Click += new System.EventHandler(this.compareImprintsToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -769,6 +818,7 @@
             this.displayResultOfAnySqlToolStripMenuItem.Name = "displayResultOfAnySqlToolStripMenuItem";
             this.displayResultOfAnySqlToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.displayResultOfAnySqlToolStripMenuItem.Text = "Display result of any Sql select";
+            this.displayResultOfAnySqlToolStripMenuItem.Visible = false;
             this.displayResultOfAnySqlToolStripMenuItem.Click += new System.EventHandler(this.displayResultOfAnySqlToolStripMenuItem_Click);
             // 
             // selectionsToolStripMenuItem
@@ -776,33 +826,44 @@
             this.selectionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem,
             this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem,
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem});
+            this.tsMenuDiscoveredFieldsofaGeneration});
             this.selectionsToolStripMenuItem.Enabled = false;
             this.selectionsToolStripMenuItem.Name = "selectionsToolStripMenuItem";
-            this.selectionsToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
-            this.selectionsToolStripMenuItem.Text = "Selections";
+            this.selectionsToolStripMenuItem.Size = new System.Drawing.Size(108, 23);
+            this.selectionsToolStripMenuItem.Text = "Discovered fields";
             // 
             // displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem
             // 
             this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem.Name = "displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem";
-            this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem.Size = new System.Drawing.Size(333, 22);
             this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem.Text = "Display discovered fields of the selected worker";
             this.displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem.Click += new System.EventHandler(this.displayDiscoveredFieldsOfSelectedWorkerToolStripMenuItem_Click);
             // 
             // displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem
             // 
             this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem.Name = "displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem";
-            this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem.Size = new System.Drawing.Size(333, 22);
             this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem.Text = "Display discovered fields of all alive workers";
             this.displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem.Click += new System.EventHandler(this.displayDiscoveredFieldOfAllWorkersToolStripMenuItem_Click);
             // 
-            // displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem
+            // tsMenuDiscoveredFieldsofaGeneration
             // 
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem.Enabled = false;
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem.Name = "displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem";
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem.Text = "Display discovered fields of a given generation";
-            this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem.Click += new System.EventHandler(this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem_Click);
+            this.tsMenuDiscoveredFieldsofaGeneration.Name = "tsMenuDiscoveredFieldsofaGeneration";
+            this.tsMenuDiscoveredFieldsofaGeneration.Size = new System.Drawing.Size(333, 22);
+            this.tsMenuDiscoveredFieldsofaGeneration.Text = "Display discovered fields from a given generation";
+            this.tsMenuDiscoveredFieldsofaGeneration.Click += new System.EventHandler(this.displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem_Click);
+            // 
+            // generationsToolStripMenuItem
+            // 
+            this.generationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectInitialWorkersGeneratrionToolStripMenuItem,
+            this.selectWorkersFromAGivenGenerationToolStripMenuItem,
+            this.selectWorkersWithSelectedParentToolStripMenuItem,
+            this.selectAllToolStripMenuItem});
+            this.generationsToolStripMenuItem.Enabled = false;
+            this.generationsToolStripMenuItem.Name = "generationsToolStripMenuItem";
+            this.generationsToolStripMenuItem.Size = new System.Drawing.Size(82, 23);
+            this.generationsToolStripMenuItem.Text = "Generations";
             // 
             // tscmbBrowseReport
             // 
@@ -825,22 +886,27 @@
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
+            // select1stGenerationToolStripMenuItem
+            // 
+            this.select1stGenerationToolStripMenuItem.Name = "select1stGenerationToolStripMenuItem";
+            this.select1stGenerationToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblInfo,
             this.stLblLastSQL});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 520);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1146, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1146, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblInfo
             // 
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(0, 19);
+            this.lblInfo.Size = new System.Drawing.Size(0, 17);
             this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
             // stLblLastSQL
@@ -849,18 +915,40 @@
             this.stLblLastSQL.BackColor = System.Drawing.Color.Transparent;
             this.stLblLastSQL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(34)))), ((int)(((byte)(0)))));
             this.stLblLastSQL.Name = "stLblLastSQL";
-            this.stLblLastSQL.Size = new System.Drawing.Size(1024, 19);
+            this.stLblLastSQL.Size = new System.Drawing.Size(1024, 17);
             this.stLblLastSQL.Text = "dfg";
             this.stLblLastSQL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stLblLastSQL.ToolTipText = "Right mouse click to copy to clipboard";
+            this.stLblLastSQL.Visible = false;
             this.stLblLastSQL.MouseDown += new System.Windows.Forms.MouseEventHandler(this.stLblLastSQL_MouseDown);
             // 
-            // compareImprintsToolStripMenuItem
+            // selectInitialWorkersGeneratrionToolStripMenuItem
             // 
-            this.compareImprintsToolStripMenuItem.Name = "compareImprintsToolStripMenuItem";
-            this.compareImprintsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.compareImprintsToolStripMenuItem.Text = "Compare imprints";
-            this.compareImprintsToolStripMenuItem.Click += new System.EventHandler(this.compareImprintsToolStripMenuItem_Click);
+            this.selectInitialWorkersGeneratrionToolStripMenuItem.Name = "selectInitialWorkersGeneratrionToolStripMenuItem";
+            this.selectInitialWorkersGeneratrionToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.selectInitialWorkersGeneratrionToolStripMenuItem.Text = "Select initial workers generation";
+            this.selectInitialWorkersGeneratrionToolStripMenuItem.Click += new System.EventHandler(this.selectInitialWorkersToolStripMenuItem_Click);
+            // 
+            // selectWorkersFromAGivenGenerationToolStripMenuItem
+            // 
+            this.selectWorkersFromAGivenGenerationToolStripMenuItem.Name = "selectWorkersFromAGivenGenerationToolStripMenuItem";
+            this.selectWorkersFromAGivenGenerationToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.selectWorkersFromAGivenGenerationToolStripMenuItem.Text = "Select from a given generation";
+            this.selectWorkersFromAGivenGenerationToolStripMenuItem.Click += new System.EventHandler(this.selectFromGivenGenerationToolStripMenuItem_Click);
+            // 
+            // selectWorkersWithSelectedParentToolStripMenuItem
+            // 
+            this.selectWorkersWithSelectedParentToolStripMenuItem.Name = "selectWorkersWithSelectedParentToolStripMenuItem";
+            this.selectWorkersWithSelectedParentToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.selectWorkersWithSelectedParentToolStripMenuItem.Text = "Select workers with selected parent";
+            this.selectWorkersWithSelectedParentToolStripMenuItem.Click += new System.EventHandler(this.selectWorkersWithTheSelectedParentToolStripMenuItem_Click);
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.selectAllToolStripMenuItem.Text = "Select all";
+            this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -957,7 +1045,6 @@
         private System.Windows.Forms.ToolStripMenuItem displayDiscoveredFieldsOfASelectedLabyrinthToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayDiscoveredFieldOfASelectedLayrinthByAllAliveWorkersToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel lblInfo;
-        private System.Windows.Forms.ToolStripMenuItem displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvWorkers;
         private System.Windows.Forms.BindingNavigator bnWorkers;
@@ -1001,6 +1088,19 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbttnResizeColumns;
         private System.Windows.Forms.ToolStripMenuItem compareImprintsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectGenerationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectInitialWorkersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem select1stGenerationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectWorkersWithTheSelectedParentToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+
+        private System.Windows.Forms.ToolStripMenuItem generationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsMenuDiscoveredFieldsofaGeneration;
+        private System.Windows.Forms.ToolStripMenuItem selectInitialWorkersGeneratrionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectWorkersFromAGivenGenerationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectWorkersWithSelectedParentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
     }
 }
 

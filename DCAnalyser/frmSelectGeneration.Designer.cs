@@ -41,9 +41,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Give a generation which is ";
+            this.label1.Text = "Give a generation ";
             // 
             // cmbCompare
             // 
@@ -56,10 +56,11 @@
             "<=",
             ">",
             ">="});
-            this.cmbCompare.Location = new System.Drawing.Point(143, 6);
+            this.cmbCompare.Location = new System.Drawing.Point(206, 6);
             this.cmbCompare.Name = "cmbCompare";
             this.cmbCompare.Size = new System.Drawing.Size(45, 21);
             this.cmbCompare.TabIndex = 1;
+            this.cmbCompare.Visible = false;
             this.cmbCompare.SelectedIndexChanged += new System.EventHandler(this.cmbCompare_SelectedIndexChanged);
             // 
             // cmbGenerationNumber
@@ -67,6 +68,7 @@
             this.cmbGenerationNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenerationNumber.FormattingEnabled = true;
             this.cmbGenerationNumber.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
@@ -76,8 +78,18 @@
             "7",
             "8",
             "9",
-            "10"});
-            this.cmbGenerationNumber.Location = new System.Drawing.Point(194, 6);
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cmbGenerationNumber.Location = new System.Drawing.Point(113, 6);
             this.cmbGenerationNumber.Name = "cmbGenerationNumber";
             this.cmbGenerationNumber.Size = new System.Drawing.Size(56, 21);
             this.cmbGenerationNumber.TabIndex = 2;
@@ -113,6 +125,7 @@
             this.chbDisplayData.TabIndex = 7;
             this.chbDisplayData.Text = "Show result in a table";
             this.chbDisplayData.UseVisualStyleBackColor = true;
+            this.chbDisplayData.Visible = false;
             this.chbDisplayData.CheckedChanged += new System.EventHandler(this.chbDisplayData_CheckedChanged);
             // 
             // frmSelectGeneration

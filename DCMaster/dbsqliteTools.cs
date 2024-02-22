@@ -167,17 +167,17 @@ namespace DCMaster
         }
 
 
-        string replaceSecondCommas(string strIn)
-        {
-            string strOut="";
-            string[] s = strIn.Split(',');
-            for (int k = 0; k < s.Length; k++)
-            {
-                if (k % 2 == 0) { strOut += s[k] + ","; }
-                else { strOut += s[k] + ";"; }
-            }
-            return strOut;
-        }
+        //string replaceSecondCommas(string strIn)
+        //{
+        //    string strOut="";
+        //    string[] s = strIn.Split(',');
+        //    for (int k = 0; k < s.Length; k++)
+        //    {
+        //        if (k % 2 == 0) { strOut += s[k] + ","; }
+        //        else { strOut += s[k] + ";"; }
+        //    }
+        //    return strOut;
+        //}
 
 
         public void createLabTable()

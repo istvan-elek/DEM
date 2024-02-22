@@ -23,6 +23,7 @@ using System.Data.SQLite;
 using System.Xml.Linq;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure.DependencyResolution;
+using System.Diagnostics.Eventing.Reader;
 
 namespace DCMaster
 {
@@ -44,10 +45,12 @@ namespace DCMaster
         IList<String> parameters = new List<String>();
         Boolean learn;
         Boolean merge;
+        Boolean randomStart=false;
         SQLiteConnectionStringBuilder cnsb = new SQLiteConnectionStringBuilder();
         string iterationName;
         string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         string repFileName;
+        string labyrinthname;
         string dbName;
         string extLearn="_nolearn";
         string extStarp="";
@@ -80,6 +83,8 @@ namespace DCMaster
             chkUseML.Checked = Properties.Settings.Default.learn;
             chkCoincidence.Checked = Properties.Settings.Default.merge;
             chkStartPositionFromParent.Checked = Properties.Settings.Default.startfrombirthplace;
+            randomStart = Properties.Settings.Default.RandomStart;
+            chkRandomStartPosition.Checked = randomStart;
         }
 
         void refreshParameters()
@@ -93,13 +98,9 @@ namespace DCMaster
             Replication_energy_level = Convert.ToInt16(parameters[4].Split(';')[1]);
             replication_rate = Convert.ToInt16(parameters[5].Split(';')[1]);
             Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
-            //tbStartPosition.Invoke(new Action(() => tbStartPosition.Text = Properties.Settings.Default.startposition));
-            //tbStop.Invoke(new Action(() => tbStop.Text = Properties.Settings.Default.countlimit));
-            //chkUseML.Invoke(new Action(() => chkUseML.Checked = Properties.Settings.Default.learn));
             learn = chkUseML.Checked;
             merge = chkCoincidence.Checked;
-            //chkCoincidence.Invoke(new Action(() => chkCoincidence.Checked = Properties.Settings.Default.merge));
-            //chkStartPositionFromParent.Invoke(new Action(()=> chkStartPositionFromParent.Checked = Properties.Settings.Default.startfrombirthplace));
+            randomStart = chkRandomStartPosition.Checked;
         }
 
 
@@ -149,7 +150,8 @@ namespace DCMaster
             tsbttnShowAnalyser.Enabled=true;
             hostile = new Hostility(lab, movement_costs);
             if (lab == null) return;
-            refreshDinamicHostility();
+            if (!randomStart) {grpDinamicHostility.Visible = true; refreshDinamicHostility(); }
+            else { grpDinamicHostility.Visible = false; } 
             int trvalue = (int)(lab.Hostility);
             if (trvalue > trackBar1.Maximum ) lab.Hostility = trackBar1.Maximum; trvalue = (int)(lab.Hostility);
             trackBar1.Value = trvalue;
@@ -231,6 +233,14 @@ namespace DCMaster
             }
         }
 
+        string CreateRandomStartPositions()
+        {
+            Random rnd = new Random();
+            int lsize = lab.Size;
+            int x = rnd.Next(lsize-1);
+            int y = rnd.Next(lsize-1);
+            return x + "," + y;
+        }
 
         // start the simulation ************************************************************************************************
         void Start()
@@ -245,7 +255,6 @@ namespace DCMaster
             //tbStartPosition.Text = Properties.Settings.Default.startposition;
             //tbStop.Text = Properties.Settings.Default.countlimit;
             Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
-
             extDelay = "_delay" + Delay;
             if (chkUseML.Checked) { learn = true; }
             else { learn = false; }
@@ -262,15 +271,19 @@ namespace DCMaster
 
             if (learn) { extLearn = "_learn"; } else { extLearn = "_nolearn"; }
             if (merge) { extMerge = "_merge"; } else { extMerge = ""; }
-            extStarp= "_startp" + tbStartPosition.Text.Replace(',','_');
+            if (!randomStart) extStarp= "_startp" + tbStartPosition.Text.Replace(',','_');
+            else extStarp = "_startpRandom)";
             extLab = "_lab" + lab.Size.ToString();
             iterationName = appfolder + @"\DC\iterations\default" + extLab + extLearn + extMerge + extStarp + extDelay + ".iter";
             repFileName = appfolder + @"\DC\reports\default" + extLab + extLearn + extMerge + extStarp + extDelay + ".report";
-            bttnSaveCurrentLab.Invoke(new Action(() => bttnSaveCurrentLab.Enabled=true));
+            //bttnSaveCurrentLab.Invoke(new Action(() => bttnSaveCurrentLab.Enabled=true));
             DirectoryInfo di1=new DirectoryInfo(appfolder + @"\DC\iterations\"); 
             if (!di1.Exists) { di1.Create(); }
             DirectoryInfo di2 = new DirectoryInfo(appfolder + @"\DC\reports\"); 
             if (!di2.Exists) { di2.Create(); }
+            DirectoryInfo diLab = new DirectoryInfo(appfolder + @"\DC\labyrinths\");
+            if (!diLab.Exists) {  diLab.Create(); }
+            labyrinthname = appfolder + @"\DC\labyrinths\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".lab";
             if (chkbSave2file.Checked)
             {
                 iterationName = appfolder + @"\DC\iterations\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extDelay + extStarp + ".iter";
@@ -278,6 +291,7 @@ namespace DCMaster
                 DirectoryInfo di3 = new DirectoryInfo(appfolder + @"\DC\Databases\");
                 if (!di3.Exists)  { di3.Create(); }
                 dbName= appfolder + @"\DC\databases\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".s3db";
+
             }
                   
             using (FileStream fs = new FileStream(iterationName, FileMode.Create, FileAccess.Write, FileShare.Read))
@@ -291,7 +305,11 @@ namespace DCMaster
             }
             for (Int32 l = 0; l < wkSequence.Length; l++)  //set up workers' start location
             {
-                if (wk[wkSequence[l]].StartLocation == null) wk[wkSequence[l]].StartLocation = tbStartPosition.Text;
+                if (wk[wkSequence[l]].StartLocation == null)
+                {
+                    if (!randomStart) wk[wkSequence[l]].StartLocation = tbStartPosition.Text;
+                    else { wk[wkSequence[l]].StartLocation = CreateRandomStartPositions(); }
+                }
                 else wk[wkSequence[l]].StartLocation = wk[wkSequence[l]].CurrentPosition;
                 wk[wkSequence[l]].Learn = learn;
             }
@@ -304,6 +322,7 @@ namespace DCMaster
                 {
                     if (stepCount == int.Parse(tbStop.Text))
                     {
+                        saveLab2File();
                         writeReportFile(numOfWorkers, tbStop.Text);
                         this.Invoke(new Action(() => this.bttnStopIteration.Enabled = false));
                         this.Invoke(new Action(() => this.bttnStartIteration.Enabled = true));
@@ -312,7 +331,6 @@ namespace DCMaster
                             cancellationTokenSource.Cancel();
                             cancellationTokenSource = null;
                         }
-                        //saveLab2File();
                         if (chkbSave2file.Checked)
                         {
                             this.Invoke(new Action(() => this.Enabled = false));
@@ -325,7 +343,7 @@ namespace DCMaster
                             this.Invoke(new Action(() => this.Text = "DC Master, v_" + Application.ProductVersion.ToString()));
                             frmterm.Close();
                         }
-                        MessageBox.Show("Process stopped at limit '" + tbStop.Text + "'", "Process stopped" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Process stopped at step count '" + tbStop.Text + "'", "Process stopped" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
                      return;                       
                     }
                 }
@@ -336,10 +354,6 @@ namespace DCMaster
                 {
                     Int32 i = wkSequence[ii];
                     wk[i].moveNext();
-                    //if (chkCoincidence.Checked)
-                    //{
-                    //    mergeImprint(wkSequence);
-                    //}
                     if (wk[i].Live)
                     {
                         if (wk[i].Energy > Replication_energy_level)
@@ -359,7 +373,6 @@ namespace DCMaster
                                     wk[maxindex].StartLocation= tbStartPosition.Text;
                                 }
                                 wk[maxindex].Parent = wk[parentsID].Parent + "," + parentsID;
-                                //wk[maxindex].Parent.Add(parentsID.ToString());
                                 wk[maxindex].Live = true;
                                 wk[maxindex].Energy = initial_worker_energy;
                                 wk[maxindex].SEntropy = wk[i].SEntropy;
@@ -386,6 +399,7 @@ namespace DCMaster
                             float sumentropia = sumofSEntropy(wk);
                             saveIteration2File(stepCount+1, numOfWorkers, sumEnergy, sumentropia);
                             writeReportFile(numOfWorkers, lblIterationCount.Text);
+                            saveLab2File();
                             this.Invoke(new Action(() => this.bttnStopIteration.Enabled = false));
                             this.Invoke(new Action(() => this.bttnStartIteration.Enabled = true));
                             if (chkbSave2file.Checked) 
@@ -400,7 +414,6 @@ namespace DCMaster
                                 this.Invoke(new Action(() => this.Enabled = true));
                                 frmterm.Close();
                             }
-                            //saveLab2File();
                             cancellationTokenSource.Cancel();
                             cancellationTokenSource = null;
                             MessageBox.Show("No worker is alive because the population went to die.", "Process terminated because population has died", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -416,6 +429,7 @@ namespace DCMaster
                 Int32 gatheredEnergy = sumOfEnergy(wk);
                 float entropia= sumofSEntropy(wk);
                 saveIteration2File(stepCount, numOfWorkers, gatheredEnergy, entropia);
+                //saveLab2File();
                 lblIterationCount.Invoke(new Action(() => lblIterationCount.Text = (stepCount).ToString()));
                 lblLivingWorkerNumber.Invoke(new Action(() => lblLivingWorkerNumber.Text = numOfWorkers.ToString()));               
                 try
@@ -429,7 +443,7 @@ namespace DCMaster
                         writeReportFile(numOfWorkers, lblIterationCount.Text);
                         this.Invoke(new Action(() => this.bttnStopIteration.Enabled = false));
                         this.Invoke(new Action(() => this.bttnStartIteration.Enabled = true));
-                        //saveLab2File();
+                        saveLab2File();
                         if (chkbSave2file.Checked)
                         {
                             //this.Invoke(new Action(() => this.bttnStartIteration.Enabled = false));
@@ -546,16 +560,17 @@ namespace DCMaster
             sb.AppendLine(lblInitnumofwkr.Text);
             sb.AppendLine("Learning workers: " + chkUseML.Checked.ToString());
             sb.AppendLine("Merge knowledge when workers coincide: " + chkCoincidence.Checked.ToString());
+            if (randomStart) { sb.AppendLine("Start position is random"); }
 
             if (chkStartPositionFromParent.Checked)
             {
-                sb.AppendLine("Start position of children is from parents at birth" );
-                sb.AppendLine("Initial start position is: " + tbStartPosition.Text);
+                sb.AppendLine("Start positions of children are from parents at birth" );
+                if (!randomStart) sb.AppendLine("Initial start position is: " + tbStartPosition.Text);
             }
             else
             {
-                sb.AppendLine("Start position is always: "  + tbStartPosition.Text);
-            }
+                if (!randomStart) sb.AppendLine("Start position is always: "  + tbStartPosition.Text);
+            }           
             System.IO.File.WriteAllText(repFileName, sb.ToString());
         }
 
@@ -567,6 +582,7 @@ namespace DCMaster
             Properties.Settings.Default.learn = chkUseML.Checked;
             Properties.Settings.Default.merge = chkCoincidence.Checked;
             Properties.Settings.Default.startfrombirthplace = chkStartPositionFromParent.Checked;
+            Properties.Settings.Default.RandomStart = chkRandomStartPosition.Checked;
             Properties.Settings.Default.Save();
             Application.Exit();
         }
@@ -667,6 +683,7 @@ namespace DCMaster
             dtWorkers.Columns.Add("Entropy", typeof(Int32));
             dtWorkers.Columns.Add("CurrentPosition");
             dtWorkers.Columns.Add("Parents");
+            dtWorkers.Columns.Add("StartPosition");
             for (int i=0; i<wk.Count; i++)
             {
                 DataRow dr=dtWorkers.NewRow();
@@ -675,6 +692,7 @@ namespace DCMaster
                 dr["Entropy"] = wk[wkSequence[i]].SEntropy;
                 dr["Parents"] = wk[wkSequence[i]].Parent;
                 dr["CurrentPosition"] = wk[wkSequence[i]].CurrentPosition;
+                dr["StartPosition"] = wk[wkSequence[i]].StartLocation;
                 dtWorkers.Rows.Add(dr);
             }
             return dtWorkers;
@@ -941,14 +959,9 @@ namespace DCMaster
             guide.Show();
         }
 
-        private void bttnSaveCurrentLab_Click(object sender, EventArgs e)
-        {
-            saveLab2File();
-        }
-
+ 
         void saveLab2File()
         {
-            string labname = System.IO.Path.ChangeExtension(iterationName, ".lab");
             List<string> llab = new List<string>();
             string line1 = getEnergySourceAndSinks();
             llab.Add(line1 + ",labsize:" + lab.Size);
@@ -964,8 +977,7 @@ namespace DCMaster
             }
             string[] slab = llab.ToArray();
 
-            System.IO.File.WriteAllLines(labname, slab);
-            MessageBox.Show("Labirynth has been saved to " + Path.GetFileName(labname));
+            System.IO.File.WriteAllLines(labyrinthname, slab);
         }
 
         string getEnergySourceAndSinks()
@@ -988,6 +1000,27 @@ namespace DCMaster
         private void chkCoincidence_CheckedChanged(object sender, EventArgs e)
         {
             if(chkCoincidence.Checked) { chkUseML.Checked = true; }
+        }
+
+        private void chkRandomStartPosition_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRandomStartPosition.Checked) 
+            {
+                randomStart = true;
+                lblsp0.Enabled = false; 
+                lblsp1.Enabled=false; 
+                tbStartPosition.Enabled = false; 
+                grpDinamicHostility.Visible = false;
+            }
+            else 
+            { 
+                randomStart=false;
+                lblsp0.Enabled = true; 
+                lblsp1.Enabled = true; 
+                tbStartPosition.Enabled = true;
+                grpDinamicHostility.Visible = true;
+                refreshDinamicHostility();
+            }
         }
     }
 }

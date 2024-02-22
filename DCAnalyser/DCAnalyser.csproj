@@ -102,6 +102,12 @@
     <Compile Include="frmCompareImprints.Designer.cs">
       <DependentUpon>frmCompareImprints.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFamilyTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFamilyTree.Designer.cs">
+      <DependentUpon>frmFamilyTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGuide.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompareImprints.resx">
       <DependentUpon>frmCompareImprints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFamilyTree.resx">
+      <DependentUpon>frmFamilyTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGuide.resx">
       <DependentUpon>frmGuide.cs</DependentUpon>

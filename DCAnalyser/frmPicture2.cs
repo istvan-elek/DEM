@@ -126,7 +126,6 @@ namespace DCAnalyser
             int ypos = (int)(Convert.ToSingle(e.Y) * rate + 0.5F);
             if (ypos == picBox.Image.Height) { ypos = picBox.Image.Height - 1; }
             string a = "position = '" + (xpos + "," + ypos) + "'";
-            //string a = (xpos + "," + ypos)/* + "'"*/;
             DataRow[] rows = lab.Select(a);
             string fieldValue="";
             if (rows.Length !=0)
@@ -145,8 +144,8 @@ namespace DCAnalyser
             string RoyalBlue = "#" + Color.FromKnownColor(KnownColor.RoyalBlue).R.ToString("X2") + Color.FromKnownColor(KnownColor.RoyalBlue).G.ToString("X2") + Color.FromKnownColor(KnownColor.RoyalBlue).B.ToString("X2");
             string redClr = "#" + Color.FromKnownColor(KnownColor.Red).R.ToString("X2") + Color.FromKnownColor(KnownColor.Red).G.ToString("X2") + Color.FromKnownColor(KnownColor.Red).B.ToString("X2");
             string blackClr = "#" + Color.FromKnownColor(KnownColor.Black).R.ToString("X2") + Color.FromKnownColor(KnownColor.Black).G.ToString("X2") + Color.FromKnownColor(KnownColor.Black).B.ToString("X2"); 
-            if (strClr == RoyalBlue) { this.Text = Title + " - ENERGY SINK(" + fieldValue +  ") at x:" + xpos + ", y:" + ypos + " position"; }
-            if (strClr == redClr) { this.Text = Title + " - ENERGY SOURCE(" + fieldValue + ") at x:" + xpos + ", y:" + ypos + " position"; }
+            if (strClr == RoyalBlue) { this.Text = Title + " - SINK(" + fieldValue +  ") at x:" + xpos + ", y:" + ypos + " position"; }
+            if (strClr == redClr) { this.Text = Title + " - SOURCE(" + fieldValue + ") at x:" + xpos + ", y:" + ypos + " position"; }
             if (strClr == blackClr) { this.Text = Title + " - empty field(" + fieldValue + ") at x:" + xpos + ", y:" + ypos + " position"; }
         }
 

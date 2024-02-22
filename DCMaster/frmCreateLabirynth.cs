@@ -9,14 +9,13 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DCMaster
 {
     public partial class frmCreateLabirynth : Form
     {
-        NpgsqlConnectionStringBuilder cnsb = new NpgsqlConnectionStringBuilder();
         public labyrinth lab/* = new labyrinth()*/;
         public int LabSize;
         int numOfEnergySources;

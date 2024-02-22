@@ -70,12 +70,6 @@ namespace DCMaster
             set { _learn = value; }
         }
 
-        //List<string> _parent = new List<string>();
-        //public List<string> Parent
-        //{
-        //    get { return _parent; }
-        //    set { _parent = value; }
-        //}
 
 
         string _parent;

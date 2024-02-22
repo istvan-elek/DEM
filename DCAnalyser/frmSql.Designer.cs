@@ -49,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bttnLoadSavedSql = new System.Windows.Forms.Button();
             this.bttnSaveSqlCommand = new System.Windows.Forms.Button();
+            this.bttnShowGraphically = new System.Windows.Forms.Button();
+            this.bttnShowFamilyTree = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSql)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnSql)).BeginInit();
@@ -63,9 +65,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dgvSql);
             this.panel1.Controls.Add(this.bnSql);
-            this.panel1.Location = new System.Drawing.Point(0, 157);
+            this.panel1.Location = new System.Drawing.Point(0, 166);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 440);
+            this.panel1.Size = new System.Drawing.Size(702, 431);
             this.panel1.TabIndex = 0;
             // 
             // dgvSql
@@ -77,8 +79,9 @@
             this.dgvSql.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSql.Location = new System.Drawing.Point(0, 25);
             this.dgvSql.Name = "dgvSql";
-            this.dgvSql.Size = new System.Drawing.Size(702, 415);
+            this.dgvSql.Size = new System.Drawing.Size(702, 406);
             this.dgvSql.TabIndex = 0;
+            this.dgvSql.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSql_CellMouseDown);
             // 
             // bnSql
             // 
@@ -236,11 +239,35 @@
             this.bttnSaveSqlCommand.UseVisualStyleBackColor = true;
             this.bttnSaveSqlCommand.Click += new System.EventHandler(this.bttnSaveSqlCommand_Click);
             // 
+            // bttnShowGraphically
+            // 
+            this.bttnShowGraphically.Location = new System.Drawing.Point(7, 137);
+            this.bttnShowGraphically.Name = "bttnShowGraphically";
+            this.bttnShowGraphically.Size = new System.Drawing.Size(152, 23);
+            this.bttnShowGraphically.TabIndex = 7;
+            this.bttnShowGraphically.Text = "Show parents graphically";
+            this.bttnShowGraphically.UseVisualStyleBackColor = true;
+            this.bttnShowGraphically.Visible = false;
+            this.bttnShowGraphically.Click += new System.EventHandler(this.bttnShowGraphically_Click);
+            // 
+            // bttnShowFamilyTree
+            // 
+            this.bttnShowFamilyTree.Location = new System.Drawing.Point(180, 137);
+            this.bttnShowFamilyTree.Name = "bttnShowFamilyTree";
+            this.bttnShowFamilyTree.Size = new System.Drawing.Size(149, 23);
+            this.bttnShowFamilyTree.TabIndex = 8;
+            this.bttnShowFamilyTree.Text = "Show family tree of ";
+            this.bttnShowFamilyTree.UseVisualStyleBackColor = true;
+            this.bttnShowFamilyTree.Visible = false;
+            this.bttnShowFamilyTree.Click += new System.EventHandler(this.bttnShowFamilyTree_Click);
+            // 
             // frmSql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 598);
+            this.Controls.Add(this.bttnShowFamilyTree);
+            this.Controls.Add(this.bttnShowGraphically);
             this.Controls.Add(this.bttnSaveSqlCommand);
             this.Controls.Add(this.bttnLoadSavedSql);
             this.Controls.Add(this.label2);
@@ -269,8 +296,6 @@
         private System.Windows.Forms.TextBox tbSql;
         private System.Windows.Forms.ComboBox cmbSql;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource bsSql;
-        private System.Windows.Forms.DataGridView dgvSql;
         private System.Windows.Forms.BindingNavigator bnSql;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -283,5 +308,9 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.Button bttnLoadSavedSql;
         private System.Windows.Forms.Button bttnSaveSqlCommand;
+        public System.Windows.Forms.BindingSource bsSql;
+        public System.Windows.Forms.DataGridView dgvSql;
+        public System.Windows.Forms.Button bttnShowGraphically;
+        public System.Windows.Forms.Button bttnShowFamilyTree;
     }
 }

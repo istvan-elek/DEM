@@ -222,7 +222,6 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.pdb
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.AssemblyReference.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.DisplayCharts2.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmConfig.resources
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateDB.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmGuide.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmMain.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateLabirynth.resources
@@ -237,7 +236,6 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmV
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.WebSite.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.GenerateResource.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.CopyComplete
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.pdb
 C:\Users\Elek István\Documents\GitHub\DEM\DC\bin\Debug\DCMaster.exe.config
@@ -264,3 +262,4 @@ C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.Co
 C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.CopyComplete
 C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.exe
 C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.Up2Date

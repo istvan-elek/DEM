@@ -80,10 +80,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Npgsql, Version=2.0.14.3, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DC\Packages\Npgsql.2.0.14.3\lib\net45\Npgsql.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -119,12 +115,6 @@
     </Compile>
     <Compile Include="frmConfig.Designer.cs">
       <DependentUpon>frmConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCreateDB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCreateDB.Designer.cs">
-      <DependentUpon>frmCreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGuide.cs">
       <SubType>Form</SubType>
@@ -203,9 +193,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateDB.resx">
-      <DependentUpon>frmCreateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGuide.resx">
       <DependentUpon>frmGuide.cs</DependentUpon>

@@ -44,6 +44,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbttnViewreports = new System.Windows.Forms.ToolStripButton();
             this.tscmbViewreports = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbttnHelp = new System.Windows.Forms.ToolStripButton();
             this.lblLabSize = new System.Windows.Forms.Label();
             this.tbStartPosition = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbStop = new System.Windows.Forms.TextBox();
             this.lblStop = new System.Windows.Forms.Label();
-            this.bttnSaveCurrentLab = new System.Windows.Forms.Button();
             this.bttnShowIterationData = new System.Windows.Forms.Button();
             this.grpAnalyserTools = new System.Windows.Forms.GroupBox();
             this.bttnShowFittness = new System.Windows.Forms.Button();
@@ -109,7 +109,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.chkRandomStartPosition = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpAnalyserTools.SuspendLayout();
@@ -151,7 +151,7 @@
             this.tsbttnHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(776, 49);
+            this.toolStrip1.Size = new System.Drawing.Size(780, 49);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -271,6 +271,11 @@
             this.tscmbViewreports.Visible = false;
             this.tscmbViewreports.SelectedIndexChanged += new System.EventHandler(this.tscmbViewreports_SelectedIndexChanged);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 49);
+            // 
             // tsbttnHelp
             // 
             this.tsbttnHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -296,7 +301,7 @@
             // tbStartPosition
             // 
             this.tbStartPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbStartPosition.Location = new System.Drawing.Point(93, 145);
+            this.tbStartPosition.Location = new System.Drawing.Point(92, 125);
             this.tbStartPosition.Name = "tbStartPosition";
             this.tbStartPosition.Size = new System.Drawing.Size(68, 20);
             this.tbStartPosition.TabIndex = 19;
@@ -306,7 +311,7 @@
             // 
             this.lblsp1.AutoSize = true;
             this.lblsp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblsp1.Location = new System.Drawing.Point(173, 147);
+            this.lblsp1.Location = new System.Drawing.Point(166, 129);
             this.lblsp1.Name = "lblsp1";
             this.lblsp1.Size = new System.Drawing.Size(103, 13);
             this.lblsp1.TabIndex = 20;
@@ -325,7 +330,6 @@
             // 
             this.groupBox1.Controls.Add(this.tbStop);
             this.groupBox1.Controls.Add(this.lblStop);
-            this.groupBox1.Controls.Add(this.bttnSaveCurrentLab);
             this.groupBox1.Controls.Add(this.bttnShowIterationData);
             this.groupBox1.Controls.Add(this.grpAnalyserTools);
             this.groupBox1.Controls.Add(this.lblStepCount);
@@ -359,17 +363,6 @@
             this.lblStop.Size = new System.Drawing.Size(161, 13);
             this.lblStop.TabIndex = 36;
             this.lblStop.Text = "Stop iteration when step count is";
-            // 
-            // bttnSaveCurrentLab
-            // 
-            this.bttnSaveCurrentLab.Enabled = false;
-            this.bttnSaveCurrentLab.Location = new System.Drawing.Point(130, 9);
-            this.bttnSaveCurrentLab.Name = "bttnSaveCurrentLab";
-            this.bttnSaveCurrentLab.Size = new System.Drawing.Size(124, 23);
-            this.bttnSaveCurrentLab.TabIndex = 34;
-            this.bttnSaveCurrentLab.Text = "Save current lab to file";
-            this.bttnSaveCurrentLab.UseVisualStyleBackColor = true;
-            this.bttnSaveCurrentLab.Click += new System.EventHandler(this.bttnSaveCurrentLab_Click);
             // 
             // bttnShowIterationData
             // 
@@ -546,6 +539,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkRandomStartPosition);
             this.groupBox2.Controls.Add(this.tbFileName2Save);
             this.groupBox2.Controls.Add(this.chkbSave2file);
             this.groupBox2.Controls.Add(this.chkStartPositionFromParent);
@@ -585,7 +579,7 @@
             // 
             this.chkStartPositionFromParent.AutoSize = true;
             this.chkStartPositionFromParent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chkStartPositionFromParent.Location = new System.Drawing.Point(19, 114);
+            this.chkStartPositionFromParent.Location = new System.Drawing.Point(19, 103);
             this.chkStartPositionFromParent.Margin = new System.Windows.Forms.Padding(2);
             this.chkStartPositionFromParent.Name = "chkStartPositionFromParent";
             this.chkStartPositionFromParent.Size = new System.Drawing.Size(162, 17);
@@ -597,7 +591,7 @@
             // 
             this.lblsp0.AutoSize = true;
             this.lblsp0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblsp0.Location = new System.Drawing.Point(16, 147);
+            this.lblsp0.Location = new System.Drawing.Point(16, 129);
             this.lblsp0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblsp0.Name = "lblsp0";
             this.lblsp0.Size = new System.Drawing.Size(71, 13);
@@ -637,7 +631,7 @@
             this.grpAnalyserBox.Controls.Add(this.splitContainer1);
             this.grpAnalyserBox.Location = new System.Drawing.Point(12, 292);
             this.grpAnalyserBox.Name = "grpAnalyserBox";
-            this.grpAnalyserBox.Size = new System.Drawing.Size(749, 3);
+            this.grpAnalyserBox.Size = new System.Drawing.Size(753, 3);
             this.grpAnalyserBox.TabIndex = 25;
             this.grpAnalyserBox.TabStop = false;
             this.grpAnalyserBox.Text = "Analyser box";
@@ -657,7 +651,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grpLabData);
-            this.splitContainer1.Size = new System.Drawing.Size(743, 0);
+            this.splitContainer1.Size = new System.Drawing.Size(747, 0);
             this.splitContainer1.SplitterDistance = 523;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -999,16 +993,22 @@
             this.trackBar2.TickFrequency = 100;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
-            // toolStripSeparator6
+            // chkRandomStartPosition
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 49);
+            this.chkRandomStartPosition.AutoSize = true;
+            this.chkRandomStartPosition.Location = new System.Drawing.Point(19, 157);
+            this.chkRandomStartPosition.Name = "chkRandomStartPosition";
+            this.chkRandomStartPosition.Size = new System.Drawing.Size(128, 17);
+            this.chkRandomStartPosition.TabIndex = 30;
+            this.chkRandomStartPosition.Text = "Random start position";
+            this.chkRandomStartPosition.UseVisualStyleBackColor = true;
+            this.chkRandomStartPosition.CheckedChanged += new System.EventHandler(this.chkRandomStartPosition_CheckedChanged);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 290);
+            this.ClientSize = new System.Drawing.Size(780, 290);
             this.Controls.Add(this.grpDinamicHostility);
             this.Controls.Add(this.grp_static_hostility);
             this.Controls.Add(this.grpAnalyserBox);
@@ -1131,9 +1131,9 @@
         private System.Windows.Forms.ToolStripButton bttnEditCreateWorkers;
         private System.Windows.Forms.ToolStripButton tsbttnShowAnalyser;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.Button bttnSaveCurrentLab;
         private System.Windows.Forms.TextBox tbStop;
         private System.Windows.Forms.Label lblStop;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.CheckBox chkRandomStartPosition;
     }
 }

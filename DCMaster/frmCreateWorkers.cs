@@ -8,13 +8,12 @@ using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
+
 
 namespace DCMaster
 {
     public partial class frmCreateWorkers : Form
     {
-        NpgsqlConnectionStringBuilder cnsb = new NpgsqlConnectionStringBuilder();
         int numOfWorkers;
         int initial_worker_energy;
         //int Gold_energy;
@@ -69,8 +68,8 @@ namespace DCMaster
             {
                 wk[i] = new worker(lab, i, learn, parameters);
                 wk[i].Energy = initial_worker_energy;
-                wk[i].Parent = "0";
-                wk[i].CurrentPosition = startPos;
+                wk[i].Parent = "";
+                //wk[i].CurrentPosition = startPos;
             }
             //tbNumOfWorkers.Text = "";
             loadWorkers2Dgv();
@@ -79,10 +78,11 @@ namespace DCMaster
 
         void loadWorkers2Dgv()
         {
+            dgvWorkers.Columns.Clear();
             dgvWorkers.Columns.Add("id", "id");
             dgvWorkers.Columns.Add("Energy", "Energy");
-            dgvWorkers.Columns.Add("Position", "Position");
-            dgvWorkers.Columns.Add("Parent", "Parernt");
+            //dgvWorkers.Columns.Add("Position", "Position");
+            dgvWorkers.Columns.Add("Parent", "Parent");
             for (int i=0; i<numOfWorkers; i++) 
             {
                 dgvWorkers.Rows.Add(wk[i].ID, wk[i].Energy, wk[i].CurrentPosition, wk[i].Parent);

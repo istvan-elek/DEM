@@ -19,15 +19,16 @@ namespace DCAnalyser
         public frmSelectGeneration()
         {
             InitializeComponent();
+            kvantor = "<";
+            generation = "0";
+            cmbCompare.SelectedItem = kvantor;
+            cmbGenerationNumber.SelectedItem = generation;
         }
 
 
         private void bttnClose_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            //where = "";
-            kvantor = "";
-            generation = "";
             this.Close();
         }
 
@@ -57,6 +58,7 @@ namespace DCAnalyser
         private void chbDisplayData_CheckedChanged(object sender, EventArgs e)
         {
             displayData = chbDisplayData.Checked;
+ 
         }
     }
 }

@@ -158,3 +158,4 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmFamilyTree.resources

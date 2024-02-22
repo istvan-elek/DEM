@@ -3,5 +3,5 @@ source_energy_max;1000
 sink_energy_max;-500
 movement_costs;-1
 replication_energy_level;5000
-replication_rate;2
+replication_rate;1
 delay;0

@@ -66,15 +66,13 @@ namespace DCAnalyser
             {
                 dbConnection(of.FileName);
                 SQLanalyzeToolStripMenuItem.Enabled = true;
+                generationsToolStripMenuItem.Enabled = true;
                 selectionsToolStripMenuItem.Enabled=true;
                 diagramsToolStripMenuItem.Enabled=true;
-                //string FolderName = Path.GetDirectoryName(of.FileName);
-                //appfolder = FolderName.Substring(0, FolderName.LastIndexOf("\\")) + "\\";
-                //string p = Path.GetDirectoryName(of.FileName);
                 Properties.Settings.Default["lastFolder"] = Path.GetDirectoryName(of.FileName); //appfolder;
                 Properties.Settings.Default.Save();
             }
-            this.Text = "Analyser --> " + Path.GetFileNameWithoutExtension(of.FileName);
+            this.Text = "DC Analyser --> " + Path.GetFileNameWithoutExtension(of.FileName);
         }
 
 
@@ -85,6 +83,7 @@ namespace DCAnalyser
             bsWorkers.DataSource = loadTableData("select * from workers order by id");
             dgvWorkers.DataSource = bsWorkers;
             bnWorkers.BindingSource= bsWorkers;
+            //bnWorkers.CountItem.Text = "pmpom";
             tslblWorkers.Text = "Workers";
             bsIteration.DataSource = loadTableData("select * from iteration");
             dgvIteration.DataSource=bsIteration;
@@ -109,12 +108,9 @@ namespace DCAnalyser
                 cnn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(sqlCommand,cnn))
                 {
-                    cmd.CommandTimeout = 160;
-                    try
+                     try
                     {
                         SQLiteDataReader dr = cmd.ExecuteReader();
-                        stLblLastSQL.Width = this.ClientSize.Width-40;
-                        stLblLastSQL.Text = cmd.CommandText;
                         dt.Load(dr);
                         this.Cursor = Cursors.Default;
                         return dt;
@@ -215,8 +211,6 @@ namespace DCAnalyser
             }
         }
 
-
-
         private void displayDiscoveredFieldOfAllWorkersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataTable dtlab = loadTableData("select * from labirynth");
@@ -232,21 +226,48 @@ namespace DCAnalyser
         private void displayDiscoveredFieldsOfAGivenGenerationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSelectGeneration selectGeneration = new frmSelectGeneration();
-            selectGeneration.ShowDialog();
             if (selectGeneration.ShowDialog() == DialogResult.OK)
             {
-                string where = selectGeneration.kvantor + selectGeneration.generation; ;
-                string sqlCommand = "SELECT t1.worker_path FROM (SELECT worker_path, id FROM /*/*worker_path*/*/ GROUP BY worker_path,id) t1 " + "INNER JOIN (SELECT id FROM workers where array_length(string_to_array(parent,','),1) " + where + " ) t2 ON t1.id=t2.id GROUP BY t1.worker_path ORDER BY t1.worker_path"; 
-                // worker_path tábla már nincs! Új SQL kell
+                DataTable dtlab = loadTableData("select * from labirynth"); 
+                Image imglab = lab2Bmp(dtlab);
+                labSize = imglab.Width;
+                //string where = selectGeneration.kvantor + selectGeneration.generation;
+                string gen = "";
+                for (int i = 0; i< int.Parse(selectGeneration.generation); i++)
+                {
+                    gen += ",%";
+                }
+                string sqlCommand = "select worker_path from workers where parents like '" + gen +"'";
                 DataTable dt = loadTableData(sqlCommand);
                 if (selectGeneration.displayData) { bsLogBook.DataSource = dt; }
                 if (dt.Rows.Count > 0)
                 {
-                    //this.Cursor = Cursors.WaitCursor;
-                    //Image img = path2Image(dt, dtwuTrGd.Rows[0], dtLabsize.Rows[0][0].ToString());
-                    //frmPicture2 frmPic = new frmPicture2("Discovered paths in " + cnsb.DataSource + " where generation =" + selectGeneration.generation, img);
-                    //this.Cursor = Cursors.Default;
-                    //frmPic.Show();
+                    this.Cursor = Cursors.WaitCursor;
+                    Image img = path2Image(dt);
+                    frmPicture2 frmPic = new frmPicture2("Discovered paths from generation #" + selectGeneration.generation, img, imglab, dtlab, "");
+                    this.Cursor = Cursors.Default;
+                    frmPic.Show();
+                    if (selectGeneration.displayData)
+                    {
+                        Form Dispform = new Form();
+                        DataGridView dgv = new DataGridView();
+                        sqlCommand = "select id, parents, worker_path from workers where parents like '" + gen + "'";
+                        DataTable dt2 = loadTableData(sqlCommand);
+                        Dispform.Width = this.Width/2;
+                        dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                        dgv.Dock = DockStyle.Fill;
+                        Dispform.Controls.Add(dgv);
+                        BindingSource bs = new BindingSource();
+                        BindingNavigator bn = new BindingNavigator(bs);
+                        bn.BindingSource = bs;
+                        bn.AddNewItem.Visible = false;
+                        bn.DeleteItem.Visible = false;
+                        bs.DataSource = dt2;
+                        dgv.DataSource = bs;
+                        Dispform.Controls.Add(bn);
+                        Dispform.Text = "Generations from #" + selectGeneration.generation;
+                        Dispform.Show();
+                    }
                 }
                 else
                 {
@@ -436,6 +457,7 @@ namespace DCAnalyser
 
         private void dgvWorkers_CellMouseDown_1(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if ((e.ColumnIndex < 0) || (e.RowIndex < 0)) return;
             if (e.Button==MouseButtons.Right)
             {
                 string[] point;
@@ -477,27 +499,27 @@ namespace DCAnalyser
         Bitmap cell2Bmp(DataTable dt, string colname)
         {
             Bitmap lBmp = new System.Drawing.Bitmap(labSize, labSize, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            if (colname=="worker_pah")
-            { 
-                Color clrEmpty = Color.Black;
-                Color source = Color.Red;
-                Color sink = Color.RoyalBlue;
+            //if (colname=="worker_pah")
+            //{ 
+            //    Color clrEmpty = Color.Black;
+            //    Color source = Color.Red;
+            //    Color sink = Color.RoyalBlue;
 
-                for (int i = 0; i < labSize; i++)
-                {
-                    for (int j = 0; j < labSize; j++)
-                    {
-                        lBmp.SetPixel(j, i, clrEmpty);
-                    }
-                }
+            //    for (int i = 0; i < labSize; i++)
+            //    {
+            //        for (int j = 0; j < labSize; j++)
+            //        {
+            //            lBmp.SetPixel(j, i, clrEmpty);
+            //        }
+            //    }
 
-                for (int j = 0; j < dt.Rows.Count; j++)
-                {
-                    if (int.Parse(dt.Rows[j][2].ToString()) < 0) lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), sink);
-                    if (int.Parse(dt.Rows[j][2].ToString()) < 0) lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), source);
-                }
-            }
-            else
+            //    for (int j = 0; j < dt.Rows.Count; j++)
+            //    {
+            //        if (int.Parse(dt.Rows[j][2].ToString()) < 0) lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), sink);
+            //        if (int.Parse(dt.Rows[j][2].ToString()) > 0) lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), source);
+            //    }
+            //}
+            //else
             {
                 Color green = Color.LightGreen;
                 Color clrEmpty = Color.Black;
@@ -510,8 +532,7 @@ namespace DCAnalyser
                 }
                 for (int j = 0; j < dt.Rows.Count; j++)
                 {
-                    /*if (int.Parse(dt.Rows[j][2].ToString()) < 0)*/ lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), green);
-                    //if (int.Parse(dt.Rows[j][2].ToString()) < 0) lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), source);
+                     lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), green);
                 }
             }
             return lBmp;
@@ -529,6 +550,71 @@ namespace DCAnalyser
             string[] files = Directory.GetFiles(dbFolder, "*.s3db");
             frmCompareImprints frmImprints=new frmCompareImprints(labSize, appfolder);
             frmImprints.ShowDialog();
+        }
+
+        private void selectInitialWorkersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqlcom = "select * from workers where parents=''";   //not instr(parents, ','
+            frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: Initial generation");
+            frmSqlform.bttnShowGraphically.Visible = true;
+            frmSqlform.bttnShowFamilyTree.Visible = true;
+            frmSqlform.Show();
+        }
+
+
+
+
+        private void selectWorkersWithTheSelectedParentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvWorkers.SelectedRows.Count > 0)
+            {
+                string selectedWorker = dgvWorkers.SelectedRows[0].Cells[0].Value.ToString();
+                string sqlcom = "SELECT *  FROM workers  where instr(parents,'," + selectedWorker + ",')";
+                frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: generation where the selected '" + selectedWorker + "' worker is parent");
+                frmSqlform.bttnShowGraphically.Visible = true;
+                frmSqlform.bttnShowFamilyTree.Visible = true;
+                frmSqlform.Show();
+            }
+            else { MessageBox.Show("There is no selected worker"); }
+        }
+
+
+        private void drawAllWorkersParentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                frmFamilyTree familyTree = new frmFamilyTree(loadTableData("select id, parents from workers"), "All workers' parents", false);
+                familyTree.Show();
+        }
+
+        private void selectFromGivenGenerationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSelectGeneration selectGeneration = new frmSelectGeneration();
+            if (selectGeneration.ShowDialog() == DialogResult.OK)
+            {
+                DataTable dtlab = loadTableData("select * from labirynth");
+                Image imglab = lab2Bmp(dtlab);
+                labSize = imglab.Width;
+                ////string where = selectGeneration.kvantor + selectGeneration.generation;
+                string gen = "%";
+                for (int i = 0; i < int.Parse(selectGeneration.generation); i++)
+                {
+                    gen += ",%";
+                }
+                string sqlCommand = "select * from workers where parents like '" + gen + "'";
+                DataTable dt = loadTableData(sqlCommand);
+                frmSql dispSql = new frmSql(cnsb, sqlCommand, labSize,"Generations from #" + selectGeneration.generation);
+                dispSql.bttnShowGraphically.Visible=true;
+                dispSql.bttnShowFamilyTree.Visible=true;
+                dispSql.Show();
+            }
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sqlcom = "SELECT *  FROM workers";
+            frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: all workers ");
+            frmSqlform.bttnShowGraphically.Visible = true;
+            frmSqlform.bttnShowFamilyTree.Visible = true;
+            frmSqlform.Show();
         }
     }
 }

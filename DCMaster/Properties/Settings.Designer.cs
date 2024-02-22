@@ -130,5 +130,17 @@ namespace DCMaster.Properties {
                 this["initialnumofworkers"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RandomStart {
+            get {
+                return ((bool)(this["RandomStart"]));
+            }
+            set {
+                this["RandomStart"] = value;
+            }
+        }
     }
 }
