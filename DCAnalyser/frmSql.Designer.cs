@@ -50,12 +50,15 @@
             this.bttnLoadSavedSql = new System.Windows.Forms.Button();
             this.bttnSaveSqlCommand = new System.Windows.Forms.Button();
             this.bttnShowGraphically = new System.Windows.Forms.Button();
-            this.bttnShowFamilyTree = new System.Windows.Forms.Button();
+            this.menuClans = new System.Windows.Forms.MenuStrip();
+            this.showClansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.largestClansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSql)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnSql)).BeginInit();
             this.bnSql.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsSql)).BeginInit();
+            this.menuClans.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -250,23 +253,38 @@
             this.bttnShowGraphically.Visible = false;
             this.bttnShowGraphically.Click += new System.EventHandler(this.bttnShowGraphically_Click);
             // 
-            // bttnShowFamilyTree
+            // menuClans
             // 
-            this.bttnShowFamilyTree.Location = new System.Drawing.Point(180, 137);
-            this.bttnShowFamilyTree.Name = "bttnShowFamilyTree";
-            this.bttnShowFamilyTree.Size = new System.Drawing.Size(149, 23);
-            this.bttnShowFamilyTree.TabIndex = 8;
-            this.bttnShowFamilyTree.Text = "Show family tree of ";
-            this.bttnShowFamilyTree.UseVisualStyleBackColor = true;
-            this.bttnShowFamilyTree.Visible = false;
-            this.bttnShowFamilyTree.Click += new System.EventHandler(this.bttnShowFamilyTree_Click);
+            this.menuClans.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuClans.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showClansToolStripMenuItem});
+            this.menuClans.Location = new System.Drawing.Point(236, 134);
+            this.menuClans.Name = "menuClans";
+            this.menuClans.Size = new System.Drawing.Size(206, 24);
+            this.menuClans.TabIndex = 9;
+            this.menuClans.Text = "menuStrip1";
+            // 
+            // showClansToolStripMenuItem
+            // 
+            this.showClansToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.largestClansToolStripMenuItem});
+            this.showClansToolStripMenuItem.Name = "showClansToolStripMenuItem";
+            this.showClansToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.showClansToolStripMenuItem.Text = "Show clans";
+            this.showClansToolStripMenuItem.Click += new System.EventHandler(this.showClansToolStripMenuItem_Click);
+            // 
+            // largestClansToolStripMenuItem
+            // 
+            this.largestClansToolStripMenuItem.Name = "largestClansToolStripMenuItem";
+            this.largestClansToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.largestClansToolStripMenuItem.Text = "Largest clans";
+            this.largestClansToolStripMenuItem.Click += new System.EventHandler(this.largestClansToolStripMenuItem_Click);
             // 
             // frmSql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 598);
-            this.Controls.Add(this.bttnShowFamilyTree);
             this.Controls.Add(this.bttnShowGraphically);
             this.Controls.Add(this.bttnSaveSqlCommand);
             this.Controls.Add(this.bttnLoadSavedSql);
@@ -275,6 +293,8 @@
             this.Controls.Add(this.tbSql);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuClans);
+            this.MainMenuStrip = this.menuClans;
             this.Name = "frmSql";
             this.Text = "Sql window";
             this.panel1.ResumeLayout(false);
@@ -284,6 +304,8 @@
             this.bnSql.ResumeLayout(false);
             this.bnSql.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsSql)).EndInit();
+            this.menuClans.ResumeLayout(false);
+            this.menuClans.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +333,8 @@
         public System.Windows.Forms.BindingSource bsSql;
         public System.Windows.Forms.DataGridView dgvSql;
         public System.Windows.Forms.Button bttnShowGraphically;
-        public System.Windows.Forms.Button bttnShowFamilyTree;
+        private System.Windows.Forms.MenuStrip menuClans;
+        private System.Windows.Forms.ToolStripMenuItem showClansToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem largestClansToolStripMenuItem;
     }
 }

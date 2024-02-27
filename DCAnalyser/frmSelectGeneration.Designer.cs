@@ -68,7 +68,6 @@
             this.cmbGenerationNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenerationNumber.FormattingEnabled = true;
             this.cmbGenerationNumber.Items.AddRange(new object[] {
-            "0",
             "1",
             "2",
             "3",

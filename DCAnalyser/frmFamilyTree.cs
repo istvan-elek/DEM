@@ -17,19 +17,20 @@ namespace DCAnalyser
         int step = 0;
         Boolean fmtree=false;
         int forks;
+        List<string> pForks;
         string mainNode;
         public frmFamilyTree(DataTable dt, string title, Boolean fmt)
         {
             InitializeComponent();
             dtFam = dt;
-            this.Text = title;
+            this.Text = title + "  with " + dt.Rows.Count + " items";
             hScrollB.Maximum = dtFam.Rows.Count ;
             fmtree = fmt;
 
             //vScrollB.Maximum = 1000;
         }
 
-        public frmFamilyTree(DataTable dt, string title, Boolean fmt, string mNode, int numofforks)
+        public frmFamilyTree(DataTable dt, string title, Boolean fmt, string mNode, int numofforks, List<string> pntForks)
         {
             InitializeComponent();
             dtFam = dt;
@@ -38,7 +39,8 @@ namespace DCAnalyser
             fmtree = fmt;
             mainNode = mNode;
             forks = numofforks;
-            this.Text="node: " + mainNode + ",   forks: " + forks;
+            pForks=pntForks;
+            this.Text="workerID: " + mainNode + ",   Children: " + forks;
             //vScrollB.Maximum = 1000;
         }
 
@@ -53,9 +55,10 @@ namespace DCAnalyser
             Graphics e = CreateGraphics();
             e.Clear(Color.SeaShell);
             int r = 20; // a node körök sugara
-            int ofsety = 200;
-            int ofsetx = 200;
-            float angle = (float)(Math.PI / forks);
+            int r2 = 30;
+            int ofsety = 150;
+            int ofsetx = this.ClientSize.Width / forks;// 200;
+            int halfofsetx = ofsetx / 2;
             Pen pen = new Pen(Color.Coral, 1);
             Brush myBrush = Brushes.LightSalmon;
             Font drawFont = new Font("Arial", 9);
@@ -63,25 +66,18 @@ namespace DCAnalyser
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
 
-            //PointF p1 = new Point(this.ClientSize.Width / 2 + r / 2, r );
-            //float x1 = this.ClientSize.Width / 2 + r / 2;
-            //float y1 = r;
-            //float x2 = p1.X - (float)(Math.Cos( angle) * ofsetx);
-            //float y2 = p1.X - (float)( Math.Sin( angle) * ofsety);
-            //e.DrawLine(pen, x1, y1, x2, y2);
-            float halfAngle=angle/2;
-            for (int i = 0; i < forks; i++)
+            for (int i = 0; i < forks; i++)   //meghúzza a vonalakat és a köröket
             {
                 float x1 = this.ClientSize.Width / 2 + r / 2;
                 float y1 = r;
-                float x2 = x1 - (float)(Math.Cos(Math.PI + halfAngle + angle*i) * ofsetx);
-                float y2 = y1 - (float)(Math.Sin(Math.PI + halfAngle + angle *i) * ofsety);
+                float x2 = halfofsetx + i * ofsetx;      //x1 - (float)(Math.Cos(Math.PI + halfAngle + angle*i) * ofsetx);
+                float y2 = ofsety;                      //y1 - (float)(Math.Sin(Math.PI + halfAngle + angle *i) * ofsety);
                 e.DrawLine(pen, x1, y1, x2, y2);
-                //PointF p2 = new PointF((float)(Math.Cos(angle * i) * ofsetx), (float)(Math.Sin(angle * i) * ofsety));
-                //e.DrawLine(pen, p1, p2);
+                e.FillEllipse(Brushes.YellowGreen, x2-r2/2, y2-r2/2, r2, r2);
+                e.DrawString(pForks[i], new Font("Arial", 8), drawBrush, new PointF(x2 - r2/2+4, y2 - r2/2 + 7));
             }
-            e.FillEllipse(myBrush, this.ClientSize.Width / 2 - r / 2, 0, r + r, r + r);
-            e.DrawString(mainNode, drawFont, drawBrush, new Point(this.ClientSize.Width / 2 + r / 2, r/2+2), sf);
+            e.FillEllipse(myBrush, this.ClientSize.Width / 2 - r / 2, 0, 2*r, 2*r); // kirajzolja a fő workert és az ID-jét
+            e.DrawString(mainNode, drawFont, drawBrush, new Point(this.ClientSize.Width / 2 + r / 2, r/2 + 2), sf);
         }
 
         void refreshDrawParents()
@@ -91,6 +87,7 @@ namespace DCAnalyser
             int r = 20; // a node körök sugara
             int ofsety = 60;
             int ofsetx = 70;
+
             hScrollB.Maximum = dtFam.Rows.Count * ofsetx;
             hScrollB.SmallChange = ofsetx;
             hScrollB.LargeChange = 10*ofsetx;
@@ -101,9 +98,11 @@ namespace DCAnalyser
             int k = 0;
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
+                //string[] names = row[0].ToString().Split(',');
             foreach (DataRow row in dtFam.Rows)
             {
-                string[] p = row[1].ToString().Split(','); // ebben van a worker ID-je
+                string[] p = row[1].ToString().Split(','); // ebben vannak a parents azonosítók
+
                 Point[] points = new Point[p.Length];
                 for (int i=0; i<p.Length; i++)
                 {
@@ -142,8 +141,8 @@ namespace DCAnalyser
         }
 
         private void frmFamilyTree_MouseDown(object sender, MouseEventArgs e)
-        {
-          int ofsety = 60;
+        {           
+            int ofsety = 60;
             int ofsetx = 70;
             int posx = (int)((hScrollB.Value + e.X) / (ofsetx));
             int posy = (int)((vScrollB.Value + e.Y) / (ofsety));
@@ -155,21 +154,28 @@ namespace DCAnalyser
                 this.Text = posx + ", " + posy + " ---> value:" + sClicked;
             }
             catch (Exception) { }
-            int k = 0;
+            int forks = 0;
+            List<string> lp = new List<string>();
             foreach (DataRow dr in dtFam.Rows) 
             {
-                string[] selRow = dr[1].ToString().Split(','); //dtFam.Rows[posx][1].ToString().Split(',');
+                string[] selRow = dr[1].ToString().Split(',');
+                string[] sellp = dr[0].ToString().Split(',');
                 try
                 {
-                    if (selRow[posy-1] == sClicked) k++;
+                    if (selRow[posy - 1] == sClicked)
+                    {
+                        lp.Add(dr[0].ToString());                       
+                        forks++;
+                    }
                 }
                 catch (Exception)
                 {
                 }
-
             }
-            this.Text = posx + ", " + posy + " ---> value:" + sClicked + ",  k:" + k.ToString();
-            frmFamilyTree ftree = new frmFamilyTree(dtFam, "ftree", true,sClicked.ToLower(), k);
+            if (forks == 0) return;
+            //this.Text = posx + ", " + posy + " ---> value:" + sClicked + ",  k:" + forks.ToString();
+            this.Text = "Selected workerID:" + sClicked + " with children:" + forks;
+            frmFamilyTree ftree = new frmFamilyTree(dtFam, "ftree", true,sClicked.ToLower(), forks, lp);
             ftree.Show();
         }
     }

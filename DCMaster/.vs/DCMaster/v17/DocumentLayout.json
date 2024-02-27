@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\dbsqlitetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:dbsqlitetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -15,15 +23,7 @@
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmcreateworkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|DCMaster||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\dbsqlitetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:dbsqlitetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmcreateworkers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -37,12 +37,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -51,26 +47,26 @@
               "RelativeDocumentMoniker": "frmMain.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
               "RelativeToolTip": "frmMain.cs",
-              "ViewState": "AQIAAKwDAAAAAAAAAAAYwPgDAAAiAAAA",
+              "ViewState": "AQIAAAQBAAAAAAAAAAAqwBIBAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T14:41:31.881Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "worker.cs",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs",
               "RelativeDocumentMoniker": "worker.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs",
               "RelativeToolTip": "worker.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAA4wAAAAAAAAAAA",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T10:15:17.933Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DCMaster",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\DCMaster.csproj",
               "RelativeDocumentMoniker": "DCMaster.csproj",
@@ -81,19 +77,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "dbsqliteTools.cs",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\dbsqliteTools.cs",
               "RelativeDocumentMoniker": "dbsqliteTools.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\dbsqliteTools.cs",
               "RelativeToolTip": "dbsqliteTools.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAcwAAAAAAAAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAcwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T15:21:09.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "frmCreateWorkers.cs",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateWorkers.cs",
               "RelativeDocumentMoniker": "frmCreateWorkers.cs",
@@ -116,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",

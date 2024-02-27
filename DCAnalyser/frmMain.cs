@@ -557,7 +557,6 @@ namespace DCAnalyser
             string sqlcom = "select * from workers where parents=''";   //not instr(parents, ','
             frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: Initial generation");
             frmSqlform.bttnShowGraphically.Visible = true;
-            frmSqlform.bttnShowFamilyTree.Visible = true;
             frmSqlform.Show();
         }
 
@@ -569,10 +568,9 @@ namespace DCAnalyser
             if (dgvWorkers.SelectedRows.Count > 0)
             {
                 string selectedWorker = dgvWorkers.SelectedRows[0].Cells[0].Value.ToString();
-                string sqlcom = "SELECT *  FROM workers  where instr(parents,'," + selectedWorker + ",')";
+                string sqlcom = "SELECT *  FROM workers  where instr(parents,'," + selectedWorker + "')";
                 frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: generation where the selected '" + selectedWorker + "' worker is parent");
                 frmSqlform.bttnShowGraphically.Visible = true;
-                frmSqlform.bttnShowFamilyTree.Visible = true;
                 frmSqlform.Show();
             }
             else { MessageBox.Show("There is no selected worker"); }
@@ -603,7 +601,6 @@ namespace DCAnalyser
                 DataTable dt = loadTableData(sqlCommand);
                 frmSql dispSql = new frmSql(cnsb, sqlCommand, labSize,"Generations from #" + selectGeneration.generation);
                 dispSql.bttnShowGraphically.Visible=true;
-                dispSql.bttnShowFamilyTree.Visible=true;
                 dispSql.Show();
             }
         }
@@ -613,8 +610,9 @@ namespace DCAnalyser
             string sqlcom = "SELECT *  FROM workers";
             frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: all workers ");
             frmSqlform.bttnShowGraphically.Visible = true;
-            frmSqlform.bttnShowFamilyTree.Visible = true;
             frmSqlform.Show();
         }
+
+
     }
 }

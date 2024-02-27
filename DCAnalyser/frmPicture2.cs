@@ -97,7 +97,7 @@ namespace DCAnalyser
             tsbtnZoomIn.Checked = true;
             tsbtnPan.Checked = false;
             tsbtnHand.Checked = false;
-            picBox.Cursor = new Cursor("lupe.ico");          
+            picBox.Cursor = new Cursor("lupe.ico");
         }
 
         private void tsbtnZoomOut_Click(object sender, EventArgs e)

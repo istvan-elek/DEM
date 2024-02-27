@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Npgsql;
 
 namespace DCAnalyser
 {
@@ -229,7 +229,7 @@ namespace DCAnalyser
             string wher = "";
             int ind = tbSql.Text.LastIndexOf("where");
             if (ind != -1) wher = tbSql.Text.Substring(tbSql.Text.LastIndexOf("where"));
-            frmFamilyTree familyTree = new frmFamilyTree(loadSqlData("select id, ltrim(parents,',') from workers " + wher), this.Text, false);
+            frmFamilyTree familyTree = new frmFamilyTree(loadSqlData("select id, ltrim(parents,',') from workers  " + wher), this.Text, false);
             familyTree.Show();
         }
 
@@ -241,7 +241,7 @@ namespace DCAnalyser
             
             DataTable dtlist = loadSqlData("select id, parents from workers " + wher);
 
-            List<string> ParentList = getParentsList(dtlist);
+            //List<string> ParentList = getParentsList(dtlist);
 
             frmFamilyTree familyTree = new frmFamilyTree(dtlist, this.Text, true);
             familyTree.Show();
@@ -251,9 +251,38 @@ namespace DCAnalyser
         List<string> getParentsList(DataTable dtparent)
         {
             List<string> plist = new List<string>();
-            foreach (DataRow dr in dtparent.Rows) { plist.Add(dr["id"].ToString() + "," + dr["parents"].ToString()); }  
+            foreach (DataRow dr in dtparent.Rows) 
+            { 
+                if (dr["parents"].ToString() != "") plist.Add(dr["parents"].ToString().Trim(',')); 
+            }  
 
             return plist;
+        }
+
+ 
+        private void largestClansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string cmd = tbSql.Text.Replace("*", "id, parents");
+            DataTable dtlist = loadSqlData(cmd);
+            List<string> ParentList = getParentsList(dtlist);
+            ParentList.Sort();
+            var distinctNames = (from d in ParentList select d.Split(',')[0]).Distinct();
+            List<int> wcountInclans = new List<int>();
+            
+            foreach ( var d in distinctNames)
+            {
+                int count = ParentList.Count(name => name.Contains(d));
+                wcountInclans.Add(count);
+            }
+            string[] gnames = distinctNames.Select(v => v.ToString()).ToArray();
+
+            frmClans clans = new frmClans(gnames, wcountInclans);
+            clans.Show();
+        }
+
+        private void showClansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

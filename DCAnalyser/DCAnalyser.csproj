@@ -96,6 +96,12 @@
     <Compile Include="frmBrowseReports.Designer.cs">
       <DependentUpon>frmBrowseReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClans.Designer.cs">
+      <DependentUpon>frmClans.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompareImprints.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <EmbeddedResource Include="frmBrowseReports.resx">
       <DependentUpon>frmBrowseReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClans.resx">
+      <DependentUpon>frmClans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompareImprints.resx">
       <DependentUpon>frmCompareImprints.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,9 +213,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\leftarrow.png" />
-    <None Include="Resources\mycursor.png" />
     <Content Include="DCAnalyser.ico" />
     <Content Include="DCAnalyser32.ico" />
+    <Content Include="Resources\cross.ico" />
+    <Content Include="Resources\hand.ico" />
+    <Content Include="Resources\lupe.ico" />
     <Content Include="wump_anal32.ico" />
   </ItemGroup>
   <ItemGroup>

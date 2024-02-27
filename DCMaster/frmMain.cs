@@ -272,7 +272,7 @@ namespace DCMaster
             if (learn) { extLearn = "_learn"; } else { extLearn = "_nolearn"; }
             if (merge) { extMerge = "_merge"; } else { extMerge = ""; }
             if (!randomStart) extStarp= "_startp" + tbStartPosition.Text.Replace(',','_');
-            else extStarp = "_startpRandom)";
+            else extStarp = "_startpRandom";
             extLab = "_lab" + lab.Size.ToString();
             iterationName = appfolder + @"\DC\iterations\default" + extLab + extLearn + extMerge + extStarp + extDelay + ".iter";
             repFileName = appfolder + @"\DC\reports\default" + extLab + extLearn + extMerge + extStarp + extDelay + ".report";
