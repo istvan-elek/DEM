@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace DCAnalyser
     {
         SQLiteConnectionStringBuilder cnsb = new SQLiteConnectionStringBuilder();
         int labSize;
+        int level;
 
         public frmSql(SQLiteConnectionStringBuilder cnb)
         {
@@ -23,16 +25,17 @@ namespace DCAnalyser
             cnsb = cnb;
         }
 
-        public frmSql(SQLiteConnectionStringBuilder cnb, string sqlcommand, string title)
-        {
-            InitializeComponent();
-            cnsb = cnb;
-            bsSql.DataSource = loadSqlData(sqlcommand);
-            tbSql.Text = sqlcommand;
-            bnSql.BindingSource = bsSql;
-            dgvSql.DataSource = bsSql;
-            this.Text = title;
-        }
+        //public frmSql(SQLiteConnectionStringBuilder cnb, string sqlcommand, string title)
+        //{
+        //    InitializeComponent();
+        //    cnsb = cnb;
+        //    bsSql.DataSource = loadSqlData(sqlcommand);
+        //    tbSql.Text = sqlcommand;
+        //    bnSql.BindingSource = bsSql;
+        //    dgvSql.DataSource = bsSql;
+        //    this.Text = title;
+        //    level=int.Parse( title.Split('#')[1]);
+        //}
 
         public frmSql(SQLiteConnectionStringBuilder cnb, string sqlcommand, int lbSize, string title)
         {
@@ -44,6 +47,7 @@ namespace DCAnalyser
             dgvSql.DataSource = bsSql;
             labSize=lbSize;
             this.Text = title;
+            level = int.Parse(title.Split('#')[1]);
         }
 
         DataTable loadSqlData(string sqlCommand)
@@ -180,7 +184,6 @@ namespace DCAnalyser
 
             Bitmap cell2Bmp(DataTable dt, string colname)
             {
-                //int labSize = dt.Rows.Count;
                 Bitmap lBmp = new System.Drawing.Bitmap(labSize, labSize, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 if (colname == "worker_pah")
                 {
@@ -215,16 +218,14 @@ namespace DCAnalyser
                     }
                     for (int j = 0; j < dt.Rows.Count; j++)
                     {
-                        /*if (int.Parse(dt.Rows[j][2].ToString()) < 0)*/
                         lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), green);
-                        //if (int.Parse(dt.Rows[j][2].ToString()) < 0) lBmp.SetPixel(Convert.ToInt32(dt.Rows[j][0]), Convert.ToInt32(dt.Rows[j][1]), source);
                     }
                 }
                 return lBmp;
             }
         }
 
-        private void bttnShowGraphically_Click(object sender, EventArgs e)
+        private void ToolStripMenuShowGraphically_Click(object sender, EventArgs e)
         {
             string wher = "";
             int ind = tbSql.Text.LastIndexOf("where");
@@ -233,19 +234,15 @@ namespace DCAnalyser
             familyTree.Show();
         }
 
-        private void bttnShowFamilyTree_Click(object sender, EventArgs e)
-        {
-            string wher="";
-            int ind = tbSql.Text.LastIndexOf("where");
-            if (ind != -1) { wher = tbSql.Text.Substring(tbSql.Text.LastIndexOf("where"));}
-            
-            DataTable dtlist = loadSqlData("select id, parents from workers " + wher);
-
-            //List<string> ParentList = getParentsList(dtlist);
-
-            frmFamilyTree familyTree = new frmFamilyTree(dtlist, this.Text, true);
-            familyTree.Show();
-        }
+        //private void bttnShowFamilyTree_Click(object sender, EventArgs e)
+        //{
+        //    string wher="";
+        //    int ind = tbSql.Text.LastIndexOf("where");
+        //    if (ind != -1) { wher = tbSql.Text.Substring(tbSql.Text.LastIndexOf("where"));}           
+        //    DataTable dtlist = loadSqlData("select id, parents from workers " + wher);
+        //    frmFamilyTree familyTree = new frmFamilyTree(dtlist, this.Text, true);
+        //    familyTree.Show();
+        //}
 
 
         List<string> getParentsList(DataTable dtparent)
@@ -255,11 +252,21 @@ namespace DCAnalyser
             { 
                 if (dr["parents"].ToString() != "") plist.Add(dr["parents"].ToString().Trim(',')); 
             }  
-
             return plist;
         }
 
- 
+        List<string> getParentsList2(DataTable dtparent)
+        {
+            List<string> plist = new List<string>();
+            foreach (DataRow dr in dtparent.Rows)
+            {
+                if (dr["parents"].ToString()=="") plist.Add(dr["id"].ToString().TrimStart(','));
+                else plist.Add(dr["parents"].ToString().TrimStart(',') + "," + dr["id"].ToString());
+            }
+            return plist;
+        }
+
+
         private void largestClansToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string cmd = tbSql.Text.Replace("*", "id, parents");
@@ -280,9 +287,17 @@ namespace DCAnalyser
             clans.Show();
         }
 
-        private void showClansToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        private void showWorkersTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string wher = "";
+            int ind = tbSql.Text.LastIndexOf("where");
+            if (ind != -1) wher = tbSql.Text.Substring(tbSql.Text.LastIndexOf("where"));
+            //frmFamilyTree familyTree = new frmFamilyTree(loadSqlData("select id, ltrim(parents,',') from workers  " + wher), this.Text, false);
+            List<string> workerNodes = new List<string>();
+            workerNodes = getParentsList2(loadSqlData("select ltrim(parents,',') as parents, id from workers  " + wher));
+            frmWorkersTree frmWorkerTree = new frmWorkersTree(workerNodes, this.Text);
+            frmWorkerTree.Show();
         }
     }
 }

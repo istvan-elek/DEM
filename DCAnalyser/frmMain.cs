@@ -556,7 +556,7 @@ namespace DCAnalyser
         {
             string sqlcom = "select * from workers where parents=''";   //not instr(parents, ','
             frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: Initial generation");
-            frmSqlform.bttnShowGraphically.Visible = true;
+            //frmSqlform.ts.Visible = true;
             frmSqlform.Show();
         }
 
@@ -570,7 +570,7 @@ namespace DCAnalyser
                 string selectedWorker = dgvWorkers.SelectedRows[0].Cells[0].Value.ToString();
                 string sqlcom = "SELECT *  FROM workers  where instr(parents,'," + selectedWorker + "')";
                 frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: generation where the selected '" + selectedWorker + "' worker is parent");
-                frmSqlform.bttnShowGraphically.Visible = true;
+                //frmSqlform.bttnShowGraphically.Visible = true;
                 frmSqlform.Show();
             }
             else { MessageBox.Show("There is no selected worker"); }
@@ -600,7 +600,7 @@ namespace DCAnalyser
                 string sqlCommand = "select * from workers where parents like '" + gen + "'";
                 DataTable dt = loadTableData(sqlCommand);
                 frmSql dispSql = new frmSql(cnsb, sqlCommand, labSize,"Generations from #" + selectGeneration.generation);
-                dispSql.bttnShowGraphically.Visible=true;
+                //dispSql.bttnShowGraphically.Visible=true;
                 dispSql.Show();
             }
         }
@@ -608,8 +608,8 @@ namespace DCAnalyser
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string sqlcom = "SELECT *  FROM workers";
-            frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: all workers ");
-            frmSqlform.bttnShowGraphically.Visible = true;
+            frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "Generations from #0");
+            //frmSqlform.bttnShowGraphically.Visible = true;
             frmSqlform.Show();
         }
 

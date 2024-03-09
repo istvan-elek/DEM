@@ -57,7 +57,7 @@ namespace DCAnalyser
             int r = 20; // a node körök sugara
             int r2 = 30;
             int ofsety = 150;
-            int ofsetx = this.ClientSize.Width / forks;// 200;
+            int ofsetx = this.ClientSize.Width / forks+1;// 200;
             int halfofsetx = ofsetx / 2;
             Pen pen = new Pen(Color.Coral, 1);
             Brush myBrush = Brushes.LightSalmon;
@@ -70,8 +70,8 @@ namespace DCAnalyser
             {
                 float x1 = this.ClientSize.Width / 2 + r / 2;
                 float y1 = r;
-                float x2 = halfofsetx + i * ofsetx;      //x1 - (float)(Math.Cos(Math.PI + halfAngle + angle*i) * ofsetx);
-                float y2 = ofsety;                      //y1 - (float)(Math.Sin(Math.PI + halfAngle + angle *i) * ofsety);
+                float x2 = halfofsetx + i * ofsetx;  
+                float y2 = ofsety;      
                 e.DrawLine(pen, x1, y1, x2, y2);
                 e.FillEllipse(Brushes.YellowGreen, x2-r2/2, y2-r2/2, r2, r2);
                 e.DrawString(pForks[i], new Font("Arial", 8), drawBrush, new PointF(x2 - r2/2+4, y2 - r2/2 + 7));
@@ -87,7 +87,6 @@ namespace DCAnalyser
             int r = 20; // a node körök sugara
             int ofsety = 60;
             int ofsetx = 70;
-
             hScrollB.Maximum = dtFam.Rows.Count * ofsetx;
             hScrollB.SmallChange = ofsetx;
             hScrollB.LargeChange = 10*ofsetx;
@@ -98,7 +97,6 @@ namespace DCAnalyser
             int k = 0;
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
-                //string[] names = row[0].ToString().Split(',');
             foreach (DataRow row in dtFam.Rows)
             {
                 string[] p = row[1].ToString().Split(','); // ebben vannak a parents azonosítók
@@ -141,7 +139,8 @@ namespace DCAnalyser
         }
 
         private void frmFamilyTree_MouseDown(object sender, MouseEventArgs e)
-        {           
+        { 
+            this.Cursor = Cursors.WaitCursor;            
             int ofsety = 60;
             int ofsetx = 70;
             int posx = (int)((hScrollB.Value + e.X) / (ofsetx));
@@ -151,7 +150,7 @@ namespace DCAnalyser
             try
             {
                 sClicked = s[posy-1].ToString();
-                this.Text = posx + ", " + posy + " ---> value:" + sClicked;
+                //this.Text = posx + ", " + posy + " ---> value:" + sClicked;
             }
             catch (Exception) { }
             int forks = 0;
@@ -173,10 +172,10 @@ namespace DCAnalyser
                 }
             }
             if (forks == 0) return;
-            //this.Text = posx + ", " + posy + " ---> value:" + sClicked + ",  k:" + forks.ToString();
             this.Text = "Selected workerID:" + sClicked + " with children:" + forks;
             frmFamilyTree ftree = new frmFamilyTree(dtFam, "ftree", true,sClicked.ToLower(), forks, lp);
             ftree.Show();
+            this.Cursor = Cursors.Default;
         }
     }
 }

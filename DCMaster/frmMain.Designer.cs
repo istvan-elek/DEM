@@ -69,6 +69,8 @@
             this.lblLivingWorkerNumber = new System.Windows.Forms.Label();
             this.lblInitnumofwkr = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkRandomDeath = new System.Windows.Forms.CheckBox();
+            this.chkRandomStartPosition = new System.Windows.Forms.CheckBox();
             this.tbFileName2Save = new System.Windows.Forms.TextBox();
             this.chkbSave2file = new System.Windows.Forms.CheckBox();
             this.chkStartPositionFromParent = new System.Windows.Forms.CheckBox();
@@ -109,7 +111,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.chkRandomStartPosition = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpAnalyserTools.SuspendLayout();
@@ -539,6 +540,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkRandomDeath);
             this.groupBox2.Controls.Add(this.chkRandomStartPosition);
             this.groupBox2.Controls.Add(this.tbFileName2Save);
             this.groupBox2.Controls.Add(this.chkbSave2file);
@@ -555,6 +557,27 @@
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Set up run parameters";
+            // 
+            // chkRandomDeath
+            // 
+            this.chkRandomDeath.AutoSize = true;
+            this.chkRandomDeath.Location = new System.Drawing.Point(197, 157);
+            this.chkRandomDeath.Name = "chkRandomDeath";
+            this.chkRandomDeath.Size = new System.Drawing.Size(96, 17);
+            this.chkRandomDeath.TabIndex = 31;
+            this.chkRandomDeath.Text = "Random death";
+            this.chkRandomDeath.UseVisualStyleBackColor = true;
+            // 
+            // chkRandomStartPosition
+            // 
+            this.chkRandomStartPosition.AutoSize = true;
+            this.chkRandomStartPosition.Location = new System.Drawing.Point(19, 157);
+            this.chkRandomStartPosition.Name = "chkRandomStartPosition";
+            this.chkRandomStartPosition.Size = new System.Drawing.Size(128, 17);
+            this.chkRandomStartPosition.TabIndex = 30;
+            this.chkRandomStartPosition.Text = "Random start position";
+            this.chkRandomStartPosition.UseVisualStyleBackColor = true;
+            this.chkRandomStartPosition.CheckedChanged += new System.EventHandler(this.chkRandomStartPosition_CheckedChanged);
             // 
             // tbFileName2Save
             // 
@@ -767,7 +790,7 @@
             this.grpLabData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpLabData.Location = new System.Drawing.Point(0, 0);
             this.grpLabData.Name = "grpLabData";
-            this.grpLabData.Size = new System.Drawing.Size(216, 0);
+            this.grpLabData.Size = new System.Drawing.Size(220, 0);
             this.grpLabData.TabIndex = 1;
             this.grpLabData.TabStop = false;
             this.grpLabData.Text = "Lab data";
@@ -776,7 +799,7 @@
             // btnShowLabImage
             // 
             this.btnShowLabImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowLabImage.Location = new System.Drawing.Point(76, 25);
+            this.btnShowLabImage.Location = new System.Drawing.Point(80, 25);
             this.btnShowLabImage.Name = "btnShowLabImage";
             this.btnShowLabImage.Size = new System.Drawing.Size(109, 23);
             this.btnShowLabImage.TabIndex = 26;
@@ -792,7 +815,7 @@
             this.tbLabData.Multiline = true;
             this.tbLabData.Name = "tbLabData";
             this.tbLabData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbLabData.Size = new System.Drawing.Size(210, 0);
+            this.tbLabData.Size = new System.Drawing.Size(214, 0);
             this.tbLabData.TabIndex = 0;
             // 
             // grp_static_hostility
@@ -993,17 +1016,6 @@
             this.trackBar2.TickFrequency = 100;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
-            // chkRandomStartPosition
-            // 
-            this.chkRandomStartPosition.AutoSize = true;
-            this.chkRandomStartPosition.Location = new System.Drawing.Point(19, 157);
-            this.chkRandomStartPosition.Name = "chkRandomStartPosition";
-            this.chkRandomStartPosition.Size = new System.Drawing.Size(128, 17);
-            this.chkRandomStartPosition.TabIndex = 30;
-            this.chkRandomStartPosition.Text = "Random start position";
-            this.chkRandomStartPosition.UseVisualStyleBackColor = true;
-            this.chkRandomStartPosition.CheckedChanged += new System.EventHandler(this.chkRandomStartPosition_CheckedChanged);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1135,5 +1147,6 @@
         private System.Windows.Forms.Label lblStop;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.CheckBox chkRandomStartPosition;
+        private System.Windows.Forms.CheckBox chkRandomDeath;
     }
 }

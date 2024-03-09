@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-//using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Npgsql;
 using System.Threading;
 using System.IO;
-//using System.Runtime.InteropServices.WindowsRuntime;
-//using System.Management.Instrumentation;
 using System.Drawing;
 using System.Diagnostics;
 using System.Reflection;
@@ -24,6 +20,7 @@ using System.Xml.Linq;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure.DependencyResolution;
 using System.Diagnostics.Eventing.Reader;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace DCMaster
 {
@@ -38,6 +35,7 @@ namespace DCMaster
         int Replication_energy_level;
         int replication_rate;
         int Delay;
+        Boolean randomDeath;
         Hostility hostile;
         Dictionary<Int32, worker> wk = new Dictionary<Int32, worker>();  // this is a workers' list as a dictionary, where key is the worker_id and worker is the worker object
         Int32[] wkSequence; // the workers' IDs are in it for the random start
@@ -46,6 +44,7 @@ namespace DCMaster
         Boolean learn;
         Boolean merge;
         Boolean randomStart=false;
+        Random rndSt = new Random();
         SQLiteConnectionStringBuilder cnsb = new SQLiteConnectionStringBuilder();
         string iterationName;
         string appfolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -78,9 +77,11 @@ namespace DCMaster
             Replication_energy_level = Convert.ToInt16(parameters[4].Split(';')[1]);
             replication_rate = Convert.ToInt16(parameters[5].Split(';')[1]);
             Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
+            randomDeath = Properties.Settings.Default.RandomDeath;
             tbStartPosition.Text = Properties.Settings.Default.startposition;
             tbStop.Text = Properties.Settings.Default.countlimit;
             chkUseML.Checked = Properties.Settings.Default.learn;
+            chkRandomDeath.Checked = Properties.Settings.Default.RandomDeath;
             chkCoincidence.Checked = Properties.Settings.Default.merge;
             chkStartPositionFromParent.Checked = Properties.Settings.Default.startfrombirthplace;
             randomStart = Properties.Settings.Default.RandomStart;
@@ -101,6 +102,7 @@ namespace DCMaster
             learn = chkUseML.Checked;
             merge = chkCoincidence.Checked;
             randomStart = chkRandomStartPosition.Checked;
+            randomDeath = chkRandomDeath.Checked;
         }
 
 
@@ -252,8 +254,6 @@ namespace DCMaster
             Int32 initial_num_of_workers = wk.Count;
             Int32 initial_energy = 0;
             refreshParameters();
-            //tbStartPosition.Text = Properties.Settings.Default.startposition;
-            //tbStop.Text = Properties.Settings.Default.countlimit;
             Delay = Convert.ToInt16(parameters[6].Split(';')[1]);
             extDelay = "_delay" + Delay;
             if (chkUseML.Checked) { learn = true; }
@@ -318,6 +318,10 @@ namespace DCMaster
             Int32 maxindex = wkSequence.Max();
             while (numOfWorkers > 0)  //addig pörög a ciklus, amíg van élő worker ----------------------------------------------------
             {
+                if (randomDeath)  // véletlen halál: az első worker vagy meghal vagy nem
+                {
+                    wk[wkSequence[0]].Live = getRandomDeathValue();
+                }
                 if (tbStop.Text.Length != 0)
                 {
                     if (stepCount == int.Parse(tbStop.Text))
@@ -354,6 +358,7 @@ namespace DCMaster
                 {
                     Int32 i = wkSequence[ii];
                     wk[i].moveNext();
+
                     if (wk[i].Live)
                     {
                         if (wk[i].Energy > Replication_energy_level)
@@ -381,6 +386,7 @@ namespace DCMaster
                             }
                             numOfWorkers = wk.Count;
                         }
+
                     }
                     else
                     {
@@ -462,6 +468,13 @@ namespace DCMaster
                     }
                 }
             } /*-------------------------------------------- while (numOfWorkers > 0) ------------------------------------------------------*/
+        }
+
+        Boolean getRandomDeathValue()
+        {
+            double v = rndSt.NextDouble();
+            Boolean rndVal = v > 0.05D;
+            return rndVal;
         }
 
 
@@ -570,7 +583,8 @@ namespace DCMaster
             else
             {
                 if (!randomStart) sb.AppendLine("Start position is always: "  + tbStartPosition.Text);
-            }           
+            }
+            sb.AppendLine("Random death: " + randomDeath.ToString());
             System.IO.File.WriteAllText(repFileName, sb.ToString());
         }
 
@@ -583,6 +597,7 @@ namespace DCMaster
             Properties.Settings.Default.merge = chkCoincidence.Checked;
             Properties.Settings.Default.startfrombirthplace = chkStartPositionFromParent.Checked;
             Properties.Settings.Default.RandomStart = chkRandomStartPosition.Checked;
+            Properties.Settings.Default.RandomDeath = chkRandomDeath.Checked;
             Properties.Settings.Default.Save();
             Application.Exit();
         }
