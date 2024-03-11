@@ -25,29 +25,23 @@ namespace DCAnalyser
             cnsb = cnb;
         }
 
-        //public frmSql(SQLiteConnectionStringBuilder cnb, string sqlcommand, string title)
-        //{
-        //    InitializeComponent();
-        //    cnsb = cnb;
-        //    bsSql.DataSource = loadSqlData(sqlcommand);
-        //    tbSql.Text = sqlcommand;
-        //    bnSql.BindingSource = bsSql;
-        //    dgvSql.DataSource = bsSql;
-        //    this.Text = title;
-        //    level=int.Parse( title.Split('#')[1]);
-        //}
 
         public frmSql(SQLiteConnectionStringBuilder cnb, string sqlcommand, int lbSize, string title)
         {
             InitializeComponent();
             cnsb = cnb;
-            bsSql.DataSource = loadSqlData(sqlcommand);
-            tbSql.Text = sqlcommand;
-            bnSql.BindingSource = bsSql;
-            dgvSql.DataSource = bsSql;
-            labSize=lbSize;
-            this.Text = title;
-            level = int.Parse(title.Split('#')[1]);
+            DataTable dTab = loadSqlData(sqlcommand);
+            if (dTab.Rows.Count > 0)
+            {
+                bsSql.DataSource = dTab;
+                tbSql.Text = sqlcommand;
+                bnSql.BindingSource = bsSql;
+                dgvSql.DataSource = bsSql;
+                labSize = lbSize;
+                this.Text = title;
+                level = int.Parse(title.Split('#')[1]);
+            }
+            else { MessageBox.Show("Selection is empty"); this.Text = "Selection is empty. Close this window.";  }
         }
 
         DataTable loadSqlData(string sqlCommand)
@@ -298,6 +292,11 @@ namespace DCAnalyser
             workerNodes = getParentsList2(loadSqlData("select ltrim(parents,',') as parents, id from workers  " + wher));
             frmWorkersTree frmWorkerTree = new frmWorkersTree(workerNodes, this.Text);
             frmWorkerTree.Show();
+        }
+
+        private void frmSql_Load(object sender, EventArgs e)
+        {
+            if (dgvSql.Rows.Count == 0) { this.Close(); }
         }
     }
 }

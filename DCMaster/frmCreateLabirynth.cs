@@ -16,13 +16,12 @@ namespace DCMaster
 {
     public partial class frmCreateLabirynth : Form
     {
-        public labyrinth lab/* = new labyrinth()*/;
+        public labyrinth lab;
         public int LabSize;
         int numOfEnergySources;
         int numOfEnergySinks;
         int movement_cost;
         static Random rnd = new Random();
-        //string currentDbName="";
         IList<String> parameters = new List<String>();
 
         public frmCreateLabirynth()
@@ -47,6 +46,7 @@ namespace DCMaster
             Properties.Settings.Default.numofenergysinks = numOfEnergySinks;
             Properties.Settings.Default.numofenergysources = numOfEnergySources;
             Properties.Settings.Default.labsize = LabSize;
+            Properties.Settings.Default.Hostility=lab.Hostility.ToString();
             Properties.Settings.Default.Save();
             this.Close();
         }

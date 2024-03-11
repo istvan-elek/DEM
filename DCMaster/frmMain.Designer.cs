@@ -91,8 +91,9 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.grpLabData = new System.Windows.Forms.GroupBox();
+            this.lblLabparams = new System.Windows.Forms.Label();
+            this.dgvLab = new System.Windows.Forms.DataGridView();
             this.btnShowLabImage = new System.Windows.Forms.Button();
-            this.tbLabData = new System.Windows.Forms.TextBox();
             this.bswks = new System.Windows.Forms.BindingSource(this.components);
             this.grp_static_hostility = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bnwks)).BeginInit();
             this.bnwks.SuspendLayout();
             this.grpLabData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bswks)).BeginInit();
             this.grp_static_hostility.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -152,7 +154,7 @@
             this.tsbttnHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(780, 49);
+            this.toolStrip1.Size = new System.Drawing.Size(783, 49);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -195,8 +197,8 @@
             this.bttnShowEditParameters.Image = ((System.Drawing.Image)(resources.GetObject("bttnShowEditParameters.Image")));
             this.bttnShowEditParameters.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnShowEditParameters.Name = "bttnShowEditParameters";
-            this.bttnShowEditParameters.Size = new System.Drawing.Size(127, 46);
-            this.bttnShowEditParameters.Text = "Show/Edit parameters";
+            this.bttnShowEditParameters.Size = new System.Drawing.Size(89, 46);
+            this.bttnShowEditParameters.Text = "Set parameters";
             this.bttnShowEditParameters.Click += new System.EventHandler(this.bttnShowParameters_Click);
             // 
             // toolStripSeparator2
@@ -267,7 +269,7 @@
             this.tscmbViewreports.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscmbViewreports.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tscmbViewreports.Name = "tscmbViewreports";
-            this.tscmbViewreports.Size = new System.Drawing.Size(250, 49);
+            this.tscmbViewreports.Size = new System.Drawing.Size(300, 49);
             this.tscmbViewreports.Sorted = true;
             this.tscmbViewreports.Visible = false;
             this.tscmbViewreports.SelectedIndexChanged += new System.EventHandler(this.tscmbViewreports_SelectedIndexChanged);
@@ -582,9 +584,9 @@
             // tbFileName2Save
             // 
             this.tbFileName2Save.Enabled = false;
-            this.tbFileName2Save.Location = new System.Drawing.Point(123, 189);
+            this.tbFileName2Save.Location = new System.Drawing.Point(130, 189);
             this.tbFileName2Save.Name = "tbFileName2Save";
-            this.tbFileName2Save.Size = new System.Drawing.Size(183, 20);
+            this.tbFileName2Save.Size = new System.Drawing.Size(176, 20);
             this.tbFileName2Save.TabIndex = 29;
             // 
             // chkbSave2file
@@ -592,9 +594,9 @@
             this.chkbSave2file.AutoSize = true;
             this.chkbSave2file.Location = new System.Drawing.Point(6, 189);
             this.chkbSave2file.Name = "chkbSave2file";
-            this.chkbSave2file.Size = new System.Drawing.Size(121, 17);
+            this.chkbSave2file.Size = new System.Drawing.Size(130, 17);
             this.chkbSave2file.TabIndex = 28;
-            this.chkbSave2file.Text = "Save report to file ->";
+            this.chkbSave2file.Text = "Save data to DBfile ->";
             this.chkbSave2file.UseVisualStyleBackColor = true;
             this.chkbSave2file.CheckedChanged += new System.EventHandler(this.chkbSave2file_CheckedChanged);
             // 
@@ -654,7 +656,7 @@
             this.grpAnalyserBox.Controls.Add(this.splitContainer1);
             this.grpAnalyserBox.Location = new System.Drawing.Point(12, 292);
             this.grpAnalyserBox.Name = "grpAnalyserBox";
-            this.grpAnalyserBox.Size = new System.Drawing.Size(753, 3);
+            this.grpAnalyserBox.Size = new System.Drawing.Size(756, 5);
             this.grpAnalyserBox.TabIndex = 25;
             this.grpAnalyserBox.TabStop = false;
             this.grpAnalyserBox.Text = "Analyser box";
@@ -674,8 +676,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grpLabData);
-            this.splitContainer1.Size = new System.Drawing.Size(747, 0);
-            this.splitContainer1.SplitterDistance = 523;
+            this.splitContainer1.Size = new System.Drawing.Size(750, 0);
+            this.splitContainer1.SplitterDistance = 534;
             this.splitContainer1.TabIndex = 1;
             // 
             // dgvWks4Analyser
@@ -684,7 +686,7 @@
             this.dgvWks4Analyser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWks4Analyser.Location = new System.Drawing.Point(0, 0);
             this.dgvWks4Analyser.Name = "dgvWks4Analyser";
-            this.dgvWks4Analyser.Size = new System.Drawing.Size(523, 0);
+            this.dgvWks4Analyser.Size = new System.Drawing.Size(534, 0);
             this.dgvWks4Analyser.TabIndex = 0;
             this.dgvWks4Analyser.Visible = false;
             // 
@@ -785,38 +787,48 @@
             // 
             // grpLabData
             // 
+            this.grpLabData.Controls.Add(this.lblLabparams);
+            this.grpLabData.Controls.Add(this.dgvLab);
             this.grpLabData.Controls.Add(this.btnShowLabImage);
-            this.grpLabData.Controls.Add(this.tbLabData);
             this.grpLabData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpLabData.Location = new System.Drawing.Point(0, 0);
             this.grpLabData.Name = "grpLabData";
-            this.grpLabData.Size = new System.Drawing.Size(220, 0);
+            this.grpLabData.Size = new System.Drawing.Size(235, 0);
             this.grpLabData.TabIndex = 1;
             this.grpLabData.TabStop = false;
-            this.grpLabData.Text = "Lab data";
+            this.grpLabData.Text = "Labyrinth data";
             this.grpLabData.Visible = false;
+            // 
+            // lblLabparams
+            // 
+            this.lblLabparams.AutoSize = true;
+            this.lblLabparams.Location = new System.Drawing.Point(11, 24);
+            this.lblLabparams.Name = "lblLabparams";
+            this.lblLabparams.Size = new System.Drawing.Size(35, 13);
+            this.lblLabparams.TabIndex = 28;
+            this.lblLabparams.Text = "label1";
+            // 
+            // dgvLab
+            // 
+            this.dgvLab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLab.Location = new System.Drawing.Point(6, 54);
+            this.dgvLab.Name = "dgvLab";
+            this.dgvLab.Size = new System.Drawing.Size(208, 0);
+            this.dgvLab.TabIndex = 27;
             // 
             // btnShowLabImage
             // 
             this.btnShowLabImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowLabImage.Location = new System.Drawing.Point(80, 25);
+            this.btnShowLabImage.Location = new System.Drawing.Point(95, 25);
             this.btnShowLabImage.Name = "btnShowLabImage";
             this.btnShowLabImage.Size = new System.Drawing.Size(109, 23);
             this.btnShowLabImage.TabIndex = 26;
             this.btnShowLabImage.Text = "Show lab as image";
             this.btnShowLabImage.UseVisualStyleBackColor = true;
             this.btnShowLabImage.Click += new System.EventHandler(this.btnShowLabImage_Click);
-            // 
-            // tbLabData
-            // 
-            this.tbLabData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbLabData.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbLabData.Location = new System.Drawing.Point(3, 16);
-            this.tbLabData.Multiline = true;
-            this.tbLabData.Name = "tbLabData";
-            this.tbLabData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbLabData.Size = new System.Drawing.Size(214, 0);
-            this.tbLabData.TabIndex = 0;
             // 
             // grp_static_hostility
             // 
@@ -1020,7 +1032,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 290);
+            this.ClientSize = new System.Drawing.Size(783, 292);
             this.Controls.Add(this.grpDinamicHostility);
             this.Controls.Add(this.grp_static_hostility);
             this.Controls.Add(this.grpAnalyserBox);
@@ -1053,6 +1065,7 @@
             this.bnwks.PerformLayout();
             this.grpLabData.ResumeLayout(false);
             this.grpLabData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bswks)).EndInit();
             this.grp_static_hostility.ResumeLayout(false);
             this.grp_static_hostility.PerformLayout();
@@ -1103,7 +1116,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.BindingSource bswks;
-        private System.Windows.Forms.TextBox tbLabData;
         private System.Windows.Forms.GroupBox grpLabData;
         private System.Windows.Forms.Button btnShowLabImage;
         public System.Windows.Forms.GroupBox grpAnalyserTools;
@@ -1148,5 +1160,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.CheckBox chkRandomStartPosition;
         private System.Windows.Forms.CheckBox chkRandomDeath;
+        private System.Windows.Forms.DataGridView dgvLab;
+        private System.Windows.Forms.Label lblLabparams;
     }
 }

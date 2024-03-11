@@ -555,8 +555,7 @@ namespace DCAnalyser
         private void selectInitialWorkersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string sqlcom = "select * from workers where parents=''";   //not instr(parents, ','
-            frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: Initial generation");
-            //frmSqlform.ts.Visible = true;
+            frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "Generation #0");
             frmSqlform.Show();
         }
 
@@ -569,7 +568,7 @@ namespace DCAnalyser
             {
                 string selectedWorker = dgvWorkers.SelectedRows[0].Cells[0].Value.ToString();
                 string sqlcom = "SELECT *  FROM workers  where instr(parents,'," + selectedWorker + "')";
-                frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "SQL Window: generation where the selected '" + selectedWorker + "' worker is parent");
+                frmSql frmSqlform = new frmSql(cnsb, sqlcom, labSize, "Workers' generations from selected #" + selectedWorker);
                 //frmSqlform.bttnShowGraphically.Visible = true;
                 frmSqlform.Show();
             }

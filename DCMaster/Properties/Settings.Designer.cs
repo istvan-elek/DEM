@@ -154,5 +154,17 @@ namespace DCMaster.Properties {
                 this["RandomDeath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Hostility {
+            get {
+                return ((string)(this["Hostility"]));
+            }
+            set {
+                this["Hostility"] = value;
+            }
+        }
     }
 }

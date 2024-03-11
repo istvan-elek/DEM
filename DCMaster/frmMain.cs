@@ -565,7 +565,9 @@ namespace DCMaster
             sb.AppendLine(parameters[3].Split(';')[0] + ": " + parameters[3].Split(';')[1] );
             sb.AppendLine(parameters[4].Split(';')[0] + ": " + parameters[4].Split(';')[1] );
             sb.AppendLine(parameters[5].Split(';')[0] + ": " + parameters[5].Split(';')[1] );
+            sb.Append("Hostility: " + lab.Hostility + Environment.NewLine);
             sb.Append(parameters[6].Split(';')[0] + ": " + parameters[6].Split(';')[1] + Environment.NewLine);
+
 
             sb.AppendLine(Environment.NewLine + "Iteration parameters" + Environment.NewLine + "--------------------");
             sb.AppendLine("Iteration number was " + inum + ", when process terminated");
@@ -722,6 +724,7 @@ namespace DCMaster
                 grpAnalyserTools.Visible = true;
                 bttnShowIterationData.Visible = true;
                 grpAnalyserBox.Visible = true;
+                //dgvWks4Analyser.Visible = true;
                 if (lab != null)
                 {
                     grp_static_hostility.Visible = true;
@@ -742,6 +745,7 @@ namespace DCMaster
                 bttnShowIterationData.Visible = false;
                 grpAnalyserBox.Visible = false;
                 grp_static_hostility.Visible = false;
+                dgvWks4Analyser.Visible = false;
                 this.AutoSize = false;
                 this.WindowState = FormWindowState.Normal;
                 for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
@@ -752,6 +756,16 @@ namespace DCMaster
                 {
                     if (Application.OpenForms[index].Name == "DisplayCharts") { Application.OpenForms[index].Close(); }
                 }
+                grpLabData.Visible = false;
+                bttnShowHideLabirynth.PerformClick();   
+                bttnShowHideLabirynth.Invoke(new Action(() => bttnShowHideLabirynth.Text = "Show labyrinth"));
+
+                bttnShowHideWorkers.PerformClick();
+                bttnShowHideWorkers.Invoke(new Action(() => bttnShowHideWorkers.Text = "Show workers"));
+                //dgvWks4Analyser.Visible = !dgvWks4Analyser.Visible;
+                bttnShowHideWorkers.Text = "Show workers";
+                bswks.DataSource = null;
+                bnwks.Visible = false;
             }
         }
 
@@ -777,28 +791,40 @@ namespace DCMaster
 
         private void bttnShowHideLabirynth_Click(object sender, EventArgs e)
         {
-            if (!tbLabData.Visible)
+            if (!grpLabData.Visible)
             {
-                tbLabData.AppendText("Labyrinth size: " + lab.Size + " x " + lab.Size + Environment.NewLine);
+                dgvLab.Columns.Clear();
+                dgvLab.Columns.Add("Position", "Position");
+                dgvLab.Columns.Add("Field_value", "Field_value");
+                dgvLab.Columns.Add("Delay", "Delay");
                 int r = lab.Size;
+                int numofSources = 0;
+                int numofSinks= 0;
                 for (int i = 0; i < r; i++)
                 {
                     for (int j=0; j < r; j++)
                     {
                         if (lab.Fields[i, j] != movement_costs)
                         {
-                            tbLabData.AppendText("Fields[" + i + "," + j + "] = " + lab.Fields[i,j] + "\tdelay: " + lab.Delay[i,j] + Environment.NewLine);
+                            //tbLabData.AppendText("Fields[" + i + "," + j + "] = " + lab.Fields[i,j] + "\tdelay: " + lab.Delay[i,j] + Environment.NewLine);
+                            dgvLab.Rows.Add(i+ "," + j, lab.Fields[i, j], lab.Delay[i, j]);
                         }
+                        if (lab.Fields[i, j] < movement_costs) numofSinks++;
+                        if (lab.Fields[i,j] > movement_costs) numofSources++;
                     }
                 }
+                lblLabparams.Text = "Labyrinth size=" + lab.Size + " x " + lab.Size + ", Sink count=" + numofSinks + ", " + "Source count=" + numofSources;
                 bttnShowHideLabirynth.Text = "Hide labyrinth";
                 grpLabData.Visible = true;
             }
             else
             {
-                tbLabData.Text = "";
                 grpLabData.Visible = false;
                 bttnShowHideLabirynth.Text = "Show labyrinth";
+                for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+                {
+                    if (Application.OpenForms[index].Name == "frmPicture2") { Application.OpenForms[index].Close(); }
+                }
             }
         }
 
@@ -917,6 +943,9 @@ namespace DCMaster
                 bttnShowIterationData.Visible = true;
                 bttnShowIterationData.Enabled = true;
                 bttnShowFittness.Enabled = true;
+                bttnShowWorkerPath.Enabled = false;
+                bttnShowHideWorkers.Enabled = false;
+                bttnShowImprint.Enabled = false;
                 tsbttnShowAnalyser.Enabled = true;
             }
             else 

@@ -50,10 +50,10 @@
             this.bttnLoadSavedSql = new System.Windows.Forms.Button();
             this.bttnSaveSqlCommand = new System.Windows.Forms.Button();
             this.menuClans = new System.Windows.Forms.MenuStrip();
+            this.showWorkersTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showParentsGraphicallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showClansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.largestClansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showWorkersTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSql)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnSql)).BeginInit();
@@ -256,6 +256,13 @@
             this.menuClans.TabIndex = 9;
             this.menuClans.Text = "menuStrip1";
             // 
+            // showWorkersTreeToolStripMenuItem
+            // 
+            this.showWorkersTreeToolStripMenuItem.Name = "showWorkersTreeToolStripMenuItem";
+            this.showWorkersTreeToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.showWorkersTreeToolStripMenuItem.Text = "Show workers\' tree";
+            this.showWorkersTreeToolStripMenuItem.Click += new System.EventHandler(this.showWorkersTreeToolStripMenuItem_Click);
+            // 
             // showParentsGraphicallyToolStripMenuItem
             // 
             this.showParentsGraphicallyToolStripMenuItem.Name = "showParentsGraphicallyToolStripMenuItem";
@@ -278,13 +285,6 @@
             this.largestClansToolStripMenuItem.Text = "Largest clans";
             this.largestClansToolStripMenuItem.Click += new System.EventHandler(this.largestClansToolStripMenuItem_Click);
             // 
-            // showWorkersTreeToolStripMenuItem
-            // 
-            this.showWorkersTreeToolStripMenuItem.Name = "showWorkersTreeToolStripMenuItem";
-            this.showWorkersTreeToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
-            this.showWorkersTreeToolStripMenuItem.Text = "Show workers\' tree";
-            this.showWorkersTreeToolStripMenuItem.Click += new System.EventHandler(this.showWorkersTreeToolStripMenuItem_Click);
-            // 
             // frmSql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +301,7 @@
             this.MainMenuStrip = this.menuClans;
             this.Name = "frmSql";
             this.Text = "Sql window";
+            this.Load += new System.EventHandler(this.frmSql_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSql)).EndInit();

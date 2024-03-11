@@ -150,6 +150,6 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.GenerateR
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.manifest
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.application
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.CopyComplete
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.Up2Date
