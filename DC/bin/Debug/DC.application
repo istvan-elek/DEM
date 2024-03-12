@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="DC.exe.manifest" size="9739">
+    <dependentAssembly dependencyType="install" codebase="DC.exe.manifest" size="4292">
       <assemblyIdentity name="DC.exe" version="1.1.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/mFFKWvBJna8M7/2jFJ4RzZdlPOhBtZtPV+Wstn4Oo8=</dsig:DigestValue>
+        <dsig:DigestValue>/i2mNh8X+N/7Vo9awzteYDLizywSjXNetS0du/T+z04=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

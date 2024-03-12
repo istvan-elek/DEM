@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Data;
-using Npgsql;
+//using Npgsql;
 
 namespace DCDemo
 {
@@ -13,7 +13,7 @@ namespace DCDemo
     {
         labirynth lab;
         static Random rnd = new Random(); //random number for neighbor choose
-        Npgsql.NpgsqlConnectionStringBuilder connsb = new NpgsqlConnectionStringBuilder();
+        //Npgsql.NpgsqlConnectionStringBuilder connsb = new NpgsqlConnectionStringBuilder();
         int initial_worker_energy=500;
         int gold_energy=5000;
         int movement_costs=-1;

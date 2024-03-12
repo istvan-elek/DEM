@@ -131,16 +131,6 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe.manifest
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.application
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Npgsql.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Mono.Security.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Npgsql.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Npgsql.xml
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\de\Npgsql.resources.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\es\Npgsql.resources.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\fi\Npgsql.resources.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\fr\Npgsql.resources.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\ja\Npgsql.resources.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\zh-CN\Npgsql.resources.dll
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.AssemblyReference.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmDCMain.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmAbout.resources
@@ -152,4 +142,3 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.manifest
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.application
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.Up2Date
