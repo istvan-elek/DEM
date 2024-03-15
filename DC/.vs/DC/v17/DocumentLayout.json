@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dc\\frmdcmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|solutionrelative:frmdcmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|solutionrelative:frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmdcmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|solutionrelative:frmdcmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dc\\frmdcmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|solutionrelative:frmdcmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|solutionrelative:frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|solutionrelative:frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B38157A-B779-4D20-8AFA-414C63AE7D21}|DC.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frmAbout.cs",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmAbout.cs",
               "RelativeDocumentMoniker": "frmAbout.cs",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "frmAbout.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmAbout.cs",
               "RelativeDocumentMoniker": "frmAbout.cs",
@@ -67,14 +67,14 @@
               "RelativeDocumentMoniker": "frmDCMain.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmDCMain.cs",
               "RelativeToolTip": "frmDCMain.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-01-23T09:24:50.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "frmDCMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmDCMain.cs",
               "RelativeDocumentMoniker": "frmDCMain.cs",
@@ -86,15 +86,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "frmGuide.cs",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmGuide.cs",
               "RelativeDocumentMoniker": "frmGuide.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmGuide.cs",
               "RelativeToolTip": "frmGuide.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2024-01-23T09:24:50.881Z"
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-23T09:24:50.881Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -104,8 +105,9 @@
               "RelativeDocumentMoniker": "frmGuide.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DC\\frmGuide.cs [Design]",
               "RelativeToolTip": "frmGuide.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2024-01-23T09:24:50.882Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-23T09:24:50.882Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

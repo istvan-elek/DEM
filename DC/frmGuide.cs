@@ -15,7 +15,7 @@ namespace DC
         public frmGuide()
         {
             InitializeComponent();
-            var uri = new Uri(Application.StartupPath + @"\DCusersguide.pdf");
+            var uri = new Uri(Application.StartupPath + @"\dcusersguide.pdf");
             this.webBrowser1.Navigate(uri);
         }
     }

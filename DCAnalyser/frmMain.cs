@@ -436,7 +436,7 @@ namespace DCAnalyser
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGuide guide = new frmGuide(Application.StartupPath + @"\dcanalyserusersguide.pdf");
+            frmGuide guide = new frmGuide(Application.StartupPath + @"\dcusersguide.pdf");
             guide.Show();
         }
 
