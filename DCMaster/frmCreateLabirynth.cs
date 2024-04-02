@@ -62,24 +62,25 @@ namespace DCMaster
             LabSize = Convert.ToInt16(tbLabSize.Text);
             numOfEnergySources = Convert.ToInt16(tbNumberOfEnergySources.Text.Trim());
             numOfEnergySinks = Convert.ToInt16(tbNumberOfEnergySinks.Text.Trim());
+            //if (LabSize * LabSize < (numOfEnergySinks + numOfEnergySources)) { MessageBox.Show("Too many sources and sinks"); return; }
             lab.createLabirynth(LabSize, numOfEnergySources, numOfEnergySinks, parameters); //create new labirynth
             label6.Text = "0";
-            lblMin.Text = "-100";
-            lblMax.Text = "100";
+            lblMin.Text = "-14";
+            lblMax.Text = "14";
             lab.NumOfEnergySinks = numOfEnergySinks;
             lab.NumOfEnergySources = numOfEnergySources;
             Hostility host = new Hostility(lab, movement_cost);
             float hstl = host.ComputeStaticHostility();
             lab.Hostility = hstl;
-            grp_static_hostility.Text = "Static hostility: " + hstl.ToString();
-            int trvalue = (int)(hstl);
-            if (trvalue > 100)
+            grp_static_hostility.Text = "Static hostility: " + hstl.ToString("##.##");
+            int trvalue = (int)(hstl*10);
+            if (trvalue > 140)
             {
-                trackBar1.Value = 100;
+                trackBar1.Value = 140;
             }
-            else if (trvalue < -100)
+            else if (trvalue < -140)
             {
-                trackBar1.Value = -100;
+                trackBar1.Value = -140;
             }
             else
             {

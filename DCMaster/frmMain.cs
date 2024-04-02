@@ -154,10 +154,10 @@ namespace DCMaster
             if (lab == null) return;
             if (!randomStart) {grpDinamicHostility.Visible = true; refreshDinamicHostility(); }
             else { grpDinamicHostility.Visible = false; } 
-            int trvalue = (int)(lab.Hostility);
-            if (trvalue > trackBar1.Maximum ) lab.Hostility = trackBar1.Maximum; trvalue = (int)(lab.Hostility);
+            int trvalue = (int)(lab.Hostility*10);
+            if (trvalue > trackBar1.Maximum ) /*lab.Hostility = trackBar1.Maximum;*/ trvalue = (int)(lab.Hostility*10);
             trackBar1.Value = trvalue;
-            grp_static_hostility.Text = "Static hostility of labyrinth: " + lab.Hostility.ToString();
+            grp_static_hostility.Text = "Static hostility of labyrinth: " + lab.Hostility.ToString("##.##");
             //trackBar2.Invoke(new Action(() => trackBar2.Value = trvalue));
         }
 
@@ -730,8 +730,8 @@ namespace DCMaster
                     grp_static_hostility.Visible = true;
 
                     float hst = lab.Hostility; //hostile.ComputeHostility();
-                    trackBar1.Value = (int)(hst);
-                    grp_static_hostility.Text = "Static hostility of the labyrinth: " + hst.ToString();
+                    trackBar1.Value = (int)(hst*10);
+                    grp_static_hostility.Text = "Static hostility of the labyrinth: " + hst.ToString("##.##");
                 }
                 else { grp_static_hostility.Visible = false; grpDinamicHostility.Visible = false; }
 
@@ -1066,5 +1066,7 @@ namespace DCMaster
                 refreshDinamicHostility();
             }
         }
+
+
     }
 }

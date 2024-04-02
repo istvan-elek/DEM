@@ -29,9 +29,9 @@ namespace DCMaster
             {
                 for (int j = 0; j < lab.Size; j++)
                 {
-                    if (lab.Fields[i, j] < movement_cost) sSink += lab.Fields[i, j];
+                    if (lab.Fields[i, j] < movement_cost)  sSink += lab.Fields[i, j];
                     if (lab.Fields[i, j] > 0) sSource += lab.Fields[i, j];
-                    if (lab.Fields[i, j] == movement_cost) sempty += lab.Fields[i, j];
+                    if (lab.Fields[i, j] == movement_cost)  sempty += lab.Fields[i, j];
                 }
             }
             sempty = sempty - movement_cost * (sSource + sSink);
@@ -39,10 +39,7 @@ namespace DCMaster
             float sumemptyfield = sempty / numoffields;
             float summSource = sSource;
             float sumSink = sSink;
-            float H0 = sumemptyfield;
-            float p1 = lab.NumOfEnergySources / numoffields;
-            float p2 = lab.NumOfEnergySinks / numoffields;
-            float Hst = H0 + p1 * summSource + p2 * sumSink;
+            float Hst = (sempty + sSink + sSource) / numoffields;
             return Hst;
         }
 

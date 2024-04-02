@@ -154,7 +154,7 @@
             this.tsbttnHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(783, 49);
+            this.toolStrip1.Size = new System.Drawing.Size(779, 49);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -656,7 +656,7 @@
             this.grpAnalyserBox.Controls.Add(this.splitContainer1);
             this.grpAnalyserBox.Location = new System.Drawing.Point(12, 292);
             this.grpAnalyserBox.Name = "grpAnalyserBox";
-            this.grpAnalyserBox.Size = new System.Drawing.Size(756, 5);
+            this.grpAnalyserBox.Size = new System.Drawing.Size(752, 5);
             this.grpAnalyserBox.TabIndex = 25;
             this.grpAnalyserBox.TabStop = false;
             this.grpAnalyserBox.Text = "Analyser box";
@@ -676,7 +676,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grpLabData);
-            this.splitContainer1.Size = new System.Drawing.Size(750, 0);
+            this.splitContainer1.Size = new System.Drawing.Size(746, 0);
             this.splitContainer1.SplitterDistance = 534;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -793,7 +793,7 @@
             this.grpLabData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpLabData.Location = new System.Drawing.Point(0, 0);
             this.grpLabData.Name = "grpLabData";
-            this.grpLabData.Size = new System.Drawing.Size(235, 0);
+            this.grpLabData.Size = new System.Drawing.Size(206, 0);
             this.grpLabData.TabIndex = 1;
             this.grpLabData.TabStop = false;
             this.grpLabData.Text = "Labyrinth data";
@@ -816,13 +816,13 @@
             this.dgvLab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLab.Location = new System.Drawing.Point(6, 54);
             this.dgvLab.Name = "dgvLab";
-            this.dgvLab.Size = new System.Drawing.Size(208, 0);
+            this.dgvLab.Size = new System.Drawing.Size(179, 0);
             this.dgvLab.TabIndex = 27;
             // 
             // btnShowLabImage
             // 
             this.btnShowLabImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowLabImage.Location = new System.Drawing.Point(95, 25);
+            this.btnShowLabImage.Location = new System.Drawing.Point(66, 25);
             this.btnShowLabImage.Name = "btnShowLabImage";
             this.btnShowLabImage.Size = new System.Drawing.Size(109, 23);
             this.btnShowLabImage.TabIndex = 26;
@@ -861,7 +861,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(171, 79);
+            this.label6.Location = new System.Drawing.Point(173, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 31;
@@ -882,11 +882,11 @@
             this.lblMax.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMax.AutoSize = true;
-            this.lblMax.Location = new System.Drawing.Point(329, 79);
+            this.lblMax.Location = new System.Drawing.Point(285, 79);
             this.lblMax.Name = "lblMax";
-            this.lblMax.Size = new System.Drawing.Size(25, 13);
+            this.lblMax.Size = new System.Drawing.Size(19, 13);
             this.lblMax.TabIndex = 30;
-            this.lblMax.Text = "100";
+            this.lblMax.Text = "10";
             // 
             // label8
             // 
@@ -903,23 +903,22 @@
             // lblMin
             // 
             this.lblMin.AutoSize = true;
-            this.lblMin.Location = new System.Drawing.Point(6, 79);
+            this.lblMin.Location = new System.Drawing.Point(51, 79);
             this.lblMin.Name = "lblMin";
-            this.lblMin.Size = new System.Drawing.Size(28, 13);
+            this.lblMin.Size = new System.Drawing.Size(22, 13);
             this.lblMin.TabIndex = 29;
-            this.lblMin.Text = "-100";
+            this.lblMin.Text = "-10";
             // 
             // trackBar1
             // 
             this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar1.LargeChange = 100;
+            this.trackBar1.LargeChange = 50;
             this.trackBar1.Location = new System.Drawing.Point(4, 50);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Minimum = -100;
+            this.trackBar1.Maximum = 140;
+            this.trackBar1.Minimum = -140;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(349, 45);
-            this.trackBar1.SmallChange = 10;
             this.trackBar1.TabIndex = 22;
             this.trackBar1.TickFrequency = 20;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -1032,7 +1031,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 292);
+            this.ClientSize = new System.Drawing.Size(779, 292);
             this.Controls.Add(this.grpDinamicHostility);
             this.Controls.Add(this.grp_static_hostility);
             this.Controls.Add(this.grpAnalyserBox);
