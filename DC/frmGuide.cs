@@ -16,7 +16,10 @@ namespace DC
         {
             InitializeComponent();
             var uri = new Uri(Application.StartupPath + @"\dcusersguide.pdf");
-            this.webBrowser1.Navigate(uri);
+            this.webBrowserGuide.Navigate(uri);
+            var uriTheory = new Uri(Application.StartupPath + @"\theory.pdf");
+            this.webBrowserTheory.Navigate(uriTheory);
+            
         }
     }
 }
