@@ -1,0 +1,10 @@
+SELECT worker_path, lab.lab_id, worker_id FROM  worker_path, lab GROUP BY worker_id, lab.lab_id, worker_path ORDER BY worker_id //egyéni, individuális tapasztalat
+
+SELECT worker_path, lab.lab_id FROM  worker_path, lab GROUP BY worker_path, lab.lab_id ORDER BY lab_id
+//kollektív tapasztalat, amely a labok bejárt útjairól szól, egyéntől független
+
+SELECT * from worker_path WHERE worker_id=970
+//egy kijejlölt worker (8970) útvonalának legyűjtése
+
+SELECT  worker_id, live FROM workers WHERE worker_id IN (SELECT worker_id FROM worker_path WHERE lab_id=2 GROUP BY worker_id)
+//azon workerek legyűjtése, amelyek még élnek és egy kijelölt labirynthban (lab_id=2)  jártak

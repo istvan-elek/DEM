@@ -1,0 +1,7 @@
+initial_worker_energy;200
+source_energy_max;1000
+sink_energy_max;-1000
+movement_costs;-1
+replication_energy_level;5000
+replication_rate;2
+delay;0

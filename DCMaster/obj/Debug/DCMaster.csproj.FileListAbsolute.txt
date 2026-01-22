@@ -1,0 +1,265 @@
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.csprojResolveAssemblyReference.cache
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.csproj.GenerateResource.Cache
+F:\MyProgs\WumpusCenter\bin\debug\Wump.exe.config
+F:\MyProgs\WumpusCenter\bin\debug\Wump.exe.manifest
+F:\MyProgs\WumpusCenter\bin\debug\Wump.application
+F:\MyProgs\WumpusCenter\bin\debug\Wump.exe
+F:\MyProgs\WumpusCenter\bin\debug\Wump.pdb
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmConfig.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmCreateDB.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmBatch.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmCreateLabirynth.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmCreateWorkers.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmLabBitmap.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmLogBook.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.frmSetupParameters.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.legend.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.Properties.Resources.resources
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.WebSite.resources
+F:\MyProgs\WumpusCenter\bin\debug\DCMaster.exe.config
+F:\MyProgs\DC\bin\Debug\DCMaster.exe.config
+F:\MyProgs\DC\bin\Debug\DCMaster.exe.manifest
+F:\MyProgs\DC\bin\Debug\DCMaster.application
+F:\MyProgs\DC\bin\Debug\DCMaster.exe
+F:\MyProgs\DC\bin\Debug\DCMaster.pdb
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.TrustInfo.xml
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.exe.manifest
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.application
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.exe
+F:\MyProgs\DCMaster\obj\Debug\DCMaster.pdb
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.exe
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.pdb
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.csprojResolveAssemblyReference.cache
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmConfig.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmCreateDB.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmBatch.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmCreateLabirynth.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmCreateWorkers.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmLabBitmap.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmLogBook.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.frmSetupParameters.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.legend.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.Properties.Resources.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.WebSite.resources
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.csproj.GenerateResource.Cache
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.TrustInfo.xml
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.exe.manifest
+F:\MyProgs\DCMaster2.1\obj\Debug\DCMaster.application
+F:\MyProgs\DCMaster\bin\Debug\DCMaster.exe.config
+F:\MyProgs\DCMaster\bin\Debug\DCMaster.exe.manifest
+F:\MyProgs\DCMaster\bin\Debug\DCMaster.application
+F:\MyProgs\DCMaster\bin\Debug\DCMaster.exe
+F:\MyProgs\DCMaster\bin\Debug\DCMaster.pdb
+F:\MyProgs\DCMaster2.1\bin\Debug\DCMaster.exe.config
+F:\MyProgs\DCMaster2.1\bin\Debug\DCMaster.exe.manifest
+F:\MyProgs\DCMaster2.1\bin\Debug\DCMaster.application
+F:\MyProgs\DCMaster2.1\bin\Debug\DCMaster.exe
+F:\MyProgs\DCMaster2.1\bin\Debug\DCMaster.pdb
+F:\MyProgs\DCMaster2.1\bin\Debug\Npgsql.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\Mono.Security.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\Npgsql.pdb
+F:\MyProgs\DCMaster2.1\bin\Debug\Npgsql.xml
+F:\MyProgs\DCMaster2.1\bin\Debug\de\Npgsql.resources.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\es\Npgsql.resources.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\fi\Npgsql.resources.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\fr\Npgsql.resources.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\ja\Npgsql.resources.dll
+F:\MyProgs\DCMaster2.1\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.csprojResolveAssemblyReference.cache
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmBatch.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLogBook.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.legend.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.WebSite.resources
+C:\Users\Elek István\Documents\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.GenerateResource.Cache
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DCMaster.exe.config
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmBatch.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLogBook.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.legend.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.WebSite.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.csprojAssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCMaster.exe.config
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCMaster.exe
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csprojAssemblyReference.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmBatch.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLogBook.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.legend.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.WebSite.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.exe
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmBatch.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLogBook.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.legend.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.WebSite.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.GenerateResource.Cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csprojAssemblyReference.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCMaster.exe.config
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmBatch.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmLogBook.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.legend.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.WebSite.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.frmPicture2.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\install\DCMaster.exe.config
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\install\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\install\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.DisplayCharts.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCMaster2.5\obj\Debug\DCMaster.ViewLogBook.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.DisplayCharts.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmPicture2.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.legend.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.WebSite.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DC\bin\Debug\DCMaster.exe.config
+C:\Users\eleki\Documents\MyProgs\DC3\DC\bin\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DC\bin\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCMaster\obj\Debug\DCMaster.frmViewTextFile.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe.config
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmPicture2.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.legend.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmViewTextFile.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.WebSite.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.DisplayCharts2.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmGuide.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmTerminateProgram.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.AssemblyReference.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.DisplayCharts2.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmGuide.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmMain.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmPicture2.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmTerminateProgram.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.legend.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.frmViewTextFile.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.WebSite.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\GitHub\DEM\DC\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\GitHub\DEM\DC\bin\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\GitHub\DEM\DC\bin\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.AssemblyReference.cache
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.DisplayCharts2.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmConfig.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmCreateDB.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmGuide.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmMain.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmCreateLabirynth.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmCreateWorkers.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmLabBitmap.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmPicture2.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmSetupParameters.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmTerminateProgram.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.legend.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.Properties.Resources.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.frmViewTextFile.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.WebSite.resources
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.GenerateResource.cache
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.CopyComplete
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.exe
+C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.Up2Date

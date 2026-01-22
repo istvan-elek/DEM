@@ -1,0 +1,163 @@
+F:\MyProgs\WumpusCenter\bin\debug\wump_anal.exe.config
+F:\MyProgs\WumpusCenter\bin\debug\wump_anal.exe
+F:\MyProgs\WumpusCenter\bin\debug\wump_anal.pdb
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.csprojResolveAssemblyReference.cache
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.Cache
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+F:\MyProgs\WumpusCenter\bin\debug\DCAnalyser.exe.config
+F:\MyProgs\DC\bin\Debug\DCAnalyser.exe.config
+F:\MyProgs\DC\bin\Debug\DCAnalyser.exe
+F:\MyProgs\DC\bin\Debug\DCAnalyser.pdb
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.exe
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.pdb
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+F:\MyProgs\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DCAnalyser.exe
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csprojResolveAssemblyReference.cache
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+C:\Users\Elek István\Documents\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.Cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csprojAssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csprojAssemblyReference.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\EFOP2019\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCAnalyser.exe
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.Cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csprojAssemblyReference.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmBrowseReports.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmPicture2.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCAnalyser\obj\Debug\DCAnalyser.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\eleki\Documents\MyProgs\DC3\DC\bin\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmBrowseReports.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmMissionCompare.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmPicture.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmPicture2.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.frmReport.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmBrowseReports.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmPicture2.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmIterationCompare.resources
+C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmGuide.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.AssemblyReference.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmBrowseReports.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmCompareImprints.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmGuide.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmIterationCompare.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmPicture2.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmFamilyTree.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.Up2Date
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmClans.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmWorkersTree.resources

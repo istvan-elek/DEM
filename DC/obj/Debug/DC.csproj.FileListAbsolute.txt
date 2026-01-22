@@ -1,0 +1,153 @@
+F:\MyProgs\DC\bin\Debug\DC.exe.config
+F:\MyProgs\DC\bin\Debug\DC.exe.manifest
+F:\MyProgs\DC\bin\Debug\DC.application
+F:\MyProgs\DC\bin\Debug\DC.exe
+F:\MyProgs\DC\bin\Debug\DC.pdb
+F:\MyProgs\DC\bin\Debug\Npgsql.dll
+F:\MyProgs\DC\bin\Debug\Mono.Security.dll
+F:\MyProgs\DC\bin\Debug\Npgsql.pdb
+F:\MyProgs\DC\bin\Debug\Npgsql.xml
+F:\MyProgs\DC\bin\Debug\de\Npgsql.resources.dll
+F:\MyProgs\DC\bin\Debug\es\Npgsql.resources.dll
+F:\MyProgs\DC\bin\Debug\fi\Npgsql.resources.dll
+F:\MyProgs\DC\bin\Debug\fr\Npgsql.resources.dll
+F:\MyProgs\DC\bin\Debug\ja\Npgsql.resources.dll
+F:\MyProgs\DC\bin\Debug\zh-CN\Npgsql.resources.dll
+F:\MyProgs\DC\obj\Debug\DC.frmDCMain.resources
+F:\MyProgs\DC\obj\Debug\DC.frmAbout.resources
+F:\MyProgs\DC\obj\Debug\DC.frmGuide.resources
+F:\MyProgs\DC\obj\Debug\DC.Properties.Resources.resources
+F:\MyProgs\DC\obj\Debug\DC.csproj.GenerateResource.Cache
+F:\MyProgs\DC\obj\Debug\DC.exe.manifest
+F:\MyProgs\DC\obj\Debug\DC.application
+F:\MyProgs\DC\obj\Debug\DC.exe
+F:\MyProgs\DC\obj\Debug\DC.pdb
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DC.exe.config
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.exe
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.pdb
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.csprojResolveAssemblyReference.cache
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.frmDCMain.resources
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.frmAbout.resources
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.frmGuide.resources
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.Properties.Resources.resources
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.csproj.GenerateResource.Cache
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DC.exe.manifest
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DC.application
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DC.exe
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\DC.pdb
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\Npgsql.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\Mono.Security.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\Npgsql.pdb
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\Npgsql.xml
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\de\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\es\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DC\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.exe.manifest
+C:\Users\Elek István\Documents\DC_source\DC\obj\Debug\DC.application
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DC.exe.config
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.exe
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DC.exe.manifest
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DC.application
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DC.exe
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\DC.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\Npgsql.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\Mono.Security.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\Npgsql.pdb
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\Npgsql.xml
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\de\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\es\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.frmDCMain.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.frmAbout.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.frmGuide.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.csproj.GenerateResource.Cache
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.exe.manifest
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.application
+C:\Users\eleki\Documents\MyProgs\DC_source\DC\obj\Debug\DC.csprojResolveAssemblyReference.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DC.exe.config
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DC.exe.manifest
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DC.application
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DC.exe
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\DC.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\Npgsql.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\Mono.Security.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\Npgsql.pdb
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\Npgsql.xml
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\de\Npgsql.resources.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\es\Npgsql.resources.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.csprojAssemblyReference.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.frmDCMain.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.frmAbout.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.frmGuide.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.Properties.Resources.resources
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.csproj.GenerateResource.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.exe.manifest
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.application
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.csproj.CopyComplete
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.exe
+C:\Users\Elek István\Documents\EFOP_svn\EFOP_362\work\wp-c\c13\EFOP_362\work\wp-c\c13\Elek_Istvan\src\DC_source\DC\obj\Debug\DC.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DC.exe.config
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DC.exe.manifest
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DC.application
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DC.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DC.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\Npgsql.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\Mono.Security.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\Npgsql.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\Npgsql.xml
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\de\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\es\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.frmDCMain.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.frmAbout.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.frmGuide.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.exe.manifest
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.application
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.csproj.CopyComplete
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe.manifest
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.application
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.AssemblyReference.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmDCMain.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmAbout.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmGuide.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.Properties.Resources.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.GenerateResource.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.manifest
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.application
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.Up2Date

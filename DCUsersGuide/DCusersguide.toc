@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Preface}{3}{}%
+\contentsline {section}{\numberline {2}Installation}{3}{}%
+\contentsline {section}{\numberline {3}DC}{3}{}%
+\contentsline {section}{\numberline {4}DCDemo}{4}{}%
+\contentsline {section}{\numberline {5}DCMaster}{6}{}%
+\contentsline {section}{\numberline {6}DCAnalyser}{10}{}%
+\contentsline {section}{\numberline {7}Database tables and structures}{15}{}%
+\contentsline {subsection}{\numberline {7.1}lab table}{15}{}%
+\contentsline {subsection}{\numberline {7.2}logbook table}{17}{}%
+\contentsline {subsection}{\numberline {7.3}iteration table}{18}{}%
+\contentsline {subsection}{\numberline {7.4}parameters table}{18}{}%
+\contentsline {subsection}{\numberline {7.5}worker\_path table}{19}{}%
+\contentsline {subsection}{\numberline {7.6}workers table}{20}{}%

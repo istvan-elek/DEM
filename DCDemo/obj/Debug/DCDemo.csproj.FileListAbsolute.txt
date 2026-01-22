@@ -1,0 +1,43 @@
+F:\MyProgs\WumpusCenter\bin\debug\Wump.exe.config
+F:\MyProgs\WumpusCenter\bin\debug\Wump.exe.manifest
+F:\MyProgs\WumpusCenter\bin\debug\Wump.application
+F:\MyProgs\WumpusCenter\bin\debug\Wump.exe
+F:\MyProgs\WumpusCenter\bin\debug\Wump.pdb
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.csprojResolveAssemblyReference.cache
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.csproj.GenerateResource.Cache
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.frmMain.resources
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.legend.resources
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.Properties.Resources.resources
+F:\MyProgs\DC\bin\Debug\DCDemo.exe.config
+F:\MyProgs\DC\bin\Debug\DCDemo.exe.manifest
+F:\MyProgs\DC\bin\Debug\DCDemo.application
+F:\MyProgs\DC\bin\Debug\DCDemo.exe
+F:\MyProgs\DC\bin\Debug\DCDemo.pdb
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.TrustInfo.xml
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.exe.manifest
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.application
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.exe
+F:\MyProgs\DCDemo\obj\Debug\DCDemo.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.csproj.AssemblyReference.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.frmMain.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.legend.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.Properties.Resources.resources
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.csproj.GenerateResource.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.csproj.CoreCompileInputs.cache
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCDemo.exe.config
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCDemo.exe
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\bin\Debug\DCDemo.pdb
+C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DCDemo\obj\Debug\DCDemo.csproj.CopyComplete
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.csproj.AssemblyReference.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.frmMain.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.legend.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.Properties.Resources.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.csproj.GenerateResource.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.exe
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.pdb

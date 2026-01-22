@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmworkerstree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmworkerstree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dcanalyser\\frmfamilytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmfamilytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmfamilytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmfamilytree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmworkerstree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C874292-DA64-4815-AE90-298ABCD12B29}|DCAnalyser.csproj|solutionrelative:frmworkerstree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmSql.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmSql.cs",
+              "RelativeDocumentMoniker": "frmSql.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmSql.cs",
+              "RelativeToolTip": "frmSql.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAIAwwCkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T08:47:52.646Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmFamilyTree.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmFamilyTree.cs",
+              "RelativeDocumentMoniker": "frmFamilyTree.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmFamilyTree.cs",
+              "RelativeToolTip": "frmFamilyTree.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T13:24:59.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmFamilyTree.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmFamilyTree.cs",
+              "RelativeDocumentMoniker": "frmFamilyTree.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmFamilyTree.cs [Design]",
+              "RelativeToolTip": "frmFamilyTree.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T13:24:50.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmWorkersTree.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmWorkersTree.cs",
+              "RelativeDocumentMoniker": "frmWorkersTree.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmWorkersTree.cs",
+              "RelativeToolTip": "frmWorkersTree.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T09:32:49.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmWorkersTree.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmWorkersTree.cs",
+              "RelativeDocumentMoniker": "frmWorkersTree.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmWorkersTree.cs [Design]",
+              "RelativeToolTip": "frmWorkersTree.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T15:53:34.564Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmSql.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmSql.cs",
+              "RelativeDocumentMoniker": "frmSql.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmSql.cs [Design]",
+              "RelativeToolTip": "frmSql.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T14:50:03.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAAFECAAAAAAAAAAAMwGgCAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-25T11:31:22.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCAnalyser\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-25T11:31:22.673Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

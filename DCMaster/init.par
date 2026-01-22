@@ -1,0 +1,7 @@
+initial_worker_energy;200
+gold_energy;1000
+trap_energy;-400
+wumpus_energy;-1000
+movement_costs;-1
+replication_energy_level;5000
+replication_rate;2

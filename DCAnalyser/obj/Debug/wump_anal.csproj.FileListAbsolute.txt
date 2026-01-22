@@ -1,0 +1,17 @@
+F:\MyProgs\wump_anal\bin\Debug\wump_anal.exe.config
+F:\MyProgs\wump_anal\bin\Debug\wump_anal.exe
+F:\MyProgs\wump_anal\bin\Debug\wump_anal.pdb
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.csprojResolveAssemblyReference.cache
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.frmMain.resources
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.Properties.Resources.resources
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.csproj.GenerateResource.Cache
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.exe
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.pdb
+F:\MyProgs\WumpusCenter\bin\debug\wump_anal.exe.config
+F:\MyProgs\WumpusCenter\bin\debug\wump_anal.exe
+F:\MyProgs\WumpusCenter\bin\debug\wump_anal.pdb
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.frmSql.resources
+F:\MyProgs\wump_anal\obj\Debug\wump_anal.DisplayCharts.resources
+F:\myprogs\wump_anal\obj\Debug\wump_anal.frmPicture.resources
+F:\MyProgs\DCAnalyser\obj\Debug\wump_anal.exe
+F:\MyProgs\DCAnalyser\obj\Debug\wump_anal.pdb

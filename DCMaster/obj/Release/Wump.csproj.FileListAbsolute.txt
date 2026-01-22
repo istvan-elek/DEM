@@ -1,0 +1,15 @@
+F:\MyProgs\WumpusCenter\Release\Wump.exe.config
+F:\MyProgs\WumpusCenter\Release\Wump.exe.manifest
+F:\MyProgs\WumpusCenter\Release\Wump.application
+F:\MyProgs\WumpusCenter\Release\Wump.exe
+F:\MyProgs\WumpusCenter\Release\Wump.pdb
+F:\MyProgs\Wump\obj\Release\Wump.AboutWumpus.resources
+F:\MyProgs\Wump\obj\Release\Wump.frmMain.resources
+F:\MyProgs\Wump\obj\Release\Wump.legend.resources
+F:\MyProgs\Wump\obj\Release\Wump.Properties.Resources.resources
+F:\MyProgs\Wump\obj\Release\Wump.csproj.GenerateResource.Cache
+F:\MyProgs\Wump\obj\Release\Wump.TrustInfo.xml
+F:\MyProgs\Wump\obj\Release\Wump.exe.manifest
+F:\MyProgs\Wump\obj\Release\Wump.application
+F:\MyProgs\Wump\obj\Release\Wump.exe
+F:\MyProgs\Wump\obj\Release\Wump.pdb

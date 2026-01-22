@@ -1,0 +1,1 @@
+SELECT worker_path, lab.lab_id, worker_id FROM  worker_path, lab GROUP BY worker_id, lab.lab_id, worker_path ORDER BY worker_id 
