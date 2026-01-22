@@ -263,3 +263,7 @@ C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.csproj.Co
 C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.exe
 C:\Users\Elek István\Documents\GitHub\DEM\DCMaster\obj\Debug\DCMaster.pdb
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.csproj.Up2Date
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCMaster\obj\Debug\DCMaster.exe.config

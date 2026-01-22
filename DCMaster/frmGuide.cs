@@ -16,7 +16,7 @@ namespace DCMaster
         {
             InitializeComponent();
             var uri = new Uri(fname); 
-            this.webBrowser1.Navigate(uri);            
+            this.webView21.Source = uri;            
         }
 
     }
