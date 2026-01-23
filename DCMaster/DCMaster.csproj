@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>dem32_gomb.ico</ApplicationIcon>
+    <ApplicationIcon>dem32_gomb2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>78366151B4EDBED031DEF630D7B08EBAFB88C504</ManifestCertificateThumbprint>
@@ -268,6 +268,7 @@
     <Content Include="dem32.ico" />
     <Content Include="dem32_gomb.ico" />
     <Content Include="dem32_gomb.png" />
+    <Content Include="dem32_gomb2.ico" />
     <Content Include="Master64.ico" />
     <Content Include="wumpus.ico" />
     <Content Include="wumpus32.ico" />

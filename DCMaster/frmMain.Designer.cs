@@ -793,7 +793,7 @@
             this.grpLabData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpLabData.Location = new System.Drawing.Point(0, 0);
             this.grpLabData.Name = "grpLabData";
-            this.grpLabData.Size = new System.Drawing.Size(206, 0);
+            this.grpLabData.Size = new System.Drawing.Size(208, 0);
             this.grpLabData.TabIndex = 1;
             this.grpLabData.TabStop = false;
             this.grpLabData.Text = "Labyrinth data";
@@ -816,13 +816,13 @@
             this.dgvLab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLab.Location = new System.Drawing.Point(6, 54);
             this.dgvLab.Name = "dgvLab";
-            this.dgvLab.Size = new System.Drawing.Size(179, 0);
+            this.dgvLab.Size = new System.Drawing.Size(181, 0);
             this.dgvLab.TabIndex = 27;
             // 
             // btnShowLabImage
             // 
             this.btnShowLabImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowLabImage.Location = new System.Drawing.Point(66, 25);
+            this.btnShowLabImage.Location = new System.Drawing.Point(68, 25);
             this.btnShowLabImage.Name = "btnShowLabImage";
             this.btnShowLabImage.Size = new System.Drawing.Size(109, 23);
             this.btnShowLabImage.TabIndex = 26;
