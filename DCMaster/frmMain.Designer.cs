@@ -112,6 +112,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.bttnShowGraph = new System.Windows.Forms.Button();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.bttnLoadExistingDB = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpAnalyserTools.SuspendLayout();
@@ -137,6 +140,8 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bttnLoadExistingDB,
+            this.toolStripSeparator7,
             this.bttnEditCreateWorkers,
             this.toolStripSeparator3,
             this.bttnEditCreateLabs,
@@ -154,7 +159,7 @@
             this.tsbttnHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(779, 49);
+            this.toolStrip1.Size = new System.Drawing.Size(822, 49);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -286,7 +291,7 @@
             this.tsbttnHelp.Image = ((System.Drawing.Image)(resources.GetObject("tsbttnHelp.Image")));
             this.tsbttnHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbttnHelp.Name = "tsbttnHelp";
-            this.tsbttnHelp.Size = new System.Drawing.Size(24, 46);
+            this.tsbttnHelp.Size = new System.Drawing.Size(24, 24);
             this.tsbttnHelp.Text = "?";
             this.tsbttnHelp.ToolTipText = "Help";
             this.tsbttnHelp.Click += new System.EventHandler(this.tsbttnHelp_Click);
@@ -334,7 +339,6 @@
             this.groupBox1.Controls.Add(this.tbStop);
             this.groupBox1.Controls.Add(this.lblStop);
             this.groupBox1.Controls.Add(this.bttnShowIterationData);
-            this.groupBox1.Controls.Add(this.grpAnalyserTools);
             this.groupBox1.Controls.Add(this.lblStepCount);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblWorkerCount);
@@ -345,7 +349,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(340, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 216);
+            this.groupBox1.Size = new System.Drawing.Size(278, 216);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iteration progress data";
@@ -382,6 +386,7 @@
             // 
             // grpAnalyserTools
             // 
+            this.grpAnalyserTools.Controls.Add(this.bttnShowGraph);
             this.grpAnalyserTools.Controls.Add(this.bttnShowFittness);
             this.grpAnalyserTools.Controls.Add(this.bttnShowEntropy);
             this.grpAnalyserTools.Controls.Add(this.bttnShowImprint);
@@ -391,9 +396,9 @@
             this.grpAnalyserTools.Controls.Add(this.bttnShowHideLabirynth);
             this.grpAnalyserTools.Controls.Add(this.bttnShowHideWorkers);
             this.grpAnalyserTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.grpAnalyserTools.Location = new System.Drawing.Point(260, 10);
+            this.grpAnalyserTools.Location = new System.Drawing.Point(639, 69);
             this.grpAnalyserTools.Name = "grpAnalyserTools";
-            this.grpAnalyserTools.Size = new System.Drawing.Size(165, 206);
+            this.grpAnalyserTools.Size = new System.Drawing.Size(165, 239);
             this.grpAnalyserTools.TabIndex = 26;
             this.grpAnalyserTools.TabStop = false;
             this.grpAnalyserTools.Text = "Analyser tools";
@@ -654,9 +659,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpAnalyserBox.Controls.Add(this.splitContainer1);
-            this.grpAnalyserBox.Location = new System.Drawing.Point(12, 292);
+            this.grpAnalyserBox.Location = new System.Drawing.Point(13, 324);
             this.grpAnalyserBox.Name = "grpAnalyserBox";
-            this.grpAnalyserBox.Size = new System.Drawing.Size(752, 5);
+            this.grpAnalyserBox.Size = new System.Drawing.Size(795, 0);
             this.grpAnalyserBox.TabIndex = 25;
             this.grpAnalyserBox.TabStop = false;
             this.grpAnalyserBox.Text = "Analyser box";
@@ -676,7 +681,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grpLabData);
-            this.splitContainer1.Size = new System.Drawing.Size(746, 0);
+            this.splitContainer1.Size = new System.Drawing.Size(789, 0);
             this.splitContainer1.SplitterDistance = 534;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -832,6 +837,7 @@
             // 
             // grp_static_hostility
             // 
+            this.grp_static_hostility.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grp_static_hostility.Controls.Add(this.label9);
             this.grp_static_hostility.Controls.Add(this.label6);
             this.grp_static_hostility.Controls.Add(this.label7);
@@ -840,9 +846,9 @@
             this.grp_static_hostility.Controls.Add(this.lblMin);
             this.grp_static_hostility.Controls.Add(this.trackBar1);
             this.grp_static_hostility.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.grp_static_hostility.Location = new System.Drawing.Point(799, 69);
+            this.grp_static_hostility.Location = new System.Drawing.Point(822, 69);
             this.grp_static_hostility.Name = "grp_static_hostility";
-            this.grp_static_hostility.Size = new System.Drawing.Size(358, 113);
+            this.grp_static_hostility.Size = new System.Drawing.Size(348, 113);
             this.grp_static_hostility.TabIndex = 32;
             this.grp_static_hostility.TabStop = false;
             this.grp_static_hostility.Text = "Static hostility of the labirynth";
@@ -918,13 +924,14 @@
             this.trackBar1.Maximum = 140;
             this.trackBar1.Minimum = -140;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(349, 45);
+            this.trackBar1.Size = new System.Drawing.Size(339, 45);
             this.trackBar1.TabIndex = 22;
             this.trackBar1.TickFrequency = 20;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // grpDinamicHostility
             // 
+            this.grpDinamicHostility.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grpDinamicHostility.Controls.Add(this.label13);
             this.grpDinamicHostility.Controls.Add(this.label14);
             this.grpDinamicHostility.Controls.Add(this.lbltrmax);
@@ -934,12 +941,13 @@
             this.grpDinamicHostility.Controls.Add(this.label12);
             this.grpDinamicHostility.Controls.Add(this.trackBar2);
             this.grpDinamicHostility.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.grpDinamicHostility.Location = new System.Drawing.Point(799, 188);
+            this.grpDinamicHostility.Location = new System.Drawing.Point(821, 188);
             this.grpDinamicHostility.Name = "grpDinamicHostility";
-            this.grpDinamicHostility.Size = new System.Drawing.Size(354, 98);
+            this.grpDinamicHostility.Size = new System.Drawing.Size(344, 98);
             this.grpDinamicHostility.TabIndex = 33;
             this.grpDinamicHostility.TabStop = false;
             this.grpDinamicHostility.Text = "Dinamic hostility from the start point";
+            this.grpDinamicHostility.Visible = false;
             // 
             // label13
             // 
@@ -1021,19 +1029,47 @@
             this.trackBar2.Maximum = 500;
             this.trackBar2.Minimum = -500;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(349, 45);
+            this.trackBar2.Size = new System.Drawing.Size(339, 45);
             this.trackBar2.SmallChange = 10;
             this.trackBar2.TabIndex = 34;
             this.trackBar2.TickFrequency = 100;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
+            // bttnShowGraph
+            // 
+            this.bttnShowGraph.Enabled = false;
+            this.bttnShowGraph.Location = new System.Drawing.Point(11, 212);
+            this.bttnShowGraph.Name = "bttnShowGraph";
+            this.bttnShowGraph.Size = new System.Drawing.Size(139, 21);
+            this.bttnShowGraph.TabIndex = 44;
+            this.bttnShowGraph.Text = "Show knowledge graph";
+            this.bttnShowGraph.UseVisualStyleBackColor = true;
+            this.bttnShowGraph.Click += new System.EventHandler(this.bttnShowGraph_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 49);
+            // 
+            // bttnLoadExistingDB
+            // 
+            this.bttnLoadExistingDB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnLoadExistingDB.Image = ((System.Drawing.Image)(resources.GetObject("bttnLoadExistingDB.Image")));
+            this.bttnLoadExistingDB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnLoadExistingDB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnLoadExistingDB.Name = "bttnLoadExistingDB";
+            this.bttnLoadExistingDB.Size = new System.Drawing.Size(46, 46);
+            this.bttnLoadExistingDB.Text = "toolStripButton1";
+            this.bttnLoadExistingDB.Click += new System.EventHandler(this.bttnLoadExistingDB_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 292);
+            this.ClientSize = new System.Drawing.Size(822, 320);
             this.Controls.Add(this.grpDinamicHostility);
             this.Controls.Add(this.grp_static_hostility);
+            this.Controls.Add(this.grpAnalyserTools);
             this.Controls.Add(this.grpAnalyserBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -1161,5 +1197,8 @@
         private System.Windows.Forms.CheckBox chkRandomDeath;
         private System.Windows.Forms.DataGridView dgvLab;
         private System.Windows.Forms.Label lblLabparams;
+        private System.Windows.Forms.Button bttnShowGraph;
+        private System.Windows.Forms.ToolStripButton bttnLoadExistingDB;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }

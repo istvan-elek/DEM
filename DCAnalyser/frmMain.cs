@@ -24,10 +24,10 @@ namespace DCAnalyser
         SQLiteConnectionStringBuilder cnsb = new SQLiteConnectionStringBuilder();
         SQLiteConnectionStringBuilder cnsbAdmin = new SQLiteConnectionStringBuilder();
         string appfolder;// = Properties.Settings.Default.lastFolder;
-        System.Windows.Forms.FormWindowState state; 
+        //System.Windows.Forms.FormWindowState state; 
         string dbFolder;
         string reportFolder;
-        List<Int32> currentWkrNumber;
+        //List<Int32> currentWkrNumber;
         List<Int32> timeSeries = new List<Int32>(0);
         int labSize;
         string[] reportNames;

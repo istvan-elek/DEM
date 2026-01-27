@@ -19,7 +19,7 @@ namespace DCDemo
         int movement_costs=-1;
         int trap_energy=-400;
         int wumpus_energy=-1000;
-        int replication_energy_level=5000;
+        //int replication_energy_level=5000;
 
         //public worker(Int32 WID, labirynth currentLab, NpgsqlConnectionStringBuilder cnsb)
         //{

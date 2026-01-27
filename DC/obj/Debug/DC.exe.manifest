@@ -50,7 +50,43 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H8nOb621rxXkCG8Guf99GvNnctcXEFWEm7MOW+EgOJs=</dsig:DigestValue>
+        <dsig:DigestValue>FBPONF3KeG6uUxztBCePyQAl83BARl9pNSPukjkE5DU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DCAnalyser.exe" size="146944">
+      <assemblyIdentity name="DCAnalyser" version="3.1.0.0" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>zzmtxEHm49yOVV3q4l6jwpAmwjEuKOrqybtnuLfKXEA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DCDemo.exe" size="64512">
+      <assemblyIdentity name="DCDemo" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>YtiEiF/FWHfRGqAAfaFIuP6Bgv+xvUTDLjG2ZCXEjnQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DCMaster.exe" size="155136">
+      <assemblyIdentity name="DCMaster" version="3.1.0.0" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>OM/IA+R7uobRfkt7hy90T1huWPjPRd9FPCPssVkekC4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -87,6 +123,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>bTKRYrRgUVqEnGk1GP9iahozY+edVJz9aCLlYB8kYD4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="431792">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.118.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>mwWBsAMWHRYFQFq0riox4DvzKHZzwUj0odkCU6qtLDA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

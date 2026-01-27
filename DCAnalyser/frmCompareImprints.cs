@@ -16,10 +16,10 @@ namespace DCAnalyser
     {
 
         SQLiteConnectionStringBuilder[] cnsb = new SQLiteConnectionStringBuilder[2];
-        DataTable dt1;
-        DataTable dt2;
+        //DataTable dt1;
+        //DataTable dt2;
         List<String> filenames = new List<String>();
-        string fold = "";
+        //string fold = "";
         string appFolder;
         int labSize;
         int k=0;

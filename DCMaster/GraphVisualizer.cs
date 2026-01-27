@@ -12,24 +12,29 @@ namespace DCMaster
     {
         public class GraphVisualiz
         {
-            public static void ShowGraph(Dictionary<string, List<(string, float)>> graph)
+            public static void ShowGraph(Dictionary<string, List<(string, float)>> graph, Dictionary<string, int> energyByPos = null)
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new GraphForm(graph));
+                //Application.EnableVisualStyles();
+                //Application.SetCompatibleTextRenderingDefault(false);
+                //Application.Run(new GraphForm(graph, energyByPos));
+                var f = new GraphForm(graph, energyByPos);
+                f.Show();        // nem blokkol
+                                 // f.ShowDialog(); // ha inkább modális ablakot akarsz
             }
         }
 
         public class GraphForm : Form
         {
             private Dictionary<string, List<(string, float)>> _graph;
+            private Dictionary<string, int> _energyByPos;
             private Dictionary<string, PointF> _positions = new Dictionary<string, PointF>();
             private int _nodeSize = 20;
             private Font _font = new Font("Arial", 8);
 
-            public GraphForm(Dictionary<string, List<(string, float)>> graph)
+            public GraphForm(Dictionary<string, List<(string, float)>> graph, Dictionary<string, int> energyByPos = null)
             {
                 this._graph = graph;
+                this._energyByPos = energyByPos;
                 this.DoubleBuffered = true;
                 this.Width = 800;
                 this.Height = 800;
@@ -42,7 +47,13 @@ namespace DCMaster
                 int radius = 300;
                 int centerX = Width / 2;
                 int centerY = Height / 2;
-                var keys = _graph.Keys.ToList();
+                var keySet = new HashSet<string>(_graph.Keys);
+                foreach (var kv in _graph)
+                {
+                    foreach (var edge in kv.Value)
+                        keySet.Add(edge.Item1);
+                }
+                var keys = keySet.ToList();
                 for (int i = 0; i < keys.Count; i++)
                 {
                     double angle = 2 * Math.PI * i / keys.Count;
@@ -79,8 +90,8 @@ namespace DCMaster
                 {
                     Brush brush = Brushes.Gray;
                     string node = kvp.Key;
-                    var parts = node.Split(',');
-                    if (parts.Length == 3 && int.TryParse(parts[2], out int val))
+
+                    if (_energyByPos != null && _energyByPos.TryGetValue(node, out int val))
                     {
                         brush = val > 0 ? Brushes.Green : val < 0 ? Brushes.Red : Brushes.LightGray;
                     }
@@ -88,7 +99,10 @@ namespace DCMaster
                     PointF p = kvp.Value;
                     g.FillEllipse(brush, p.X - _nodeSize / 2, p.Y - _nodeSize / 2, _nodeSize, _nodeSize);
                     g.DrawEllipse(Pens.Black, p.X - _nodeSize / 2, p.Y - _nodeSize / 2, _nodeSize, _nodeSize);
-                    g.DrawString(kvp.Key, _font, Brushes.Black, p.X + _nodeSize / 2, p.Y);
+                    var label = kvp.Key;
+                    if (_energyByPos != null && _energyByPos.TryGetValue(kvp.Key, out int eVal))
+                        label += "," + eVal;
+                    g.DrawString(label, _font, Brushes.Black, p.X + _nodeSize / 2, p.Y);
                 }
             }
         }

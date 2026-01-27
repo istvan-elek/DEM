@@ -23,7 +23,7 @@ namespace DCAnalyser
         DataTable dt1;
         DataTable dt2;
         DataTable dt3;
-        string selectedDb = "";
+        //string selectedDb = "";
         string[] filenames;
         string fold = "";
         string appFolder;

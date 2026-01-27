@@ -151,3 +151,11 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebVi
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.config
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.Up2Date
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\System.Data.SQLite.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\System.Data.SQLite.xml

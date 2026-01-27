@@ -34,10 +34,11 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe.config
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.pdb
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.csproj.AssemblyReference.cache
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.frmMain.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.legend.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.Properties.Resources.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.csproj.GenerateResource.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.csproj.CoreCompileInputs.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCDemo\obj\Debug\DCDemo.frmMainDemo.resources

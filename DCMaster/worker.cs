@@ -23,6 +23,11 @@ namespace DCMaster
         int delayValue;
         
 
+        
+        // Knowledge graph built from Imprint (nodes) and WorkerPath (edges)
+        // Node key: "x,y" (stable); node energy stored separately.
+        public KnowledgeGraph Knowledge { get; } = new KnowledgeGraph();
+
         public worker(labyrinth currentLab, Int32 id, Boolean learning, IList<string> param) 
         {
             lab = currentLab;
@@ -103,6 +108,8 @@ namespace DCMaster
                     int x = Convert.ToInt16(_currentPosition.Split(',')[0]);
                     int y = Convert.ToInt16(_currentPosition.Split(',')[1]);
                     _workerPath.Add(_currentPosition + "," + lab.Fields[x,y]);
+                    Knowledge.UpdateFromImprint(_imprint);
+                    Knowledge.UpdateFromWorkerPath(_workerPath);
                 }
             }
         }
@@ -204,6 +211,11 @@ namespace DCMaster
                 }
             }
             _currentPosition = newPosition;
+
+            // Update knowledge graph incrementally
+            Knowledge.UpdateFromImprint(_imprint);
+            Knowledge.UpdateFromWorkerPath(_workerPath);
+
             if (_energy < 1) { _live = false; }
         }
 
@@ -223,6 +235,123 @@ namespace DCMaster
             neighbors.Add(x + "," + yrem);
             return neighbors;
         }
+
+    /// <summary>
+    /// Knowledge graph built from:
+    ///  - Nodes: Imprint triads ("x,y,energy") => key "x,y", energy attribute
+    ///  - Edges: WorkerPath triads ("x,y,energy") in time order => directed transitions
+    /// Uses incremental processing of WorkerPath to avoid O(n^2) rebuilds.
+    /// </summary>
+    public class KnowledgeGraph
+    {
+        // adjacency: from -> (to -> weight)
+        public Dictionary<string, Dictionary<string, float>> Adj { get; } = new Dictionary<string, Dictionary<string, float>>();
+
+        // node attributes: last known energy per position ("x,y")
+        public Dictionary<string, int> EnergyByPos { get; } = new Dictionary<string, int>();
+
+        // last processed index in workerPath list
+        public int LastProcessedPathIndex { get; private set; } = 0;
+
+        private static bool TryParseTriad(string triad, out string pos, out int energy)
+        {
+            pos = "";
+            energy = 0;
+            if (string.IsNullOrWhiteSpace(triad)) return false;
+
+            var parts = triad.Split(',');
+            if (parts.Length < 3) return false;
+
+            // Keep as string key "x,y" to be stable even if energy changes
+            pos = parts[0].Trim() + "," + parts[1].Trim();
+            return int.TryParse(parts[2].Trim(), out energy);
+        }
+
+        /// <summary>
+        /// Refresh node energy attributes from imprint (unique visited fields).
+        /// Safe to call often (imprint is typically much smaller than path).
+        /// </summary>
+        public void UpdateFromImprint(List<string> imprint)
+        {
+            if (imprint == null) return;
+
+            // imprint is a set-like list (order not meaningful)
+            foreach (var s in imprint)
+            {
+                if (TryParseTriad(s, out var pos, out var e))
+                {
+                    EnergyByPos[pos] = e;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Incrementally update edges from workerPath and also learn energies from the path.
+        /// </summary>
+        public void UpdateFromWorkerPath(List<string> workerPath)
+        {
+            if (workerPath == null) return;
+
+            if (workerPath.Count == 0)
+            {
+                LastProcessedPathIndex = 0;
+                return;
+            }
+
+            // Learn energy from the last element even if there's no edge yet
+            if (workerPath.Count == 1)
+            {
+                if (TryParseTriad(workerPath[0], out var singlePos, out var singleE))
+                    EnergyByPos[singlePos] = singleE;
+                LastProcessedPathIndex = 1;
+                return;
+            }
+
+            // Ensure LastProcessedPathIndex is sane
+            if (LastProcessedPathIndex < 0 || LastProcessedPathIndex > workerPath.Count)
+                LastProcessedPathIndex = 0;
+
+            for (int i = Math.Max(1, LastProcessedPathIndex); i < workerPath.Count; i++)
+            {
+                if (!TryParseTriad(workerPath[i - 1], out var a, out var ea)) continue;
+                if (!TryParseTriad(workerPath[i], out var b, out var eb)) continue;
+
+                // record energies (last known)
+                EnergyByPos[a] = ea;
+                EnergyByPos[b] = eb;
+
+                if (a == b) continue;
+
+                if (!Adj.TryGetValue(a, out var outMap))
+                {
+                    outMap = new Dictionary<string, float>();
+                    Adj[a] = outMap;
+                }
+
+                // weight = transition frequency (can be replaced later with reinforcement logic)
+                outMap[b] = outMap.TryGetValue(b, out var w) ? w + 1f : 1f;
+            }
+
+            LastProcessedPathIndex = workerPath.Count;
+        }
+
+        /// <summary>
+        /// Convert to the structure expected by GraphVisualizer: Dictionary(from -> List(to, weight)).
+        /// </summary>
+        public Dictionary<string, List<(string to, float weight)>> ToVisualizerGraph()
+        {
+            var result = new Dictionary<string, List<(string to, float weight)>>();
+
+            foreach (var kv in Adj)
+            {
+                var list = kv.Value.Select(e => (e.Key, e.Value)).ToList();
+                result[kv.Key] = list;
+            }
+
+            return result;
+        }
+    }
+
 #endregion
     }
 }

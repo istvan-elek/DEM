@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{837F46AC-C518-443E-9708-CABEDDC11682}</ProjectGuid>
+    <ProjectGuid>{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DCMaster</RootNamespace>
@@ -33,7 +34,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -75,10 +76,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\DC\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\DC\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.3650.58, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.3650.58\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
@@ -93,13 +94,13 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\DC\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.EF6, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>packages\System.Data.SQLite.EF6.1.0.118.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <HintPath>..\DC\packages\System.Data.SQLite.EF6.1.0.118.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>packages\System.Data.SQLite.Linq.1.0.118.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>..\DC\packages\System.Data.SQLite.Linq.1.0.118.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -201,6 +202,7 @@
     <Compile Include="worker.cs" />
     <EmbeddedResource Include="DisplayCharts2.resx">
       <DependentUpon>DisplayCharts2.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
@@ -300,10 +302,15 @@
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
     <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.3650.58\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.3650.58\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('..\DC\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\DC\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.3650.58\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.3650.58\build\Microsoft.Web.WebView2.targets')" />
+  <Import Project="..\DC\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\DC\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\DC\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ELTE IK")]
 [assembly: AssemblyProduct("DCMaster")]
-[assembly: AssemblyCopyright("Copyright © Istvan Elek, 2023, 2024")]
+[assembly: AssemblyCopyright("Copyright © Istvan Elek, 2023, 2024, 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

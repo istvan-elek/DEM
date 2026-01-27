@@ -161,3 +161,4 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.Up2Date
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmClans.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmWorkersTree.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe.config

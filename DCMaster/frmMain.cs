@@ -1067,6 +1067,110 @@ namespace DCMaster
             }
         }
 
+        private void bttnShowGraph_Click(object sender, EventArgs e)
+        {
+            var w = wk[wkSequence[1]];
+            var g = w.Knowledge.ToVisualizerGraph();
+            GraphVisualizer.GraphVisualiz.ShowGraph(g, w.Knowledge.EnergyByPos);
+
+        }
+
+
+        private void bttnLoadExistingDB_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "SQLite Database files (*.db, *.s3db)|*.db;*.s3db";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                iterationName = ofd.FileName;
+                bttnShowGatheredEnergy.Enabled = true;
+                bttnShowPopulation.Enabled = true;
+                bttnShowEntropy.Enabled = true;
+                bttnShowIterationData.Visible = true;
+                bttnShowIterationData.Enabled = true;
+                bttnShowFittness.Enabled = true;
+                bttnShowWorkerPath.Enabled = true;
+                bttnShowHideWorkers.Enabled = true;
+                bttnShowImprint.Enabled = true;
+                bttnShowHideLabirynth.Enabled = true;
+                tsbttnShowAnalyser.Enabled = true;
+                frmViewTextFile viewreports = new frmViewTextFile(iterationName);
+                viewreports.TopMost = true;
+                dbConnection(ofd.FileName);
+            }
+        }
+
+        void dbConnection(string fileName)
+        {
+            DataTable dtlab=new DataTable();
+            DataTable dtworkers=new DataTable();
+            DataTable dtiteration=new DataTable();
+            cnsb.DataSource = fileName;
+            dtlab = loadTableData("select * from labirynth");
+            dtworkers = loadTableData("select * from workers order by id");
+            dtiteration= loadTableData("select * from iteration");
+            string sz = dtlab.Rows[dtlab.Rows.Count - 1][2].ToString();
+
+            ReadWorkerData(dtworkers);
+        }
+
+        void ReadLabyrinthData(DataTable labtable)
+        {
+            int size = Convert.ToInt32(labtable.Rows[labtable.Rows.Count - 1]["size"]);
+            //lab = new labyrinth(size);
+            movement_costs = Convert.ToInt32(labtable.Rows[labtable.Rows.Count - 1]["movement_cost"]);
+            lab.Fields = new int[size, size];
+            lab.Delay = new int[size, size];
+            for (int i = 0; i < labtable.Rows.Count - 1; i++)
+            {
+                int x = Convert.ToInt32(labtable.Rows[i]["x"]);
+                int y = Convert.ToInt32(labtable.Rows[i]["y"]);
+                lab.Fields[x, y] = Convert.ToInt32(labtable.Rows[i]["field_value"]);
+                lab.Delay[x, y] = Convert.ToInt32(labtable.Rows[i]["delay"]);
+            }
+        }   
+
+        void ReadWorkerData(DataTable worker)
+        {
+            wk = new Dictionary<Int32, worker>();
+            cnsb.DataSource = iterationName;
+            DataTable dtworkers = loadTableData("select * from workers order by id");
+            foreach (DataRow dr in dtworkers.Rows)
+            {
+                //worker wkr = new worker();
+                //wkr.ID = Convert.ToInt32(dr["id"]);
+                //wkr.Energy = Convert.ToInt32(dr["energy"]);
+                //wkr.SEntropy = float.Parse(dr["sentropy"].ToString());
+                //wkr.CurrentPosition = dr["currentposition"].ToString();
+                //wkr.Parent = dr["parent"].ToString();
+                //wkr.StartLocation = dr["startposition"].ToString();
+                //wk.Add(wkr.ID, wkr);
+            }
+        }
+
+        DataTable loadTableData(string sqlCommand)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection cnn = new SQLiteConnection(cnsb.ConnectionString))
+            {
+                cnn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(sqlCommand, cnn))
+                {
+                    try
+                    {
+                        SQLiteDataReader dr = cmd.ExecuteReader();
+                        dt.Load(dr);
+                        this.Cursor = Cursors.Default;
+                        return dt;
+                    }
+                    catch (Exception err)
+                    {
+                        throw (err);
+                    }
+                }
+            }
+        }
 
     }
 }
