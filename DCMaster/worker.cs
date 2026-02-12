@@ -17,18 +17,18 @@ namespace DCMaster
     {
         labyrinth lab;
         static Random rnd = new Random(); //random number for neighbor choose
-        float lbsize;
-        int initEnergy;
-        int movementCost;
-        int delayValue;
-        
+        float lbsize; //labyrinth size
+        int initEnergy; // kezdeti energia, amit a paraméterekből olvasunk be
+        int movementCost;// egy lépés költsége, amit a paraméterekből olvasunk be
+        int delayValue;// egy mező újra engedélyezéséhez szükséges lépések száma, amit a paraméterekből olvasunk be. A delayValue értékétől függően a mező energia értéke elérhetetlen lesz. Legközelebb akkor lesz újra elérhető, amikor a delayValue értékétől függő lépések száma letelik. Ez a mechanizmus teszi lehetővé, hogy a mezők átmenetileg üressé váljanak, és így befolyásolják a worker döntéseit és útvonalát a labirintusban.
 
-        
+
+
         // Knowledge graph built from Imprint (nodes) and WorkerPath (edges)
         // Node key: "x,y" (stable); node energy stored separately.
         public KnowledgeGraph Knowledge { get; } = new KnowledgeGraph();
 
-        public worker(labyrinth currentLab, Int32 id, Boolean learning, IList<string> param) 
+        public worker(labyrinth currentLab, Int32 id, Boolean learning, IList<string> param) // constructor, initializes the worker with the given labyrinth, id, learning mode, and parameters (initial energy, movement cost, delay value)
         {
             lab = currentLab;
             lbsize = (float)lab.Size;
@@ -87,7 +87,10 @@ namespace DCMaster
 
         List<string> _workerPath = new List<string>(); // worker path is series of number triads, which contains x,y coordinates and energy of the fields in a labirynth
         public List<string> WorkerPath
-        {get { return _workerPath; } }
+        {
+            get { return _workerPath; }
+            set { _workerPath = value; }
+        }
 
 
         List<string> _edge = new List<string>();
@@ -150,32 +153,21 @@ namespace DCMaster
 
 #region Methods
 
-        public void moveNext()  //moves the next position in labirynth. Find neighbors of the current field, and select a field randomly from the neighbors
+        public void moveNext() //moves the next position in labirynth. Find neighbors of the current field, and select a field randomly from the neighbors
         {
             HashSet<string> visited = new HashSet<string>(_imprint);            
             List<string> currentNeighbours = new List<string>();
             currentNeighbours = getNeighbors(_currentPosition);
             int xold= Convert.ToInt16(_currentPosition.Split(',')[0]);
             int yold = Convert.ToInt16(_currentPosition.Split(',')[1]);
-            string newPosition = currentNeighbours[rnd.Next(0, currentNeighbours.Count)];
-            if (_learn)  // ha tanul, akkor megnézi, hogy az új mező szerepel-e a tudásában (imprint)
+            string newPosition = ChooseNextByGraphAndEnergy(currentNeighbours);
+            if (_learn)  // ha tanul, akkor kerüli az energianyelő (negatív) mezőket az imprint alapján
             {
-                foreach (string item in _imprint)
+                int tries = 0;
+                while (tries < 8 && IsDangerByImprint(newPosition))
                 {
-                    string[] s = item.Split(',');   //imprint content
-                    string s2 = s[0] + "," + s[1]; // position x=s[0], y=s[1],  s[2] is energy
-                    Boolean danger = true;
-                    while (danger)
-                    {
-                        if ((s2 == newPosition) && (int.Parse(s[2]) < movementCost))// megnézi, hogy a mező benne van-e az imprintben és energia értéke negatív-e (energianyelő)
-                        {
-                            newPosition = currentNeighbours[rnd.Next(0, currentNeighbours.Count)];
-                        }
-                        else
-                        {
-                            danger = false;
-                        }
-                    }
+                    newPosition = ChooseNextByGraphAndEnergy(currentNeighbours);
+                    tries++;
                 }
             }
             int x = Convert.ToInt16(newPosition.Split(',')[0]);
@@ -199,20 +191,20 @@ namespace DCMaster
             }
             else  // ha nem tanul
             {
-                if (lab.Delay[x, y] == 0)
+                if (lab.Delay[x, y] == 0)// enable a mező
                 {
                     _energy += fieldval; 
                     _sEntropy -= Math.Abs(fieldval - lab.Fields[xold, yold]);
                     if (fieldval > -movementCost) lab.Delay[x, y] = delayValue;                   
                 }
-                else
+                else  // disable a mező
                 {
                     lab.Delay[x, y] -= 1;
                 }
             }
             _currentPosition = newPosition;
 
-            // Update knowledge graph incrementally
+            // Update knowledge incrementally
             Knowledge.UpdateFromImprint(_imprint);
             Knowledge.UpdateFromWorkerPath(_workerPath);
 
@@ -237,12 +229,138 @@ namespace DCMaster
         }
 
     /// <summary>
+    /// 
+
+        private struct ScoredPos
+        {
+            public string Pos;
+            public float Score;
+
+            public ScoredPos(string pos, float score)
+            {
+                Pos = pos;
+                Score = score;
+            }
+        }
+
+        private string ChooseNextByGraphAndEnergy(List<string> neighbors)
+        {
+            // Hangolható paraméterek
+            float alphaGraph = 0.7f;        // 0..1  (gráf hatása)
+            float betaEnergy = 0.3f;        // energia hatása
+            float temperature = 1.2f;       // >0   (kisebb -> determinisztikusabb)
+            float backtrackPenalty = 1.0f;  // visszalépés bünti
+
+            string cur = _currentPosition;
+
+            // Előző pozíció (loop ellen)
+            string prev = null;
+            if (_workerPath != null && _workerPath.Count >= 2)
+            {
+                // workerPath elem: "x,y,energy"
+                var p = _workerPath[_workerPath.Count - 2].Split(',');
+                if (p.Length >= 2) prev = p[0].Trim() + "," + p[1].Trim();
+            }
+
+            var items = new List<ScoredPos>(neighbors.Count);
+
+            foreach (var n in neighbors)
+            {
+                float g = 0f;
+
+                // Gráf-él súly (ha ismert)
+                if (Knowledge != null &&
+                    Knowledge.Adj != null &&
+                    Knowledge.Adj.TryGetValue(cur, out var outMap) &&
+                    outMap != null &&
+                    outMap.TryGetValue(n, out var w))
+                {
+                    g = w;
+                }
+
+                // Energia (ha ismert)
+                int e = 0;
+                if (Knowledge != null &&
+                    Knowledge.EnergyByPos != null &&
+                    Knowledge.EnergyByPos.TryGetValue(n, out var ee))
+                {
+                    e = ee;
+                }
+
+                float score = alphaGraph * g + betaEnergy * e;
+
+                // visszalépés büntetése
+                if (prev != null && n == prev) score -= backtrackPenalty;
+
+                // kis zaj
+                score += (float)(rnd.NextDouble() * 0.05);
+
+                items.Add(new ScoredPos(n, score));
+            }
+
+            return SoftmaxPick(items, temperature);
+        }
+
+        private string SoftmaxPick(List<ScoredPos> items, float temperature)
+        {
+            if (items == null || items.Count == 0) return _currentPosition;
+            if (temperature <= 0.0001f) temperature = 0.0001f;
+
+            float max = items.Max(t => t.Score);
+
+            double sum = 0;
+            var weights = new double[items.Count];
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                double v = Math.Exp((items[i].Score - max) / temperature);
+                weights[i] = v;
+                sum += v;
+            }
+
+            double r = rnd.NextDouble() * sum;
+            double acc = 0;
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                acc += weights[i];
+                if (r <= acc) return items[i].Pos;
+            }
+
+            return items[items.Count - 1].Pos;
+        }
+
+        private bool IsDangerByImprint(string pos)
+        {
+            // Danger = az imprintben szerepel és energia értéke negatív (energianyelő)
+            // imprint elem: "x,y,energy"
+            if (_imprint == null) return false;
+
+            foreach (string item in _imprint)
+            {
+                var s = item.Split(',');
+                if (s.Length < 3) continue;
+
+                string p = s[0].Trim() + "," + s[1].Trim();
+                if (p == pos)
+                {
+                    if (int.TryParse(s[2], out int e))
+                    {
+                        if (e < movementCost) return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+            /// <summary>
     /// Knowledge graph built from:
     ///  - Nodes: Imprint triads ("x,y,energy") => key "x,y", energy attribute
     ///  - Edges: WorkerPath triads ("x,y,energy") in time order => directed transitions
     /// Uses incremental processing of WorkerPath to avoid O(n^2) rebuilds.
     /// </summary>
-    public class KnowledgeGraph
+
+public class KnowledgeGraph
     {
         // adjacency: from -> (to -> weight)
         public Dictionary<string, Dictionary<string, float>> Adj { get; } = new Dictionary<string, Dictionary<string, float>>();

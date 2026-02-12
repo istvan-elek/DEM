@@ -10,7 +10,8 @@ namespace DCMaster
     {
         /// <summary>
         /// The main entry point for the application.
-        /// </summary>
+        /// </summary>		lab.Fields[x,y]	error CS0103: The name 'lab' does not exist in the current context	
+
         [STAThread]
         static void Main()
         {

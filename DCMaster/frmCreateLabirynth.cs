@@ -127,7 +127,7 @@ namespace DCMaster
             {
                 for (int j = 0; j < r; j++)
                 {
-                    if (lab.Fields[i, j] != -1)
+                    if (lab.Fields[i, j] != movement_cost)
                     {
                         labir += "Fields[" + i + "," + j + "] = " + lab.Fields[i, j] + Environment.NewLine;
                     }

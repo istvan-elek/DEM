@@ -31,13 +31,21 @@ namespace DCMaster
                     lBmp.SetPixel(j, i, clrEmpty);
                 }
             }
-            for (int i = 0; i < lab.Position.Count; i++)
+            foreach (var pos in lab.Position.Values)
             {
-                int x = int.Parse(lab.Position[i].Split(',')[0]);
-                int y = int.Parse(lab.Position[i].Split(',')[1]);
+                int x = int.Parse(pos.Split(',')[0]);
+                int y = int.Parse(pos.Split(',')[1]);
                 if (lab.Fields[x, y] < 0) { lBmp.SetPixel(x, y, sink); }
                 if (lab.Fields[x, y] > 0) { lBmp.SetPixel(x, y, source); }
             }
+        
+            //for (int i = 0; i < lab.Position.Count; i++)
+            //{
+            //    int x = int.Parse(lab.Position[i].Split(',')[0]);
+            //    int y = int.Parse(lab.Position[i].Split(',')[1]);
+            //    if (lab.Fields[x, y] < 0) { lBmp.SetPixel(x, y, sink); }
+            //    if (lab.Fields[x, y] > 0) { lBmp.SetPixel(x, y, source); }
+            //}
             return lBmp;
         }
 
@@ -60,13 +68,13 @@ namespace DCMaster
             {
                 w.Value.Imprint.ForEach(delegate (string elements)
                 {
-                    int x = int.Parse(elements.Split(',')[0]);
-                    int y = int.Parse(elements.Split(',')[1]);
-                    int val = int.Parse(elements.Split(',')[2]);
+                    string el=elements.TrimEnd(';');
+                    int x = int.Parse(el.Split(',')[0]);
+                    int y = int.Parse(el.Split(',')[1]);
+                    int val = int.Parse(el.Split(',')[2]);
                     if (val <0 ) { Bmp.SetPixel(x, y, sink); }
                     else { Bmp.SetPixel(x,y, source); }
                     //imageMatrix[x, y] += 1;
-
                 });
             }
             return Bmp;

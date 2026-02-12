@@ -3,32 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dcmaster\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:frmguide.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dcmaster\\frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dcmaster\\frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\graphvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:graphvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\graphvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:graphvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|c:\\users\\elek istv\u00E1n\\documents\\myprogs\\dc3\\dem\\dcmaster\\knowledgegraphbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\knowledgegraphbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{479B2CD0-0A46-452E-93A4-FB75DCDCDE29}|DCMaster.csproj|solutionrelative:knowledgegraphbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\knowledgegraphbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:knowledgegraphbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:frmcreatelabirynth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837F46AC-C518-443E-9708-CABEDDC11682}|DCMaster.csproj|solutionrelative:worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,53 +78,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmCreateLabirynth.cs",
-              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
-              "RelativeDocumentMoniker": "frmCreateLabirynth.cs",
-              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
-              "RelativeToolTip": "frmCreateLabirynth.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAiwJIAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmGuide.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmGuide.cs",
+              "RelativeDocumentMoniker": "frmGuide.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmGuide.cs [Design]",
+              "RelativeToolTip": "frmGuide.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T11:28:36.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmCreateLabirynth.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
-              "RelativeDocumentMoniker": "frmCreateLabirynth.cs",
-              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs [Design]",
-              "RelativeToolTip": "frmCreateLabirynth.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T11:28:33.756Z",
+              "WhenOpened": "2026-01-27T12:48:35.904Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "KnowledgeGraphBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\KnowledgeGraphBuilder.cs",
-              "RelativeDocumentMoniker": "KnowledgeGraphBuilder.cs",
-              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\KnowledgeGraphBuilder.cs",
-              "RelativeToolTip": "KnowledgeGraphBuilder.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmGuide.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmGuide.cs",
+              "RelativeDocumentMoniker": "frmGuide.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmGuide.cs",
+              "RelativeToolTip": "frmGuide.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:13:25.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GraphVisualizer.cs",
-              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\GraphVisualizer.cs",
-              "RelativeDocumentMoniker": "GraphVisualizer.cs",
-              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\GraphVisualizer.cs",
-              "RelativeToolTip": "GraphVisualizer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAlwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:13:14.598Z",
+              "WhenOpened": "2026-01-27T12:48:05.778Z",
               "EditorCaption": ""
             },
             {
@@ -103,14 +109,136 @@
               "RelativeDocumentMoniker": "frmMain.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
               "RelativeToolTip": "frmMain.cs",
-              "ViewState": "AgIAAFYEAAAAAAAAAAAgwGoEAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACAEAAAAAAAAAAAkwCUEAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T14:41:31.881Z",
+              "WhenOpened": "2026-01-27T12:46:38.47Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T12:46:38.791Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GraphVisualizer.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\GraphVisualizer.cs",
+              "RelativeDocumentMoniker": "GraphVisualizer.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\GraphVisualizer.cs",
+              "RelativeToolTip": "GraphVisualizer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAlwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T12:46:26.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmCreateLabirynth.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
+              "RelativeDocumentMoniker": "frmCreateLabirynth.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs [Design]",
+              "RelativeToolTip": "frmCreateLabirynth.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T12:46:09.504Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "KnowledgeGraphBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\KnowledgeGraphBuilder.cs",
+              "RelativeDocumentMoniker": "KnowledgeGraphBuilder.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\KnowledgeGraphBuilder.cs",
+              "RelativeToolTip": "KnowledgeGraphBuilder.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T12:46:13.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmCreateLabirynth.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
+              "RelativeDocumentMoniker": "frmCreateLabirynth.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
+              "RelativeToolTip": "frmCreateLabirynth.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAiwJIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T12:46:08.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmCreateLabirynth.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
+              "RelativeDocumentMoniker": "frmCreateLabirynth.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
+              "RelativeToolTip": "frmCreateLabirynth.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAiwJIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T11:28:36.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frmCreateLabirynth.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs",
+              "RelativeDocumentMoniker": "frmCreateLabirynth.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmCreateLabirynth.cs [Design]",
+              "RelativeToolTip": "frmCreateLabirynth.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T11:28:33.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "KnowledgeGraphBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\KnowledgeGraphBuilder.cs",
+              "RelativeDocumentMoniker": "KnowledgeGraphBuilder.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\KnowledgeGraphBuilder.cs",
+              "RelativeToolTip": "KnowledgeGraphBuilder.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:13:25.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GraphVisualizer.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\GraphVisualizer.cs",
+              "RelativeDocumentMoniker": "GraphVisualizer.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\GraphVisualizer.cs",
+              "RelativeToolTip": "GraphVisualizer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAlwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:13:14.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAACAEAAAAAAAAAAAkwCUEAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T14:41:31.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "worker.cs",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\worker.cs",
               "RelativeDocumentMoniker": "worker.cs",
@@ -118,20 +246,18 @@
               "RelativeToolTip": "worker.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAQwD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T10:15:17.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T10:15:17.933Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",
               "ToolTip": "C:\\Users\\Elek Istv\u00E1n\\Documents\\MyProgs\\DC3\\DEM\\DCMaster\\frmMain.cs [Design]",
               "RelativeToolTip": "frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T14:41:24.988Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-20T14:41:24.988Z"
             }
           ]
         }

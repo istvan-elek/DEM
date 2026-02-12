@@ -31,15 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.bttnLoadExistingDB = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.bttnEditCreateWorkers = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bttnEditCreateLabs = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.bttnShowEditParameters = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.bttnStartIteration = new System.Windows.Forms.ToolStripButton();
             this.bttnStopIteration = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbttnShowAnalyser = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbttnViewreports = new System.Windows.Forms.ToolStripButton();
@@ -51,10 +54,16 @@
             this.lblsp1 = new System.Windows.Forms.Label();
             this.lblIterationCount = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblStCount = new System.Windows.Forms.Label();
             this.tbStop = new System.Windows.Forms.TextBox();
             this.lblStop = new System.Windows.Forms.Label();
             this.bttnShowIterationData = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblWorkerCount = new System.Windows.Forms.Label();
+            this.lblLivingWorkerNumber = new System.Windows.Forms.Label();
+            this.lblInitnumofwkr = new System.Windows.Forms.Label();
             this.grpAnalyserTools = new System.Windows.Forms.GroupBox();
+            this.bttnShowGraph = new System.Windows.Forms.Button();
             this.bttnShowFittness = new System.Windows.Forms.Button();
             this.bttnShowEntropy = new System.Windows.Forms.Button();
             this.bttnShowImprint = new System.Windows.Forms.Button();
@@ -63,11 +72,6 @@
             this.bttnShowWorkerPath = new System.Windows.Forms.Button();
             this.bttnShowHideLabirynth = new System.Windows.Forms.Button();
             this.bttnShowHideWorkers = new System.Windows.Forms.Button();
-            this.lblStepCount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblWorkerCount = new System.Windows.Forms.Label();
-            this.lblLivingWorkerNumber = new System.Windows.Forms.Label();
-            this.lblInitnumofwkr = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkRandomDeath = new System.Windows.Forms.CheckBox();
             this.chkRandomStartPosition = new System.Windows.Forms.CheckBox();
@@ -112,9 +116,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.bttnShowGraph = new System.Windows.Forms.Button();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.bttnLoadExistingDB = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.grpAnalyserTools.SuspendLayout();
@@ -141,16 +142,17 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bttnLoadExistingDB,
+            this.toolStripSeparator8,
             this.toolStripSeparator7,
             this.bttnEditCreateWorkers,
             this.toolStripSeparator3,
             this.bttnEditCreateLabs,
-            this.toolStripSeparator4,
+            this.toolStripSeparator9,
             this.bttnShowEditParameters,
-            this.toolStripSeparator2,
+            this.toolStripSeparator10,
             this.bttnStartIteration,
             this.bttnStopIteration,
-            this.toolStripSeparator1,
+            this.toolStripSeparator11,
             this.tsbttnShowAnalyser,
             this.toolStripSeparator5,
             this.tsbttnViewreports,
@@ -159,9 +161,31 @@
             this.tsbttnHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(822, 49);
+            this.toolStrip1.Size = new System.Drawing.Size(795, 49);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // bttnLoadExistingDB
+            // 
+            this.bttnLoadExistingDB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnLoadExistingDB.Image = ((System.Drawing.Image)(resources.GetObject("bttnLoadExistingDB.Image")));
+            this.bttnLoadExistingDB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnLoadExistingDB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnLoadExistingDB.Name = "bttnLoadExistingDB";
+            this.bttnLoadExistingDB.Size = new System.Drawing.Size(46, 46);
+            this.bttnLoadExistingDB.Text = "Load existing simulation data";
+            this.bttnLoadExistingDB.Click += new System.EventHandler(this.bttnLoadExistingDB_Click);
+            this.bttnLoadExistingDB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bttnLoadExistingDB_MouseDown);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 49);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 49);
             // 
             // bttnEditCreateWorkers
             // 
@@ -191,10 +215,10 @@
             this.bttnEditCreateLabs.Text = "Create labyrinths";
             this.bttnEditCreateLabs.Click += new System.EventHandler(this.bttnCreateLab_Click);
             // 
-            // toolStripSeparator4
+            // toolStripSeparator9
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 49);
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 49);
             // 
             // bttnShowEditParameters
             // 
@@ -206,10 +230,10 @@
             this.bttnShowEditParameters.Text = "Set parameters";
             this.bttnShowEditParameters.Click += new System.EventHandler(this.bttnShowParameters_Click);
             // 
-            // toolStripSeparator2
+            // toolStripSeparator10
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 49);
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 49);
             // 
             // bttnStartIteration
             // 
@@ -234,10 +258,10 @@
             this.bttnStopIteration.Text = "Stop iteration";
             this.bttnStopIteration.Click += new System.EventHandler(this.bttnStopIteration_Click);
             // 
-            // toolStripSeparator1
+            // toolStripSeparator11
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 49);
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 49);
             // 
             // tsbttnShowAnalyser
             // 
@@ -291,7 +315,7 @@
             this.tsbttnHelp.Image = ((System.Drawing.Image)(resources.GetObject("tsbttnHelp.Image")));
             this.tsbttnHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbttnHelp.Name = "tsbttnHelp";
-            this.tsbttnHelp.Size = new System.Drawing.Size(24, 24);
+            this.tsbttnHelp.Size = new System.Drawing.Size(24, 46);
             this.tsbttnHelp.Text = "?";
             this.tsbttnHelp.ToolTipText = "Help";
             this.tsbttnHelp.Click += new System.EventHandler(this.tsbttnHelp_Click);
@@ -329,17 +353,18 @@
             // 
             this.lblIterationCount.AutoSize = true;
             this.lblIterationCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIterationCount.Location = new System.Drawing.Point(84, 100);
+            this.lblIterationCount.Location = new System.Drawing.Point(82, 104);
             this.lblIterationCount.Name = "lblIterationCount";
-            this.lblIterationCount.Size = new System.Drawing.Size(0, 13);
+            this.lblIterationCount.Size = new System.Drawing.Size(13, 13);
             this.lblIterationCount.TabIndex = 22;
+            this.lblIterationCount.Text = "0";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblStCount);
             this.groupBox1.Controls.Add(this.tbStop);
             this.groupBox1.Controls.Add(this.lblStop);
             this.groupBox1.Controls.Add(this.bttnShowIterationData);
-            this.groupBox1.Controls.Add(this.lblStepCount);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblWorkerCount);
             this.groupBox1.Controls.Add(this.lblLivingWorkerNumber);
@@ -347,12 +372,21 @@
             this.groupBox1.Controls.Add(this.lblLabSize);
             this.groupBox1.Controls.Add(this.lblIterationCount);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(340, 69);
+            this.groupBox1.Location = new System.Drawing.Point(340, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(278, 216);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iteration progress data";
+            // 
+            // lblStCount
+            // 
+            this.lblStCount.AutoSize = true;
+            this.lblStCount.Location = new System.Drawing.Point(22, 103);
+            this.lblStCount.Name = "lblStCount";
+            this.lblStCount.Size = new System.Drawing.Size(62, 13);
+            this.lblStCount.TabIndex = 38;
+            this.lblStCount.Text = "Step count:";
             // 
             // tbStop
             // 
@@ -384,6 +418,47 @@
             this.bttnShowIterationData.Visible = false;
             this.bttnShowIterationData.Click += new System.EventHandler(this.tsbttnViewIterationData_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(21, 72);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 13);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "------------------------------------------------------------------";
+            // 
+            // lblWorkerCount
+            // 
+            this.lblWorkerCount.AutoSize = true;
+            this.lblWorkerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWorkerCount.Location = new System.Drawing.Point(22, 129);
+            this.lblWorkerCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWorkerCount.Name = "lblWorkerCount";
+            this.lblWorkerCount.Size = new System.Drawing.Size(103, 13);
+            this.lblWorkerCount.TabIndex = 29;
+            this.lblWorkerCount.Text = "Living worker count:";
+            // 
+            // lblLivingWorkerNumber
+            // 
+            this.lblLivingWorkerNumber.AutoSize = true;
+            this.lblLivingWorkerNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLivingWorkerNumber.Location = new System.Drawing.Point(125, 129);
+            this.lblLivingWorkerNumber.Name = "lblLivingWorkerNumber";
+            this.lblLivingWorkerNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblLivingWorkerNumber.TabIndex = 28;
+            // 
+            // lblInitnumofwkr
+            // 
+            this.lblInitnumofwkr.AutoSize = true;
+            this.lblInitnumofwkr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblInitnumofwkr.Location = new System.Drawing.Point(22, 58);
+            this.lblInitnumofwkr.Name = "lblInitnumofwkr";
+            this.lblInitnumofwkr.Size = new System.Drawing.Size(108, 13);
+            this.lblInitnumofwkr.TabIndex = 26;
+            this.lblInitnumofwkr.Text = "Initial worker count: 0";
+            // 
             // grpAnalyserTools
             // 
             this.grpAnalyserTools.Controls.Add(this.bttnShowGraph);
@@ -396,13 +471,24 @@
             this.grpAnalyserTools.Controls.Add(this.bttnShowHideLabirynth);
             this.grpAnalyserTools.Controls.Add(this.bttnShowHideWorkers);
             this.grpAnalyserTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.grpAnalyserTools.Location = new System.Drawing.Point(639, 69);
+            this.grpAnalyserTools.Location = new System.Drawing.Point(624, 36);
             this.grpAnalyserTools.Name = "grpAnalyserTools";
             this.grpAnalyserTools.Size = new System.Drawing.Size(165, 239);
             this.grpAnalyserTools.TabIndex = 26;
             this.grpAnalyserTools.TabStop = false;
             this.grpAnalyserTools.Text = "Analyser tools";
             this.grpAnalyserTools.Visible = false;
+            // 
+            // bttnShowGraph
+            // 
+            this.bttnShowGraph.Enabled = false;
+            this.bttnShowGraph.Location = new System.Drawing.Point(11, 212);
+            this.bttnShowGraph.Name = "bttnShowGraph";
+            this.bttnShowGraph.Size = new System.Drawing.Size(139, 21);
+            this.bttnShowGraph.TabIndex = 44;
+            this.bttnShowGraph.Text = "Show knowledge graph";
+            this.bttnShowGraph.UseVisualStyleBackColor = true;
+            this.bttnShowGraph.Click += new System.EventHandler(this.bttnShowGraph_Click);
             // 
             // bttnShowFittness
             // 
@@ -493,58 +579,6 @@
             this.bttnShowHideWorkers.UseVisualStyleBackColor = true;
             this.bttnShowHideWorkers.Click += new System.EventHandler(this.bttnShowHideWorkers_click);
             // 
-            // lblStepCount
-            // 
-            this.lblStepCount.AutoSize = true;
-            this.lblStepCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStepCount.Location = new System.Drawing.Point(22, 100);
-            this.lblStepCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblStepCount.Name = "lblStepCount";
-            this.lblStepCount.Size = new System.Drawing.Size(62, 13);
-            this.lblStepCount.TabIndex = 31;
-            this.lblStepCount.Text = "Step count:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(21, 72);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "------------------------------------------------------------------";
-            // 
-            // lblWorkerCount
-            // 
-            this.lblWorkerCount.AutoSize = true;
-            this.lblWorkerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblWorkerCount.Location = new System.Drawing.Point(22, 129);
-            this.lblWorkerCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWorkerCount.Name = "lblWorkerCount";
-            this.lblWorkerCount.Size = new System.Drawing.Size(103, 13);
-            this.lblWorkerCount.TabIndex = 29;
-            this.lblWorkerCount.Text = "Living worker count:";
-            // 
-            // lblLivingWorkerNumber
-            // 
-            this.lblLivingWorkerNumber.AutoSize = true;
-            this.lblLivingWorkerNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLivingWorkerNumber.Location = new System.Drawing.Point(125, 129);
-            this.lblLivingWorkerNumber.Name = "lblLivingWorkerNumber";
-            this.lblLivingWorkerNumber.Size = new System.Drawing.Size(0, 13);
-            this.lblLivingWorkerNumber.TabIndex = 28;
-            // 
-            // lblInitnumofwkr
-            // 
-            this.lblInitnumofwkr.AutoSize = true;
-            this.lblInitnumofwkr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblInitnumofwkr.Location = new System.Drawing.Point(22, 58);
-            this.lblInitnumofwkr.Name = "lblInitnumofwkr";
-            this.lblInitnumofwkr.Size = new System.Drawing.Size(102, 13);
-            this.lblInitnumofwkr.TabIndex = 26;
-            this.lblInitnumofwkr.Text = "Initial worker count: ";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.chkRandomDeath);
@@ -558,7 +592,7 @@
             this.groupBox2.Controls.Add(this.lblsp1);
             this.groupBox2.Controls.Add(this.tbStartPosition);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 69);
+            this.groupBox2.Location = new System.Drawing.Point(12, 58);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(312, 217);
             this.groupBox2.TabIndex = 24;
@@ -590,7 +624,9 @@
             // 
             this.tbFileName2Save.Enabled = false;
             this.tbFileName2Save.Location = new System.Drawing.Point(130, 189);
+            this.tbFileName2Save.Multiline = true;
             this.tbFileName2Save.Name = "tbFileName2Save";
+            this.tbFileName2Save.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbFileName2Save.Size = new System.Drawing.Size(176, 20);
             this.tbFileName2Save.TabIndex = 29;
             // 
@@ -659,9 +695,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpAnalyserBox.Controls.Add(this.splitContainer1);
-            this.grpAnalyserBox.Location = new System.Drawing.Point(13, 324);
+            this.grpAnalyserBox.Location = new System.Drawing.Point(12, 292);
             this.grpAnalyserBox.Name = "grpAnalyserBox";
-            this.grpAnalyserBox.Size = new System.Drawing.Size(795, 0);
+            this.grpAnalyserBox.Size = new System.Drawing.Size(768, 0);
             this.grpAnalyserBox.TabIndex = 25;
             this.grpAnalyserBox.TabStop = false;
             this.grpAnalyserBox.Text = "Analyser box";
@@ -681,8 +717,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grpLabData);
-            this.splitContainer1.Size = new System.Drawing.Size(789, 0);
-            this.splitContainer1.SplitterDistance = 534;
+            this.splitContainer1.Size = new System.Drawing.Size(762, 0);
+            this.splitContainer1.SplitterDistance = 570;
             this.splitContainer1.TabIndex = 1;
             // 
             // dgvWks4Analyser
@@ -691,9 +727,11 @@
             this.dgvWks4Analyser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWks4Analyser.Location = new System.Drawing.Point(0, 0);
             this.dgvWks4Analyser.Name = "dgvWks4Analyser";
-            this.dgvWks4Analyser.Size = new System.Drawing.Size(534, 0);
+            this.dgvWks4Analyser.Size = new System.Drawing.Size(570, 0);
             this.dgvWks4Analyser.TabIndex = 0;
             this.dgvWks4Analyser.Visible = false;
+            this.dgvWks4Analyser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWks4Analyser_CellClick);
+            this.dgvWks4Analyser.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvWks4Analyser_RowHeaderMouseDoubleClick);
             // 
             // bnwks
             // 
@@ -798,7 +836,7 @@
             this.grpLabData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpLabData.Location = new System.Drawing.Point(0, 0);
             this.grpLabData.Name = "grpLabData";
-            this.grpLabData.Size = new System.Drawing.Size(208, 0);
+            this.grpLabData.Size = new System.Drawing.Size(327, 0);
             this.grpLabData.TabIndex = 1;
             this.grpLabData.TabStop = false;
             this.grpLabData.Text = "Labyrinth data";
@@ -821,13 +859,13 @@
             this.dgvLab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLab.Location = new System.Drawing.Point(6, 54);
             this.dgvLab.Name = "dgvLab";
-            this.dgvLab.Size = new System.Drawing.Size(181, 0);
+            this.dgvLab.Size = new System.Drawing.Size(300, 0);
             this.dgvLab.TabIndex = 27;
             // 
             // btnShowLabImage
             // 
             this.btnShowLabImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowLabImage.Location = new System.Drawing.Point(68, 25);
+            this.btnShowLabImage.Location = new System.Drawing.Point(187, 25);
             this.btnShowLabImage.Name = "btnShowLabImage";
             this.btnShowLabImage.Size = new System.Drawing.Size(109, 23);
             this.btnShowLabImage.TabIndex = 26;
@@ -837,7 +875,6 @@
             // 
             // grp_static_hostility
             // 
-            this.grp_static_hostility.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grp_static_hostility.Controls.Add(this.label9);
             this.grp_static_hostility.Controls.Add(this.label6);
             this.grp_static_hostility.Controls.Add(this.label7);
@@ -846,7 +883,7 @@
             this.grp_static_hostility.Controls.Add(this.lblMin);
             this.grp_static_hostility.Controls.Add(this.trackBar1);
             this.grp_static_hostility.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.grp_static_hostility.Location = new System.Drawing.Point(822, 69);
+            this.grp_static_hostility.Location = new System.Drawing.Point(864, 36);
             this.grp_static_hostility.Name = "grp_static_hostility";
             this.grp_static_hostility.Size = new System.Drawing.Size(348, 113);
             this.grp_static_hostility.TabIndex = 32;
@@ -931,7 +968,6 @@
             // 
             // grpDinamicHostility
             // 
-            this.grpDinamicHostility.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grpDinamicHostility.Controls.Add(this.label13);
             this.grpDinamicHostility.Controls.Add(this.label14);
             this.grpDinamicHostility.Controls.Add(this.lbltrmax);
@@ -941,13 +977,12 @@
             this.grpDinamicHostility.Controls.Add(this.label12);
             this.grpDinamicHostility.Controls.Add(this.trackBar2);
             this.grpDinamicHostility.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.grpDinamicHostility.Location = new System.Drawing.Point(821, 188);
+            this.grpDinamicHostility.Location = new System.Drawing.Point(864, 161);
             this.grpDinamicHostility.Name = "grpDinamicHostility";
             this.grpDinamicHostility.Size = new System.Drawing.Size(344, 98);
             this.grpDinamicHostility.TabIndex = 33;
             this.grpDinamicHostility.TabStop = false;
             this.grpDinamicHostility.Text = "Dinamic hostility from the start point";
-            this.grpDinamicHostility.Visible = false;
             // 
             // label13
             // 
@@ -1035,38 +1070,11 @@
             this.trackBar2.TickFrequency = 100;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
-            // bttnShowGraph
-            // 
-            this.bttnShowGraph.Enabled = false;
-            this.bttnShowGraph.Location = new System.Drawing.Point(11, 212);
-            this.bttnShowGraph.Name = "bttnShowGraph";
-            this.bttnShowGraph.Size = new System.Drawing.Size(139, 21);
-            this.bttnShowGraph.TabIndex = 44;
-            this.bttnShowGraph.Text = "Show knowledge graph";
-            this.bttnShowGraph.UseVisualStyleBackColor = true;
-            this.bttnShowGraph.Click += new System.EventHandler(this.bttnShowGraph_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 49);
-            // 
-            // bttnLoadExistingDB
-            // 
-            this.bttnLoadExistingDB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnLoadExistingDB.Image = ((System.Drawing.Image)(resources.GetObject("bttnLoadExistingDB.Image")));
-            this.bttnLoadExistingDB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bttnLoadExistingDB.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnLoadExistingDB.Name = "bttnLoadExistingDB";
-            this.bttnLoadExistingDB.Size = new System.Drawing.Size(46, 46);
-            this.bttnLoadExistingDB.Text = "toolStripButton1";
-            this.bttnLoadExistingDB.Click += new System.EventHandler(this.bttnLoadExistingDB_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 320);
+            this.ClientSize = new System.Drawing.Size(795, 278);
             this.Controls.Add(this.grpDinamicHostility);
             this.Controls.Add(this.grp_static_hostility);
             this.Controls.Add(this.grpAnalyserTools);
@@ -1118,9 +1126,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton bttnEditCreateLabs;
         private System.Windows.Forms.ToolStripButton bttnShowEditParameters;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Label lblLabSize;
         private System.Windows.Forms.TextBox tbStartPosition;
         private System.Windows.Forms.Label lblsp1;
@@ -1133,7 +1139,6 @@
         private System.Windows.Forms.CheckBox chkCoincidence;
         private System.Windows.Forms.Label lblWorkerCount;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblStepCount;
         private System.Windows.Forms.ToolStripButton bttnStopIteration;
         private System.Windows.Forms.Label lblsp0;
         private System.Windows.Forms.CheckBox chkStartPositionFromParent;
@@ -1161,7 +1166,6 @@
         private System.Windows.Forms.Button bttnShowHideLabirynth;
         private System.Windows.Forms.Button bttnShowHideWorkers;
         private System.Windows.Forms.Button bttnShowImprint;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbttnViewreports;
         private System.Windows.Forms.Button bttnShowIterationData;
         private System.Windows.Forms.GroupBox grp_static_hostility;
@@ -1200,5 +1204,10 @@
         private System.Windows.Forms.Button bttnShowGraph;
         private System.Windows.Forms.ToolStripButton bttnLoadExistingDB;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.Label lblStCount;
     }
 }

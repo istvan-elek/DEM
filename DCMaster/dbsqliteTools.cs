@@ -82,17 +82,21 @@ namespace DCMaster
                     cmd.Connection = cnn;
                     foreach (string line in iter2)
                     {
-                        string[] s = line.Split(' ');
-                        int stepcount = int.Parse(s[0]);
-                        int numofworkers = int.Parse(s[1]);
-                        int energy = int.Parse(s[2]);
-                        float entropy = Convert.ToSingle( s[3]);
-                        cmd.CommandText = "Insert into iteration (stepcount, numofworkers, energy, entropy) VALUES (?,?,?,?)";
-                        cmd.Parameters.Add(new SQLiteParameter("stepcount", stepcount));
-                        cmd.Parameters.Add(new SQLiteParameter("numofworkers", numofworkers));
-                        cmd.Parameters.Add(new SQLiteParameter("energy", energy));
-                        cmd.Parameters.Add(new SQLiteParameter("entropy", entropy));
-                        cmd.ExecuteNonQuery();
+                        if (!line.Contains("stepCount"))
+                        {
+                            string[] s = line.Split(' ');
+                            int stepcount = int.Parse(s[0]);
+                            int numofworkers = int.Parse(s[1]);
+                            int energy = int.Parse(s[2]);
+                            float entropy = Convert.ToSingle( s[3]);
+                            cmd.CommandText = "Insert into iteration (stepcount, numofworkers, energy, entropy) VALUES (?,?,?,?)";
+                            cmd.Parameters.Add(new SQLiteParameter("stepcount", stepcount));
+                            cmd.Parameters.Add(new SQLiteParameter("numofworkers", numofworkers));
+                            cmd.Parameters.Add(new SQLiteParameter("energy", energy));
+                            cmd.Parameters.Add(new SQLiteParameter("entropy", entropy));
+                            cmd.ExecuteNonQuery();
+                        }
+
                     }
                 }
             }
@@ -136,7 +140,7 @@ namespace DCMaster
                     using (SQLiteCommand cmd = new SQLiteCommand())
                     {
                         cmd.Connection = cnn;
-                        cmd.CommandText = "Insert into workers (id,energy,entropy,learn,parents,current_position,start_location, worker_path, imprint,edge) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                        cmd.CommandText = "Insert or ignore into workers (id,energy,entropy,learn,parents,current_position,start_location, worker_path, imprint,edge) VALUES (?,?,?,?,?,?,?,?,?,?)";
                         cmd.Parameters.Add(new SQLiteParameter("id", wk[wkSequence[i]].ID));
                         cmd.Parameters.Add(new SQLiteParameter("energy", wk[wkSequence[i]].Energy));
                         cmd.Parameters.Add(new SQLiteParameter("entropy", wk[wkSequence[i]].SEntropy));

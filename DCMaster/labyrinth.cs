@@ -17,7 +17,22 @@ namespace DCMaster
         int source_energy_max;
         int sink_energy_max;
         int movement_costs;
+        public labyrinth(){}
+        public labyrinth(int size)
+        {
+            _size = size;
+            _fields = new int[_size, _size];
+            _delay = new int[_size, _size];
+            _Position = new Dictionary<int, string>();
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    _fields[j, i] = movement_costs;
+                }
+            }
 
+        }
         public void createLabirynth(int grsize, int numberOfSources, int numberOfSinks, IList<String> par)   //create a new labirynth with grsize size, and fills its fields with 0 (empty content) 
         {
             initial_worker_energy = Convert.ToInt16(par[0].Split(';')[1]);
@@ -126,13 +141,11 @@ namespace DCMaster
             set { _size = value; }
         }
 
-        Dictionary<int, string> _Position;
+        private Dictionary<int, string> _Position;
         public Dictionary<int, string> Position
-        //List<string> _Position;
-        //    public List<string> Position
         {
             get { return _Position; }
-            set { Position = value; }
+            set { _Position = value; }
         }
 
         int _numOfEnergySinks;

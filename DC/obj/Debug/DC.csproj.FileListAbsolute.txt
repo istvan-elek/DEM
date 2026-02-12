@@ -126,11 +126,31 @@ C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.application
 C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.csproj.CopyComplete
 C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.exe
 C:\Users\eleki\Documents\MyProgs\DC25\DC_source\DC\obj\Debug\DC.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\docs\cross.ico
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\docs\dcusersguide.pdf
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\docs\hand.ico
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\docs\lupe.ico
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\docs\theory.pdf
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe.config
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe.manifest
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.application
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DC.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\System.Data.SQLite.dll
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.pdb
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe.config
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\System.Data.SQLite.xml
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.AssemblyReference.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmDCMain.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.frmAbout.resources
@@ -140,22 +160,7 @@ C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.GenerateR
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.CoreCompileInputs.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.manifest
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.application
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.Up2Date
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Core.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Core.xml
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.exe.config
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\obj\Debug\DC.csproj.Up2Date
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\System.Data.SQLite.dll
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe.config
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCDemo.exe.config
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCMaster.exe.config
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\System.Data.SQLite.xml

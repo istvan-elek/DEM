@@ -17,9 +17,10 @@ namespace DC
         public frmGuide()
         {
             InitializeComponent();
-            var uri = new Uri(Application.StartupPath + @"\dcusersguide.pdf");
+            string path = Path.Combine(AppContext.BaseDirectory, "docs", "dcusersguide.pdf");
+            var uri = new Uri(path);
             this.webBrowserGuide.Source = uri;
-            var uriTheory = new Uri(Application.StartupPath + @"\theory.pdf");
+            var uriTheory = new Uri(Path.Combine(AppContext.BaseDirectory, "docs", "theory.pdf")); 
             this.webBrowserTheory.Source = uriTheory;
             
         }

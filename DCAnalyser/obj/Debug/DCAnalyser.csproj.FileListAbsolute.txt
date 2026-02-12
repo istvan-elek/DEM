@@ -139,26 +139,26 @@ C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe
 C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.pdb
 C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmIterationCompare.resources
 C:\Users\eleki\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmGuide.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe.config
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DC\bin\Debug\DCAnalyser.pdb
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.AssemblyReference.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.DisplayCharts.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmBrowseReports.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmClans.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmCompareImprints.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmFamilyTree.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmGuide.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmMain.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmIterationCompare.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmPicture2.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmSelectGeneration.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmSql.resources
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmWorkersTree.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.Properties.Resources.resources
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.GenerateResource.cache
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.Up2Date
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe
 C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.pdb
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmFamilyTree.resources
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.csproj.Up2Date
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmClans.resources
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.frmWorkersTree.resources
-C:\Users\Elek István\Documents\MyProgs\DC3\DEM\DCAnalyser\obj\Debug\DCAnalyser.exe.config

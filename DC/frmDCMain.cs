@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,17 +40,20 @@ namespace DC
 
         private void bttnDemo_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(Application.StartupPath + @"\DCDemo.exe");
+            var exe = Path.Combine(AppContext.BaseDirectory, "DCDemo.exe");
+            Process.Start(new ProcessStartInfo(exe) { UseShellExecute = true });
         }
 
         private void bttnMaster_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(Application.StartupPath + @"\DCMaster.exe");
+            var exe = Path.Combine(AppContext.BaseDirectory, "DCMaster.exe");
+            Process.Start(new ProcessStartInfo(exe) { UseShellExecute = true });
         }
 
         private void bttnAnalyser_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(Application.StartupPath + @"\DCAnalyser.exe");
+            var exe = Path.Combine(AppContext.BaseDirectory, "DCAnalyser.exe");
+            Process.Start(new ProcessStartInfo(exe) { UseShellExecute = true });
         }
 
         private void bttnMinimize_Click(object sender, EventArgs e)

@@ -17,13 +17,18 @@ namespace DCMaster
     {
         labyrinth lab;
         static Random rnd = new Random(); //random number for neighbor choose
-        float lbsize;
-        int initEnergy;
-        int movementCost;
-        int delayValue;
-        
+        float lbsize; //labyrinth size
+        int initEnergy; // kezdeti energia, amit a paraméterekből olvasunk be
+        int movementCost;// egy lépés költsége, amit a paraméterekből olvasunk be
+        int delayValue;// egy mező újra engedélyezéséhez szükséges lépések száma, amit a paraméterekből olvasunk be. A delayValue értékétől függően a mező energia értéke elérhetetlen lesz. Legközelebb akkor lesz újra elérhető, amikor a delayValue értékétől függő lépések száma letelik. Ez a mechanizmus teszi lehetővé, hogy a mezők átmenetileg üressé váljanak, és így befolyásolják a worker döntéseit és útvonalát a labirintusban.
 
-        public worker(labyrinth currentLab, Int32 id, Boolean learning, IList<string> param) 
+
+
+        // Knowledge graph built from Imprint (nodes) and WorkerPath (edges)
+        // Node key: "x,y" (stable); node energy stored separately.
+        public KnowledgeGraph Knowledge { get; } = new KnowledgeGraph();
+
+        public worker(labyrinth currentLab, Int32 id, Boolean learning, IList<string> param) // constructor, initializes the worker with the given labyrinth, id, learning mode, and parameters (initial energy, movement cost, delay value)
         {
             lab = currentLab;
             lbsize = (float)lab.Size;
@@ -82,7 +87,10 @@ namespace DCMaster
 
         List<string> _workerPath = new List<string>(); // worker path is series of number triads, which contains x,y coordinates and energy of the fields in a labirynth
         public List<string> WorkerPath
-        {get { return _workerPath; } }
+        {
+            get { return _workerPath; }
+            set { _workerPath = value; }
+        }
 
 
         List<string> _edge = new List<string>();
@@ -103,6 +111,8 @@ namespace DCMaster
                     int x = Convert.ToInt16(_currentPosition.Split(',')[0]);
                     int y = Convert.ToInt16(_currentPosition.Split(',')[1]);
                     _workerPath.Add(_currentPosition + "," + lab.Fields[x,y]);
+                    Knowledge.UpdateFromImprint(_imprint);
+                    Knowledge.UpdateFromWorkerPath(_workerPath);
                 }
             }
         }
@@ -143,7 +153,7 @@ namespace DCMaster
 
 #region Methods
 
-        public void moveNext()  //moves the next position in labirynth. Find neighbors of the current field, and select a field randomly from the neighbors
+        public void moveNext() //moves the next position in labirynth. Find neighbors of the current field, and select a field randomly from the neighbors
         {
             HashSet<string> visited = new HashSet<string>(_imprint);            
             List<string> currentNeighbours = new List<string>();
@@ -153,7 +163,7 @@ namespace DCMaster
             string newPosition = currentNeighbours[rnd.Next(0, currentNeighbours.Count)];
             if (_learn)  // ha tanul, akkor megnézi, hogy az új mező szerepel-e a tudásában (imprint)
             {
-                foreach (string item in _imprint)
+                foreach (string item in _imprint)  
                 {
                     string[] s = item.Split(',');   //imprint content
                     string s2 = s[0] + "," + s[1]; // position x=s[0], y=s[1],  s[2] is energy
@@ -192,18 +202,23 @@ namespace DCMaster
             }
             else  // ha nem tanul
             {
-                if (lab.Delay[x, y] == 0)
+                if (lab.Delay[x, y] == 0)// enable a mező
                 {
                     _energy += fieldval; 
                     _sEntropy -= Math.Abs(fieldval - lab.Fields[xold, yold]);
                     if (fieldval > -movementCost) lab.Delay[x, y] = delayValue;                   
                 }
-                else
+                else  // disable a mező
                 {
                     lab.Delay[x, y] -= 1;
                 }
             }
             _currentPosition = newPosition;
+
+            // Update knowledge incrementally
+            Knowledge.UpdateFromImprint(_imprint);
+            Knowledge.UpdateFromWorkerPath(_workerPath);
+
             if (_energy < 1) { _live = false; }
         }
 
@@ -223,6 +238,123 @@ namespace DCMaster
             neighbors.Add(x + "," + yrem);
             return neighbors;
         }
+
+    /// <summary>
+    /// Knowledge graph built from:
+    ///  - Nodes: Imprint triads ("x,y,energy") => key "x,y", energy attribute
+    ///  - Edges: WorkerPath triads ("x,y,energy") in time order => directed transitions
+    /// Uses incremental processing of WorkerPath to avoid O(n^2) rebuilds.
+    /// </summary>
+    public class KnowledgeGraph
+    {
+        // adjacency: from -> (to -> weight)
+        public Dictionary<string, Dictionary<string, float>> Adj { get; } = new Dictionary<string, Dictionary<string, float>>();
+
+        // node attributes: last known energy per position ("x,y")
+        public Dictionary<string, int> EnergyByPos { get; } = new Dictionary<string, int>();
+
+        // last processed index in workerPath list
+        public int LastProcessedPathIndex { get; private set; } = 0;
+
+        private static bool TryParseTriad(string triad, out string pos, out int energy)
+        {
+            pos = "";
+            energy = 0;
+            if (string.IsNullOrWhiteSpace(triad)) return false;
+
+            var parts = triad.Split(',');
+            if (parts.Length < 3) return false;
+
+            // Keep as string key "x,y" to be stable even if energy changes
+            pos = parts[0].Trim() + "," + parts[1].Trim();
+            return int.TryParse(parts[2].Trim(), out energy);
+        }
+
+        /// <summary>
+        /// Refresh node energy attributes from imprint (unique visited fields).
+        /// Safe to call often (imprint is typically much smaller than path).
+        /// </summary>
+        public void UpdateFromImprint(List<string> imprint)
+        {
+            if (imprint == null) return;
+
+            // imprint is a set-like list (order not meaningful)
+            foreach (var s in imprint)
+            {
+                if (TryParseTriad(s, out var pos, out var e))
+                {
+                    EnergyByPos[pos] = e;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Incrementally update edges from workerPath and also learn energies from the path.
+        /// </summary>
+        public void UpdateFromWorkerPath(List<string> workerPath)
+        {
+            if (workerPath == null) return;
+
+            if (workerPath.Count == 0)
+            {
+                LastProcessedPathIndex = 0;
+                return;
+            }
+
+            // Learn energy from the last element even if there's no edge yet
+            if (workerPath.Count == 1)
+            {
+                if (TryParseTriad(workerPath[0], out var singlePos, out var singleE))
+                    EnergyByPos[singlePos] = singleE;
+                LastProcessedPathIndex = 1;
+                return;
+            }
+
+            // Ensure LastProcessedPathIndex is sane
+            if (LastProcessedPathIndex < 0 || LastProcessedPathIndex > workerPath.Count)
+                LastProcessedPathIndex = 0;
+
+            for (int i = Math.Max(1, LastProcessedPathIndex); i < workerPath.Count; i++)
+            {
+                if (!TryParseTriad(workerPath[i - 1], out var a, out var ea)) continue;
+                if (!TryParseTriad(workerPath[i], out var b, out var eb)) continue;
+
+                // record energies (last known)
+                EnergyByPos[a] = ea;
+                EnergyByPos[b] = eb;
+
+                if (a == b) continue;
+
+                if (!Adj.TryGetValue(a, out var outMap))
+                {
+                    outMap = new Dictionary<string, float>();
+                    Adj[a] = outMap;
+                }
+
+                // weight = transition frequency (can be replaced later with reinforcement logic)
+                outMap[b] = outMap.TryGetValue(b, out var w) ? w + 1f : 1f;
+            }
+
+            LastProcessedPathIndex = workerPath.Count;
+        }
+
+        /// <summary>
+        /// Convert to the structure expected by GraphVisualizer: Dictionary(from -> List(to, weight)).
+        /// </summary>
+        public Dictionary<string, List<(string to, float weight)>> ToVisualizerGraph()
+        {
+            var result = new Dictionary<string, List<(string to, float weight)>>();
+
+            foreach (var kv in Adj)
+            {
+                var list = kv.Value.Select(e => (e.Key, e.Value)).ToList();
+                result[kv.Key] = list;
+            }
+
+            return result;
+        }
+    }
+
 #endregion
     }
 }

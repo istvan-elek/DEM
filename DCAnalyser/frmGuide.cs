@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,12 @@ namespace DCAnalyser
         public frmGuide(string fname)
         {
             InitializeComponent();
-            var uri = new Uri(fname); 
-            this.webBrowser1.Navigate(uri);            
+
+            string path = Path.Combine(AppContext.BaseDirectory, "docs", "dcusersguide.pdf");
+            var uri = new Uri(path);
+            this.webView21.Source = uri;
+
+            
         }
 
     }

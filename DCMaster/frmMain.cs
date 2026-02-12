@@ -41,6 +41,7 @@ namespace DCMaster
         Int32[] wkSequence; // the workers' IDs are in it for the random start
         labyrinth lab;
         IList<String> parameters = new List<String>();
+        Boolean loadExistingLab=false;
         Boolean learn;
         Boolean merge;
         Boolean randomStart=false;
@@ -64,6 +65,8 @@ namespace DCMaster
             loadParameters();
             tbStartPosition.TabStop = false;
             tbStop.TabStop = false;
+            chkbSave2file.Checked=true;
+            tbFileName2Save.Enabled = true;
         }
 
         void loadParameters()
@@ -86,7 +89,7 @@ namespace DCMaster
             chkStartPositionFromParent.Checked = Properties.Settings.Default.startfrombirthplace;
             randomStart = Properties.Settings.Default.RandomStart;
             chkRandomStartPosition.Checked = randomStart;
-        }
+            }
 
         void refreshParameters()
         {
@@ -119,7 +122,7 @@ namespace DCMaster
         private void bttnCreateWorkers_Click(object sender, EventArgs e)  // create workerre klikkel
         {
             frmCreateWorkers createWorkers = new frmCreateWorkers(tbStartPosition.Text.Trim(), lab, learn); // workereket kreál az indulási pozícióval, a labirínthal és a learning opcióval
-            lblStepCount.Text = "Step count: ";
+            //lblStepCount.Text = "Step count: ";
             lblIterationCount.Text = "0";
             lblLivingWorkerNumber.Text = "0";
             createWorkers.StartPosition = FormStartPosition.CenterScreen;
@@ -144,6 +147,7 @@ namespace DCMaster
             frmCreateLabirynth createLab = new frmCreateLabirynth();
             createLab.StartPosition = FormStartPosition.CenterScreen;
             createLab.ShowDialog();
+            loadExistingLab=false;
             lblLabSize.Text = "Labyrinth size: " + createLab.LabSize; 
             lab = createLab.lab;
             bttnEditCreateWorkers.Enabled=true;
@@ -245,9 +249,8 @@ namespace DCMaster
         }
 
         // start the simulation ************************************************************************************************
-        void Start()
+        void Start() // this method is running the whole simulation, it is called when the user clicks the "Start iteration" button, and it is running until there is no living worker, or the user stops the process by clicking the "Stop iteration" button, or when the step count reaches the value in the tbStop textbox
         {
-        //set up initial parameter of GUI and files (appfolder, reports and iterations) START ============================
 
         #region appfolder, reports and iterations    
             Int32 numOfWorkers = wk.Count;
@@ -264,7 +267,26 @@ namespace DCMaster
             lblInitnumofwkr.Invoke(new Action(() => lblInitnumofwkr.Text = "Initial worker count: " + initial_num_of_workers.ToString()));
             lblLabSize.Invoke(new Action(() => lblLabSize.Text = "Labyrinth size: " + lab.Size.ToString() + "  x " + lab.Size.ToString()));
             lblLivingWorkerNumber.Invoke(new Action(() => lblLivingWorkerNumber.Text = numOfWorkers.ToString()));
-            Int32 stepCount = 0;
+
+            int stepCount = 0;
+            if (lblIterationCount.Text != "0") stepCount = int.Parse(lblIterationCount.Text);
+
+            if (lblIterationCount.InvokeRequired)
+            {
+                lblIterationCount.Invoke(new Action(() =>
+                {
+                    var parts = lblIterationCount.Text.Split(':');
+                    if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out var v))
+                        stepCount = v;
+                }));
+            }
+            else
+            {
+                var parts = lblIterationCount.Text.Split(':');
+                if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out var v))
+                    stepCount = v;
+            }
+
             wkSequence = setwkIDsequence(wk);
             initial_energy = sumOfEnergy(wk);
             Directory.CreateDirectory(Path.Combine(appfolder, "DC"));
@@ -284,23 +306,34 @@ namespace DCMaster
             DirectoryInfo diLab = new DirectoryInfo(appfolder + @"\DC\labyrinths\");
             if (!diLab.Exists) {  diLab.Create(); }
             labyrinthname = appfolder + @"\DC\labyrinths\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".lab";
-            if (chkbSave2file.Checked)
+            if (chkbSave2file.Checked)  // ha a "save to file" jelölőnégyzet be van jelölve, akkor a fájlnevekben benne lesznek a paraméterek, különben csak a fájlnév lesz tbFileName2Save.Text + ".iter" és tbFileName2Save.Text + ".report"
             {
-                iterationName = appfolder + @"\DC\iterations\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extDelay + extStarp + ".iter";
-                repFileName = appfolder + @"\DC\reports\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".report";
+                if (!loadExistingLab) // ha nem egy már meglévő labirintust töltöttünk be, akkor a fájlnevekben benne lesznek a paraméterek, különben csak a fájlnév lesz tbFileName2Save.Text + ".iter" és tbFileName2Save.Text + ".report"
+                {
+                    iterationName = appfolder + @"\DC\iterations\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".iter";
+                    repFileName = appfolder + @"\DC\reports\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".report";
+                }
+                else
+                {
+                    iterationName = appfolder + @"\DC\iterations\" + tbFileName2Save.Text + ".iter";
+                    repFileName = appfolder + @"\DC\reports\" + tbFileName2Save.Text + ".report";
+                }
                 DirectoryInfo di3 = new DirectoryInfo(appfolder + @"\DC\Databases\");
                 if (!di3.Exists)  { di3.Create(); }
-                dbName= appfolder + @"\DC\databases\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".s3db";
+                if (!loadExistingLab) dbName = appfolder + @"\DC\databases\" + tbFileName2Save.Text.Trim() + extLab + extLearn + extMerge + extStarp + extDelay + ".s3db";
+                else dbName = tbFileName2Save.Text + ".s3db";
 
             }
-                  
-            using (FileStream fs = new FileStream(iterationName, FileMode.Create, FileAccess.Write, FileShare.Read))
+            if (stepCount==0)  // ha az iteráció még nem kezdődött el, akkor létrehozzuk az iterációs fájlt, és beleírjuk a fejlécet és az első sort az indulási értékekkel, ha már van iterációs fájl, akkor nem írunk semmit, hanem folytatjuk a meglévő fájlhoz
             {
-                using (StreamWriter sw = new StreamWriter(fs))
+                using (FileStream fs = new FileStream(iterationName, FileMode.Create, FileAccess.Write, FileShare.ReadWrite))
                 {
-                    sw.WriteLine("stepCount\tnumOfWorkers\tEnergy\t\tEntropy");
-                    sw.WriteLine(stepCount + "\t\t" + initial_num_of_workers + "\t\t" + initial_energy + "\t\t0" );
-                    sw.Close();
+                    using (StreamWriter sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine("stepCount\tnumOfWorkers\tEnergy\t\tEntropy");
+                        sw.WriteLine(stepCount + "\t\t" + initial_num_of_workers + "\t\t" + initial_energy + "\t\t0");
+                        sw.Close();
+                    }
                 }
             }
             for (Int32 l = 0; l < wkSequence.Length; l++)  //set up workers' start location
@@ -316,7 +349,8 @@ namespace DCMaster
         #endregion  //set up initial parameter of GUI and files (appfolder, reports and iterations)
              
             Int32 maxindex = wkSequence.Max();
-            while (numOfWorkers > 0)  //addig pörög a ciklus, amíg van élő worker ----------------------------------------------------
+            while (numOfWorkers > 0) // amíg van élő worker, addig megy a folyamat, ha nincs több élő worker, akkor leáll a folyamat, és kiírja a jelentést, valamint elmenti az iterációs adatokat egy fájlba, ha a chkbSave2file jelölőnégyzet be van jelölve, akkor elmenti az adatokat egy adatbázisba is, addig pörög a ciklus, amíg van élő worker
+            // ----------------------------------------------------
             {
                 if (randomDeath)  // véletlen halál: az első worker vagy meghal vagy nem
                 {
@@ -324,7 +358,7 @@ namespace DCMaster
                 }
                 if (tbStop.Text.Length != 0)
                 {
-                    if (stepCount == int.Parse(tbStop.Text))
+                    if (stepCount == int.Parse(tbStop.Text))  // ha a step count eléri a tbStop textboxban megadott értéket, akkor leállítja a folyamatot, és kiírja a jelentést, valamint elmenti az iterációs adatokat egy fájlba, ha a chkbSave2file jelölőnégyzet be van jelölve, akkor elmenti az adatokat egy adatbázisba is
                     {
                         saveLab2File();
                         writeReportFile(numOfWorkers, tbStop.Text);
@@ -335,14 +369,16 @@ namespace DCMaster
                             cancellationTokenSource.Cancel();
                             cancellationTokenSource = null;
                         }
-                        if (chkbSave2file.Checked)
+                        if (chkbSave2file.Checked) // ha a "save to file" jelölőnégyzet be van jelölve, akkor elmenti az adatokat egy adatbázisba is
                         {
                             this.Invoke(new Action(() => this.Enabled = false));
                             frmTerminateProgram frmterm = new frmTerminateProgram();
                             frmterm.Location = new Point(this.Location.X + this.Width / 2 - frmterm.Width/2, this.Location.Y + this.Height / 2);
                             frmterm.Show();
                             this.Invoke(new Action(() => this.Text="Results are saving to database..."));                           
-                            saveFinalData2DB();
+                            if (!loadExistingLab) saveFinalData2DB();
+                            else updateFinalDB();
+                            //saveIteration2File(stepCount, numOfWorkers, sumEnergy, sumentropia);
                             this.Invoke(new Action(() => this.Enabled = true));
                             this.Invoke(new Action(() => this.Text = "DC Master, v_" + Application.ProductVersion.ToString()));
                             frmterm.Close();
@@ -354,12 +390,12 @@ namespace DCMaster
                 initial_num_of_workers = numOfWorkers;
                 wkSequence = setwkIDsequence(wk);
                 //start workers  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                for (int ii=0; ii< wkSequence.Length; ii++)
+                for (int ii=0; ii< wkSequence.Length; ii++) // a workerek véletlenszerű sorrendben indulnak el, a moveNext() metódusuk fut, majd ha életben vannak, akkor megnézzük, hogy van-e elég energiájuk a replikációhoz, ha van, akkor létrehozzuk a gyerekeket, ha nincs elég energiájuk, akkor töröljük a workert
                 {
                     Int32 i = wkSequence[ii];
                     wk[i].moveNext();
 
-                    if (wk[i].Live)
+                    if (wk[i].Live) // ha a worker életben van, akkor megnézzük, hogy van-e elég energiája a replikációhoz, ha igen, akkor létrehozzuk a gyerekeket, ha nincs elég energiája, akkor töröljük a workert
                     {
                         if (wk[i].Energy > Replication_energy_level)
                         {
@@ -388,16 +424,17 @@ namespace DCMaster
                         }
 
                     }
-                    else
+                    else // ha a worker meghalt, akkor töröljük a workert a listából, és frissítjük a workerek számát, ha nincs több worker, akkor leállítjuk a folyamatot
                     {
                         wk.Remove(i);
                         numOfWorkers = wk.Count;
-                        if (numOfWorkers != 0)
+                        if (numOfWorkers != 0) // ha van még élő worker, akkor frissítjük a wkSequence tömböt a workerek új ID-sorrendjével, és megyünk tovább a következő workerre
                         {
                             wkSequence = setwkIDsequence(wk);
                         }
-                        else
+                        else // ha nincs több élő worker, akkor leállítjuk a folyamatot, és kiírjuk a jelentést, valamint elmentjük az iterációs adatokat egy fájlba, ha a chkbSave2file jelölőnégyzet be van jelölve, akkor elmentjük az adatokat egy adatbázisba is
                         {
+
                             lblIterationCount.Invoke(new Action(() => lblIterationCount.Text = (stepCount).ToString()));
                             lblLivingWorkerNumber.Invoke(new Action(() => lblLivingWorkerNumber.Text = numOfWorkers.ToString()));
                             writeReportFile(numOfWorkers, (stepCount).ToString());
@@ -415,7 +452,8 @@ namespace DCMaster
                                 frmTerminateProgram frmterm = new frmTerminateProgram();
                                 frmterm.Location = new Point(this.Location.X + this.Width / 2 - frmterm.Width / 2, this.Location.Y + this.Height / 2);
                                 frmterm.Show();
-                                saveFinalData2DB();
+                                if (!loadExistingLab) saveFinalData2DB();
+                                else updateFinalDB();
                                 this.Invoke(new Action(() => this.Text = "DC Master, v_" + Application.ProductVersion.ToString()));
                                 this.Invoke(new Action(() => this.Enabled = true));
                                 frmterm.Close();
@@ -436,7 +474,9 @@ namespace DCMaster
                 float entropia= sumofSEntropy(wk);
                 saveIteration2File(stepCount, numOfWorkers, gatheredEnergy, entropia);
                 //saveLab2File();
+
                 lblIterationCount.Invoke(new Action(() => lblIterationCount.Text = (stepCount).ToString()));
+
                 lblLivingWorkerNumber.Invoke(new Action(() => lblLivingWorkerNumber.Text = numOfWorkers.ToString()));               
                 try
                 {
@@ -458,7 +498,9 @@ namespace DCMaster
                             frmTerminateProgram frmterm = new frmTerminateProgram();
                             frmterm.Location = new Point(this.Location.X + this.Width / 2 - frmterm.Width / 2, this.Location.Y + this.Height/2);
                             frmterm.Show();
-                            saveFinalData2DB();
+                            if(!loadExistingLab) saveFinalData2DB();
+                            else updateFinalDB();
+                            //saveIteration2File(stepCount, numOfWorkers, gatheredEnergy, entropia);
                             this.Invoke(new Action(() => this.Enabled = true));
                             this.Invoke(new Action(() => this.Text = "DC Master, v_" + Application.ProductVersion.ToString()));
                             frmterm.Close();
@@ -480,7 +522,7 @@ namespace DCMaster
 
         void saveIteration2File(int stepNum, int numWk, Int32 energ, float SEntr)
         {
-            using (FileStream fs = new FileStream(iterationName, FileMode.Append, FileAccess.Write, FileShare.Read))
+            using (FileStream fs = new FileStream(iterationName, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
             {
                 using (StreamWriter sw = new StreamWriter(fs))
                 {
@@ -488,6 +530,24 @@ namespace DCMaster
                 }
             }
         }
+
+        void updateFinalDB()
+        {
+            using (var cnn = new SQLiteConnection(cnsb.ConnectionString))
+            {
+                cnn.Open();
+                var cmd = new SQLiteCommand(
+                    "SELECT name FROM sqlite_master WHERE type='table' AND name='workers';", cnn);
+                var exists = cmd.ExecuteScalar();
+                System.Diagnostics.Debug.WriteLine("workers table exists? " + (exists != null));
+            }
+
+            //cnsb.DataSource = dbName ;
+            dbsqliteTools dbs = new dbsqliteTools(cnsb);
+            dbs.saveWorkersTable(wkSequence, wk);
+            dbs.saveIteration(File.ReadAllLines(iterationName));
+        }
+
 
        
         void saveFinalData2DB()  // adatbázisba ment mindent a pillanatnyi állapotokról. Menti a workereket, a worker_path-okat, az iteráció lépéseinek adatait
@@ -497,10 +557,10 @@ namespace DCMaster
             dbs.createNewDBFile();
             dbs.createWorkersTable();
             if (wk.Count != 0) dbs.saveWorkersTable(wkSequence, wk);
-            dbs.createLabTable();           
+            dbs.createLabTable();
             dbs.saveLabirynthTable(lab, movement_costs);
             dbs.createIterationTable();
-            dbs.saveIteration(File.ReadAllLines(iterationName));
+            dbs.saveIteration(File.ReadAllLines(iterationName));     
         }
 
         float sumofSEntropy(Dictionary<Int32, worker> wkrs)
@@ -700,7 +760,9 @@ namespace DCMaster
             dtWorkers.Columns.Add("Entropy", typeof(Int32));
             dtWorkers.Columns.Add("CurrentPosition");
             dtWorkers.Columns.Add("Parents");
-            dtWorkers.Columns.Add("StartPosition");
+            dtWorkers.Columns.Add("StartPosition"); 
+            dtWorkers.Columns.Add("Imprint");
+            dtWorkers.Columns.Add("WorkerPath");
             for (int i=0; i<wk.Count; i++)
             {
                 DataRow dr=dtWorkers.NewRow();
@@ -710,6 +772,8 @@ namespace DCMaster
                 dr["Parents"] = wk[wkSequence[i]].Parent;
                 dr["CurrentPosition"] = wk[wkSequence[i]].CurrentPosition;
                 dr["StartPosition"] = wk[wkSequence[i]].StartLocation;
+                dr["Imprint"] = string.Join(";", wk[wkSequence[i]].Imprint);
+                dr["WorkerPath"] = string.Join(";", wk[wkSequence[i]].WorkerPath);
                 dtWorkers.Rows.Add(dr);
             }
             return dtWorkers;
@@ -727,7 +791,7 @@ namespace DCMaster
                 //dgvWks4Analyser.Visible = true;
                 if (lab != null)
                 {
-                    grp_static_hostility.Visible = true;
+                    //grp_static_hostility.Visible = true;
 
                     float hst = lab.Hostility; //hostile.ComputeHostility();
                     trackBar1.Value = (int)(hst*10);
@@ -768,15 +832,14 @@ namespace DCMaster
                 bnwks.Visible = false;
             }
         }
-
-        private void bttnShowHideWorkers_click(object sender, EventArgs e)
+        private void ToggleWorkers()
         {
             if (!dgvWks4Analyser.Visible)
             {
                 bttnShowHideWorkers.Text = "Hide workers";
                 dgvWks4Analyser.Visible = !dgvWks4Analyser.Visible;
                 bswks.DataSource = getCurrentWorkers();
-                bnwks.BindingSource = bswks;                
+                bnwks.BindingSource = bswks;
                 dgvWks4Analyser.DataSource = bswks;
                 bnwks.Visible = true;
             }
@@ -786,34 +849,52 @@ namespace DCMaster
                 bttnShowHideWorkers.Text = "Show workers";
                 bswks.DataSource = null;
                 bnwks.Visible = false;
-            }          
+            }
         }
 
-        private void bttnShowHideLabirynth_Click(object sender, EventArgs e)
+        private void bttnShowHideWorkers_click(object sender, EventArgs e)
         {
+                ToggleWorkers();         
+        }
+
+        private  void ToggleLabyrinth()
+        {
+
             if (!grpLabData.Visible)
             {
-                dgvLab.Columns.Clear();
-                dgvLab.Columns.Add("Position", "Position");
-                dgvLab.Columns.Add("Field_value", "Field_value");
-                dgvLab.Columns.Add("Delay", "Delay");
-                int r = lab.Size;
-                int numofSources = 0;
-                int numofSinks= 0;
-                for (int i = 0; i < r; i++)
+                if (loadExistingLab)
                 {
-                    for (int j=0; j < r; j++)
+                    dgvLab.Columns.Clear();
+                    dgvLab.DataSource = loadTableData("select * from labirynth");
+                    //dgvLab.Columns.Add("Position", "Position");
+                    //dgvLab.Columns.Add("Field_value", "Field_value");
+                    //dgvLab.Columns.Add("Delay", "Delay");
+                }
+
+                int r = lab.Size;
+                int numofSources = lab.NumOfEnergySources;
+                int numofSinks = lab.NumOfEnergySinks;
+                if (!loadExistingLab)
+                {
+                    dgvLab.Columns.Clear();
+                    dgvLab.Columns.Add("Position", "Position");
+                    dgvLab.Columns.Add("Field_value", "Field_value");
+                    dgvLab.Columns.Add("Delay", "Delay");
+                    for (int i = 0; i < r; i++)
                     {
-                        if (lab.Fields[i, j] != movement_costs)
+                        for (int j = 0; j < r; j++)
                         {
-                            //tbLabData.AppendText("Fields[" + i + "," + j + "] = " + lab.Fields[i,j] + "\tdelay: " + lab.Delay[i,j] + Environment.NewLine);
-                            dgvLab.Rows.Add(i+ "," + j, lab.Fields[i, j], lab.Delay[i, j]);
+                            if (lab.Fields[i, j] != movement_costs)
+                            {
+                                dgvLab.Rows.Add(i + "," + j, lab.Fields[i, j], lab.Delay[i, j]);
+                            }
+                            if (lab.Fields[i, j] < movement_costs) numofSinks++;
+                            if (lab.Fields[i, j] > movement_costs) numofSources++;
                         }
-                        if (lab.Fields[i, j] < movement_costs) numofSinks++;
-                        if (lab.Fields[i,j] > movement_costs) numofSources++;
                     }
                 }
-                lblLabparams.Text = "Labyrinth size=" + lab.Size + " x " + lab.Size + ", Sink count=" + numofSinks + ", " + "Source count=" + numofSources;
+
+                lblLabparams.Text = "Labyrinth size=" + lab.Size + " x " + lab.Size + ", Sink count=" + lab.NumOfEnergySinks + ", " + "Source count=" + lab.NumOfEnergySources;
                 bttnShowHideLabirynth.Text = "Hide labyrinth";
                 grpLabData.Visible = true;
             }
@@ -826,6 +907,11 @@ namespace DCMaster
                     if (Application.OpenForms[index].Name == "frmPicture2") { Application.OpenForms[index].Close(); }
                 }
             }
+        }
+
+        private void bttnShowHideLabirynth_Click(object sender, EventArgs e)
+        {
+            ToggleLabyrinth();      
         }
 
 
@@ -991,10 +1077,15 @@ namespace DCMaster
             }
         }
 
-        private void chkbSave2file_CheckedChanged(object sender, EventArgs e)
+        private void UpdateSave2FileUi()
         {
             if (chkbSave2file.Checked) { tbFileName2Save.Enabled = true; }
             else { tbFileName2Save.Enabled = false; }
+        }
+
+        private void chkbSave2file_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateSave2FileUi();
         }
 
         private void tsbttnHelp_Click(object sender, EventArgs e)
@@ -1069,10 +1160,18 @@ namespace DCMaster
 
         private void bttnShowGraph_Click(object sender, EventArgs e)
         {
-            var w = wk[wkSequence[1]];
-            var g = w.Knowledge.ToVisualizerGraph();
-            GraphVisualizer.GraphVisualiz.ShowGraph(g, w.Knowledge.EnergyByPos);
+                if (dgvWks4Analyser.CurrentRow == null) return;
 
+                int id = Convert.ToInt32(dgvWks4Analyser.CurrentRow.Cells["id"].Value); // vagy Cells[0]
+                var w = wk[id];
+
+                var kg = new KnowledgeGraphBuilder.KnowledgeGraphBuild();
+                kg.BuildFromWorker(w);
+
+                var g = kg.ToVisualizerGraph();
+                var energyByPos = kg.ToEnergyByPos();
+
+                GraphVisualizer.GraphVisualiz.ShowGraph(id.ToString(), g, energyByPos);
         }
 
 
@@ -1096,7 +1195,11 @@ namespace DCMaster
                 tsbttnShowAnalyser.Enabled = true;
                 frmViewTextFile viewreports = new frmViewTextFile(iterationName);
                 viewreports.TopMost = true;
+                loadParameters();
                 dbConnection(ofd.FileName);
+                loadExistingLab=true;
+                ToggleWorkers();
+                ToggleLabyrinth();
             }
         }
 
@@ -1110,42 +1213,109 @@ namespace DCMaster
             dtworkers = loadTableData("select * from workers order by id");
             dtiteration= loadTableData("select * from iteration");
             string sz = dtlab.Rows[dtlab.Rows.Count - 1][2].ToString();
-
+            tbFileName2Save.Text = Path.GetFileNameWithoutExtension(fileName);
+            tbFileName2Save.Enabled=true;
+            ReadLabyrinthData(dtlab, int.Parse(sz));
             ReadWorkerData(dtworkers);
+            lblInitnumofwkr.Text = "Initial number of workers: " + wk.Count.ToString();
+            lblLivingWorkerNumber.Text = dtiteration.Rows[dtiteration.Rows.Count - 1]["numofworkers"].ToString();
+            if (learn) { extLearn = "_learn"; } else { extLearn = "_nolearn"; }
+            if (merge) { extMerge = "_merge"; } else { extMerge = ""; }
+            if (!randomStart) extStarp = "_startp" + tbStartPosition.Text.Replace(',', '_');
+            else extStarp = "_startpRandom";
+            extLab = "_lab" + lab.Size.ToString();
+
+            string dbFile = fileName; 
+            // Databases mappa
+            string dbDir = Path.GetDirectoryName(dbFile);
+            // DC mappa (Databases szülője)
+            string dcDir = Directory.GetParent(dbDir).FullName;
+            // név kiterjesztés nélkül
+            string name = Path.GetFileNameWithoutExtension(dbFile).TrimStart('.');
+            string iterFile = Path.Combine(dcDir, "iterations", name + ".iter");
+            // normalizálás (eltünteti az esetleges .. / . maradványokat)
+            iterationName = Path.GetFullPath(iterFile);
+
+            foreach (DataRow dr in dtiteration.Rows)
+            {
+                //saveIteration2File(int.Parse(dr["stepcount"].ToString()), int.Parse(dr["numofworkers"].ToString()), int.Parse(dr["energy"].ToString()), float.Parse(dr["entropy"].ToString()));
+            }
+            //lblLivingWorkerNumber.Text = dtiteration.Rows[dtiteration.Rows.Count - 1]["numofworkers"].ToString();
+            
         }
 
-        void ReadLabyrinthData(DataTable labtable)
+
+        void ReadLabyrinthData(DataTable labtable, int sz)
         {
-            int size = Convert.ToInt32(labtable.Rows[labtable.Rows.Count - 1]["size"]);
-            //lab = new labyrinth(size);
-            movement_costs = Convert.ToInt32(labtable.Rows[labtable.Rows.Count - 1]["movement_cost"]);
+            int sinkCount = 0;
+            int sourceCount = 0;
+            dgvLab.DataSource=labtable;
+            int size = sz;
+            lblLabSize.Text="Labyrinth size: " + sz.ToString();
+            lab = new labyrinth(size);
             lab.Fields = new int[size, size];
             lab.Delay = new int[size, size];
+            for (int i=0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    lab.Fields[i, j] = movement_costs;
+                    lab.Delay[i, j] = movement_costs;
+                }
+            }
             for (int i = 0; i < labtable.Rows.Count - 1; i++)
             {
-                int x = Convert.ToInt32(labtable.Rows[i]["x"]);
-                int y = Convert.ToInt32(labtable.Rows[i]["y"]);
-                lab.Fields[x, y] = Convert.ToInt32(labtable.Rows[i]["field_value"]);
+                int x = Convert.ToInt32(labtable.Rows[i]["position"].ToString().Split(',')[0]);
+                int y = Convert.ToInt32(labtable.Rows[i]["position"].ToString().Split(',')[1]);
+                int erg= int.Parse(labtable.Rows[i]["energy"].ToString());
+                if (erg < movement_costs) sinkCount += 1;
+                if (erg > 0) sourceCount += 1;
+                lab.Position.Add(i, labtable.Rows[i]["position"].ToString());
+                lab.Fields[x, y] = erg;
                 lab.Delay[x, y] = Convert.ToInt32(labtable.Rows[i]["delay"]);
             }
+            lab.NumOfEnergySinks = sinkCount;
+            lab.NumOfEnergySources = sourceCount;
         }   
 
-        void ReadWorkerData(DataTable worker)
+        void ReadWorkerData(DataTable dtworkers)
         {
             wk = new Dictionary<Int32, worker>();
+            wkSequence = new Int32[dtworkers.Rows.Count];
             cnsb.DataSource = iterationName;
-            DataTable dtworkers = loadTableData("select * from workers order by id");
+            int k = 0;
             foreach (DataRow dr in dtworkers.Rows)
             {
-                //worker wkr = new worker();
-                //wkr.ID = Convert.ToInt32(dr["id"]);
-                //wkr.Energy = Convert.ToInt32(dr["energy"]);
-                //wkr.SEntropy = float.Parse(dr["sentropy"].ToString());
-                //wkr.CurrentPosition = dr["currentposition"].ToString();
-                //wkr.Parent = dr["parent"].ToString();
-                //wkr.StartLocation = dr["startposition"].ToString();
-                //wk.Add(wkr.ID, wkr);
+                worker wkr = new worker(lab, int.Parse(dr["id"].ToString()),true, parameters);
+                wkr.ID = Convert.ToInt32(dr["id"]);
+                wkSequence[k] = wkr.ID;
+                wkr.Energy = Convert.ToInt32(dr["energy"]);
+                wkr.SEntropy = float.Parse(dr["entropy"].ToString());
+                wkr.CurrentPosition = dr["current_position"].ToString();
+                wkr.Parent = dr["parents"].ToString();
+                wkr.StartLocation = dr["start_location"].ToString();
+                //imprint feldolgozása
+                var s = (dr["imprint"] ?? "").ToString();
+                wkr.Imprint = s
+                    .Trim()                 // whitespace le
+                    .TrimEnd(';')           // ha van a végén ;, le
+                    .Split(';')
+                    .Select(x => x.Trim())  // " a ; b " -> "a","b"
+                    .Where(x => x.Length > 0)
+                    .ToList();
+                //workerpath feldolgozása
+                var swp = (dr["worker_path"] ?? "").ToString();
+                wkr.WorkerPath = swp
+                    .Trim()                 // whitespace le
+                    .TrimEnd(';')           // ha van a végén ;, le
+                    .Split(';')
+                    .Select(x => x.Trim())  // " a ; b " -> "a","b"
+                    .Where(x => x.Length > 0)
+                    .ToList();
+                wk.Add(wkr.ID, wkr);
+                k += 1;
             }
+            
         }
 
         DataTable loadTableData(string sqlCommand)
@@ -1166,11 +1336,127 @@ namespace DCMaster
                     }
                     catch (Exception err)
                     {
-                        throw (err);
+                        MessageBox.Show("Load table function failed: " + err.ToString());
                     }
                 }
             }
+            return dt;
         }
+
+
+
+        private void dgvWks4Analyser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bttnShowGraph.Enabled=true;
+        }
+
+        private void dgvWks4Analyser_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvWks4Analyser.CurrentRow == null) return;
+
+            int id = Convert.ToInt32(dgvWks4Analyser.CurrentRow.Cells["id"].Value); // vagy Cells[0]
+            var w = wk[id];
+
+            var kg = new KnowledgeGraphBuilder.KnowledgeGraphBuild();
+            kg.BuildFromWorker(w);
+
+            var g = kg.ToVisualizerGraph();
+            var energyByPos = kg.ToEnergyByPos();
+
+            GraphVisualizer.GraphVisualiz.ShowGraph(id.ToString(), g, energyByPos);
+        }
+
+        private void bttnLoadExistingDB_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                      DeleteDcHelperFilesWithConfirm(this);
+            }
+        }
+
+        public static void DeleteDcHelperFilesWithConfirm(IWin32Window owner = null)
+        {
+            // Magyar Windows-on a felhasználónév lehet ékezetes; LocalApplicationData a jó megoldás.
+            string baseDir = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "DC");
+
+            string iterationsDir = Path.Combine(baseDir, "iterations");
+            string reportsDir = Path.Combine(baseDir, "reports");
+            string labyrinthsDir = Path.Combine(baseDir, "labyrinths");
+            string databasesDir = Path.Combine(baseDir, "databases");
+
+            var msg = $"Shall I delete existing iteration, report and labyrinth files?\n\n" +
+                      $"Base folder:\n{baseDir}\n\n" +
+                      $"- iterations: *.iter\n" +
+                      $"- reports:    *.rep\n" +
+                      $"- labyrinths: *.lab\n" +
+                      $"- databases: *.s3db";
+
+            if (MessageBox.Show(owner, msg, "Delete files",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+#if !DEBUG
+        MessageBox.Show(owner, "Safety: deletion is enabled only in DEBUG builds.",
+            "Delete files", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        return;
+#endif
+
+            var sb = new StringBuilder();
+            int totalDeleted = 0;
+            int totalFailed = 0;
+
+            // helyi függvény a törléshez
+            (int deleted, int failed) DeleteByPattern(string dir, string pattern)
+            {
+                if (!Directory.Exists(dir))
+                    return (0, 0);
+
+                int deleted = 0, failed = 0;
+
+                foreach (var file in Directory.EnumerateFiles(dir, pattern, SearchOption.TopDirectoryOnly))
+                {
+                    try
+                    {
+                        // ha véletlen read-only, törlés előtt normalizáljuk
+                        File.SetAttributes(file, FileAttributes.Normal);
+                        File.Delete(file);
+                        deleted++;
+                    }
+                    catch
+                    {
+                        failed++;
+                    }
+                }
+
+                return (deleted, failed);
+            }
+
+            var r1 = DeleteByPattern(iterationsDir, "*.iter");
+            sb.AppendLine($"iterations ({iterationsDir})  deleted: {r1.deleted}, failed: {r1.failed}");
+            totalDeleted += r1.deleted; totalFailed += r1.failed;
+
+            var r2 = DeleteByPattern(reportsDir, "*.rep");
+            sb.AppendLine($"reports    ({reportsDir})     deleted: {r2.deleted}, failed: {r2.failed}");
+            totalDeleted += r2.deleted; totalFailed += r2.failed;
+
+            var r3 = DeleteByPattern(labyrinthsDir, "*.lab");
+            sb.AppendLine($"labyrinths ({labyrinthsDir})  deleted: {r3.deleted}, failed: {r3.failed}");
+            totalDeleted += r3.deleted; totalFailed += r3.failed;
+
+            var r4 = DeleteByPattern(databasesDir, "*.s3db");
+            sb.AppendLine($"databases ({databasesDir})  deleted: {r4.deleted}, failed: {r4.failed}");
+            totalDeleted += r4.deleted; totalFailed += r4.failed;
+
+            sb.AppendLine();
+            sb.AppendLine($"TOTAL deleted: {totalDeleted}, failed: {totalFailed}");
+
+            MessageBox.Show(owner, sb.ToString(), "Delete files",
+                MessageBoxButtons.OK,
+                totalFailed == 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+        }
+
 
     }
 }

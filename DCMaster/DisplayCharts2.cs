@@ -128,7 +128,7 @@ namespace DCMaster
                 int l = stick.Length;
                 string num = stick.Substring(0, 2);
                 for (int k=2; k<l; k++) { num += "0"; }
-                ch1.ChartAreas[0].AxisY.Minimum = int.Parse(num) * (l+1);
+                //ch1.ChartAreas[0].AxisY.Minimum = int.Parse(num) * (l+1);
             }
             if (title=="fittness") ch1.ChartAreas[0].AxisY.Title = "fittness = Log10 ( population * energy )";
             ch1.Series[0].ChartType = SeriesChartType.Line;
